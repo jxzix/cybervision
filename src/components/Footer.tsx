@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <img src="/cyb_logo.png" alt="CyberVision Logo" className="h-8 w-auto object-contain" referrerPolicy="no-referrer" />
+            <img src="/cyb_logo.png" alt="CyberVision Logo" className="h-8 w-auto object-contain" referrerPolicy="no-referrer" loading="lazy" />
             <span className="text-2xl font-black tracking-tighter text-white">
               CYBER<span className="text-blue-500">VISION</span>
             </span>

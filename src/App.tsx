@@ -3,18 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Problem from './components/Problem';
-import Services from './components/Services';
-import BotsIA from './components/BotsIA';
-import Stats from './components/Stats';
-import Integrations from './components/Integrations';
-import Testimonials from './components/Testimonials';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
+
+const Problem = lazy(() => import('./components/Problem'));
+const Services = lazy(() => import('./components/Services'));
+const Stats = lazy(() => import('./components/Stats'));
+const Integrations = lazy(() => import('./components/Integrations'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const CTA = lazy(() => import('./components/CTA'));
+const BotsIA = lazy(() => import('./components/BotsIA'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function Home() {
   useEffect(() => {
@@ -24,12 +25,14 @@ function Home() {
   return (
     <main>
       <Hero />
-      <Problem />
-      <Services />
-      <Stats />
-      <Integrations />
-      <Testimonials />
-      <CTA />
+      <Suspense fallback={null}>
+        <Problem />
+        <Services />
+        <Stats />
+        <Integrations />
+        <Testimonials />
+        <CTA />
+      </Suspense>
     </main>
   );
 }
@@ -42,10 +45,12 @@ export default function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/bots-ia" element={<BotsIA />} />
+            <Route path="/bots-ia" element={<Suspense fallback={null}><BotsIA /></Suspense>} />
           </Routes>
         </div>
-        <Footer />
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
       </div>
     </Router>
   );
