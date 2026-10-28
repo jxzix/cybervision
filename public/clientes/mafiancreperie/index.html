@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>The Mafian Creperie Gourmet · Menú</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --carbon:#0c0906;
+  --piedra:#17110c;
+  --piedra-2:#211810;
+  --oro:#f3c66e;
+  --oro-viejo:#b98a3e;
+  --crema:#f4e7cd;
+  --humo:#a8977c;
+  --linea:rgba(243,198,110,.22);
+  --glow:0 1px 0 rgba(0,0,0,.9),0 0 3px rgba(255,226,160,.7),0 0 14px rgba(243,170,70,.38);
+  --oro-claro:#ffe3a1;
+  --script:"Pinyon Script","Snell Roundhand","Apple Chancery",cursive;
+  --serif:"Cormorant Garamond","Garamond","Baskerville","Times New Roman",serif;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --carbon:#0c0906;--piedra:#17110c;--piedra-2:#211810;--oro:#f3c66e;--oro-viejo:#b98a3e;--crema:#f4e7cd;--humo:#a8977c;--linea:rgba(243,198,110,.22);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --carbon:#0c0906;--piedra:#17110c;--piedra-2:#211810;--oro:#f3c66e;--oro-viejo:#b98a3e;--crema:#f4e7cd;--humo:#a8977c;--linea:rgba(243,198,110,.22);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  background-color:var(--carbon);
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(243,198,110,.10), transparent 60%),
+    radial-gradient(800px 500px at 100% 40%, rgba(120,70,30,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .55  0 0 0 0 .42  0 0 0 0 .3  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  color:var(--crema);
+  font-family:var(--serif);
+  font-size:1.15rem;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:rgba(12,9,6,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+img{max-width:100%;display:block}
+a{color:var(--oro)}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* ---------- HERO ---------- */
+.hero{text-align:center;padding:2.5rem 0 3rem;position:relative}
+.sign{width:min(460px,86vw);margin:0 auto;aspect-ratio:1;
+  -webkit-mask-image:radial-gradient(closest-side,#000 74%,transparent 100%);
+  mask-image:radial-gradient(closest-side,#000 74%,transparent 100%);
+  animation:encender 1.6s ease-out both;
+}
+@keyframes encender{
+  0%{filter:brightness(.15) saturate(.4)}
+  12%{filter:brightness(.9)}
+  16%{filter:brightness(.25)}
+  24%{filter:brightness(1.05)}
+  30%{filter:brightness(.55)}
+  45%,100%{filter:brightness(1)}
+}
+@media (prefers-reduced-motion:reduce){.sign{animation:none}}
+.hero p.tag{font-family:var(--script);font-size:clamp(2.4rem,7vw,3.4rem);line-height:1.15;color:var(--oro-claro);-webkit-text-stroke:.6px var(--oro);text-shadow:var(--glow);margin:.4rem 0 .6rem;font-weight:400}
+.hero p.sub{color:var(--humo);font-style:italic;margin:0 auto 1.6rem;max-width:34ch;font-size:1.2rem}
+.cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn{font:600 1.1rem/1 var(--serif);letter-spacing:.02em;padding:.85rem 1.4rem;border-radius:999px;border:1px solid var(--oro);color:var(--carbon);background:var(--oro);text-decoration:none;cursor:pointer;box-shadow:0 0 22px rgba(243,198,110,.25)}
+.btn.ghost{background:transparent;color:var(--oro);box-shadow:none}
+.btn:hover{filter:brightness(1.08)}
+.horario{margin-top:1.8rem;color:var(--humo);font-size:1rem}
+.horario strong{color:var(--crema);font-weight:600}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(12,9,6,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-block:1px solid var(--linea)}
+.nav-inner{display:flex;align-items:center;gap:1rem;padding:.55rem 0}
+.tabs{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;flex:1;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{white-space:nowrap;text-decoration:none;color:#d9c9a8;font-size:1.1rem;font-weight:700;padding:.45rem .9rem;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s}
+.tabs a:hover{color:var(--oro-claro);border-color:var(--linea)}
+.tabs a[aria-current="true"]{color:#1a1208;background:var(--oro-claro);box-shadow:0 0 12px rgba(243,198,110,.35)}
+.buscar{position:relative;flex:0 0 auto}
+.buscar input{font:500 1.02rem var(--serif);color:var(--crema);background:var(--piedra-2);border:1px solid var(--linea);border-radius:999px;padding:.5rem .9rem .5rem 2.1rem;width:13rem;max-width:42vw}
+.buscar input::placeholder{color:var(--humo)}
+.buscar svg{position:absolute;left:.75rem;top:50%;translate:0 -50%;width:15px;height:15px;stroke:var(--humo)}
+
+/* ---------- DESTACADOS ---------- */
+.seccion{padding:3.5rem 0 1rem}
+.titulo{text-align:center;margin-bottom:2rem}
+.titulo h2{font-family:var(--script);font-weight:400;font-size:clamp(3.1rem,9vw,4.6rem);line-height:1.1;margin:0;color:var(--oro-claro);-webkit-text-stroke:.7px var(--oro);paint-order:stroke fill;letter-spacing:.01em;text-shadow:var(--glow)}
+.titulo p{margin:.6rem auto 0;color:#cdbb9c;font-style:italic;font-size:1.15rem;max-width:46ch}
+.orn{display:block;width:150px;height:18px;margin:.7rem auto 0;color:var(--oro-viejo)}
+.don{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.foto{position:relative;margin:0;background:var(--piedra);border:1px solid var(--linea);border-radius:18px;overflow:hidden}
+.foto img{width:100%;aspect-ratio:4/3.4;object-fit:cover}
+.foto figcaption{padding:1rem 1.15rem 1.2rem}
+.foto .fila{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.foto h3{margin:0;font-size:1.45rem;font-weight:700;line-height:1.2}
+.foto .precio{color:var(--oro);font-weight:700;font-size:1.35rem}
+.foto p{margin:.3rem 0 0;color:var(--humo);font-size:1.05rem;line-height:1.45}
+.sello{position:absolute;top:.8rem;left:.8rem;background:rgba(12,9,6,.82);color:var(--oro);border:1px solid var(--oro-viejo);font-size:.92rem;font-weight:600;padding:.25rem .7rem;border-radius:999px}
+
+/* ---------- MENÚ ---------- */
+.lista{display:grid;gap:.2rem 3.5rem;grid-template-columns:1fr}
+@media (min-width:860px){.lista{grid-template-columns:1fr 1fr}}
+.item{padding:.95rem 0;border-bottom:1px solid rgba(243,198,110,.09)}
+.item .linea{display:flex;align-items:baseline;gap:.6rem}
+.item h3{margin:0;font-size:1.3rem;font-weight:700;line-height:1.25;color:var(--crema)}
+.item .puntos{flex:1;border-bottom:2px dotted rgba(243,198,110,.35);translate:0 -.3em;min-width:1.5rem}
+.item .precio{color:var(--oro);font-weight:700;font-size:1.3rem;white-space:nowrap;font-variant-numeric:lining-nums}
+.item .precio small{color:var(--humo);font-weight:500;font-size:.85rem;margin-right:.15rem}
+.item .precio .sep{color:var(--oro-viejo);margin:0 .35rem;font-weight:400}
+.item p{margin:.2rem 0 0;color:#bfae8f;font-style:italic;font-size:1.05rem;line-height:1.45;max-width:52ch}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.45rem}
+.chip{font-size:.85rem;font-weight:600;padding:.08rem .55rem;border-radius:999px;border:1px solid var(--linea);color:var(--humo)}
+.chip.fav{color:var(--carbon);background:var(--oro);border-color:var(--oro)}
+.chip.licor{color:#f0b0a0;border-color:rgba(240,150,130,.4)}
+.chip.nuevo{color:var(--oro);border-color:var(--oro-viejo)}
+.chip.pica{color:#ff9f6e;border-color:rgba(255,140,90,.4)}
+.nota{color:var(--humo);font-size:1rem;text-align:center;margin:1.4rem auto 0;max-width:60ch}
+.tamanos{text-align:center;margin:-1rem 0 1rem;color:var(--oro-viejo);font-size:1rem}
+@media (max-width:520px){.buscar input{width:9.5rem}}
+.vacio{text-align:center;padding:3rem 1rem;color:var(--humo);font-size:1.2rem}
+.vacio button{margin-top:1rem}
+.oculto{display:none !important}
+
+/* ---------- ARMA TU CREPA ---------- */
+.taller{background:linear-gradient(180deg,var(--piedra),var(--carbon));border:1px solid var(--linea);border-radius:24px;padding:clamp(1.3rem,4vw,2.4rem);display:grid;gap:2rem}
+@media (min-width:860px){.taller{grid-template-columns:1.5fr 1fr}}
+.paso h3{font-size:1.35rem;margin:0 0 .7rem;font-weight:700}
+.paso + .paso{margin-top:1.6rem}
+.bases{display:flex;gap:.6rem;flex-wrap:wrap}
+.base{font:600 1.08rem var(--serif);padding:.6rem 1.1rem;border-radius:12px;border:1px solid var(--linea);background:var(--piedra-2);color:var(--crema);cursor:pointer}
+.base[aria-pressed="true"]{border-color:var(--oro);color:var(--oro);box-shadow:0 0 0 1px var(--oro) inset}
+.ingr{display:flex;flex-wrap:wrap;gap:.5rem}
+.ing{font:500 1.02rem var(--serif);padding:.45rem .85rem;border-radius:999px;border:1px solid var(--linea);background:transparent;color:var(--crema);cursor:pointer}
+.ing span{color:var(--humo);margin-left:.3rem}
+.ing[aria-pressed="true"]{background:var(--oro);color:var(--carbon);border-color:var(--oro)}
+.ing[aria-pressed="true"] span{color:#5a3f15}
+.ing:disabled{opacity:.35;cursor:not-allowed}
+.ticket{background:var(--crema);color:#2a1d10;border-radius:14px;padding:1.4rem 1.3rem 1.2rem;position:relative;align-self:start;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.ticket::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:radial-gradient(circle at 10px 0,var(--crema) 6px,transparent 6.5px) 0 0/20px 10px repeat-x}
+.ticket h3{font-family:var(--script);font-weight:400;font-size:2.3rem;margin:0;line-height:1;text-align:center;color:#6b4614}
+.ticket .nombre{text-align:center;font-style:italic;margin:.2rem 0 1rem;color:#6b5a44}
+.ticket ul{list-style:none;margin:0;padding:0;border-top:1px dashed #b69e78}
+.ticket li{display:flex;justify-content:space-between;padding:.35rem 0;border-bottom:1px dashed #d8c5a3;font-size:1.05rem}
+.ticket .total{display:flex;justify-content:space-between;align-items:baseline;margin-top:.8rem;font-weight:700;font-size:1.5rem}
+.ticket .pie{margin:.8rem 0 0;font-size:.98rem;color:#6b5a44;text-align:center}
+.ticket button{margin-top:1rem;width:100%;background:#2a1d10;color:var(--crema);border-color:#2a1d10;box-shadow:none}
+
+/* ---------- FOOTER ---------- */
+footer{margin-top:4rem;border-top:1px solid var(--linea);padding:3rem 0 2.5rem;text-align:center;color:var(--humo)}
+footer .firma{font-family:var(--script);font-size:3rem;color:var(--oro-claro);-webkit-text-stroke:.6px var(--oro);text-shadow:var(--glow);line-height:1;margin:0 0 1rem}
+.datos{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:760px;margin:0 auto 2rem}
+.datos h4{margin:0 0 .2rem;color:var(--crema);font-size:1.15rem}
+.datos p{margin:0;font-size:1.05rem}
+.legal{font-size:.92rem;font-style:italic}
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <img class="sign" src="img/logo.jpg" alt="Letrero iluminado de The Mafian Creperie Gourmet, con sombrero, corbata y puro">
+  <p class="tag">Combinaciones que no podrás resistir</p>
+  <p class="sub">Crepas dulces, saladas y con licor, cafés, frappés, eskimos… y algo más.</p>
+  <div class="cta">
+    <a class="btn" href="#dulces">Ver el menú</a>
+    <a class="btn ghost" href="#arma">Arma tu crepa</a>
+  </div>
+  <p class="horario">Abierto todos los días · <strong>12:00 a 22:00</strong></p>
+</header>
+
+<nav class="nav" aria-label="Secciones del menú">
+  <div class="wrap nav-inner">
+    <div class="tabs" id="tabs"></div>
+    <label class="buscar">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Busca: nutella, café…" aria-label="Buscar en el menú">
+    </label>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="seccion" id="don" data-nav="Lo del Don">
+    <div class="titulo">
+      <h2>Recomendaciones del Don</h2>
+      <p>Las tres que la familia pide una y otra vez.</p>
+      <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M2 9h52M96 9h52" stroke="currentColor" stroke-width="1"/><path d="M60 9l7-6 8 6-8 6z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="81" cy="9" r="2.2" fill="currentColor"/><circle cx="89" cy="9" r="1.4" fill="currentColor"/><circle cx="54" cy="9" r="1.6" fill="currentColor"/><circle cx="96" cy="9" r="1.6" fill="currentColor"/></svg>
+    </div>
+    <div class="don">
+      <figure class="foto" data-buscar="la familia crepa nutella fresa platano nuez">
+        <span class="sello">La más pedida</span>
+        <img src="img/crepa.jpg" alt="Crepa con fresas, chocolate y galleta">
+        <figcaption>
+          <div class="fila"><h3>Crepa La Familia</h3><span class="precio">$119</span></div>
+          <p>Nutella, fresa, plátano, nuez y lluvia de galleta. Para compartir… o no.</p>
+        </figcaption>
+      </figure>
+      <figure class="foto" data-buscar="frappe mocha mafioso oreo chocolate cafe">
+        <span class="sello">Firma de la casa</span>
+        <img src="img/frappe.jpg" alt="Frappé de chocolate con crema batida y galleta">
+        <figcaption>
+          <div class="fila"><h3>Frappé Mocha Mafioso</h3><span class="precio">$85</span></div>
+          <p>Espresso, chocolate belga, galleta Oreo y crema batida. 16 oz.</p>
+        </figcaption>
+      </figure>
+      <figure class="foto" data-buscar="affogato helado espresso postre cafe">
+        <span class="sello">Postre con café</span>
+        <img src="img/affogato.jpg" alt="Affogato: helado de vainilla bañado en espresso">
+        <figcaption>
+          <div class="fila"><h3>Affogato de la Casa</h3><span class="precio">$79</span></div>
+          <p>Helado de vainilla bañado en espresso doble y un hilo de cajeta.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div id="menu"></div>
+
+  <div class="vacio oculto" id="vacio">
+    <div>No encontramos nada con “<span id="vacioQ"></span>”.<br>Prueba con “nutella”, “licor” o “frappé”.</div>
+    <button class="btn ghost" type="button" id="limpiar">Ver todo el menú</button>
+  </div>
+
+  <section class="seccion" id="arma" data-nav="Arma tu crepa">
+    <div class="titulo">
+      <h2>Arma tu crepa</h2>
+      <p>Elige la base y hasta 5 ingredientes. Muéstrale el ticket a quien te atienda.</p>
+      <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M2 9h52M96 9h52" stroke="currentColor" stroke-width="1"/><path d="M60 9l7-6 8 6-8 6z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="81" cy="9" r="2.2" fill="currentColor"/><circle cx="89" cy="9" r="1.4" fill="currentColor"/><circle cx="54" cy="9" r="1.6" fill="currentColor"/><circle cx="96" cy="9" r="1.6" fill="currentColor"/></svg>
+    </div>
+    <div class="taller">
+      <div>
+        <div class="paso">
+          <h3>1. Base</h3>
+          <div class="bases" id="bases"></div>
+        </div>
+        <div class="paso">
+          <h3>2. Ingredientes <span id="cuenta" style="color:var(--humo);font-weight:500;font-size:1.05rem"></span></h3>
+          <div class="ingr" id="ingr"></div>
+        </div>
+      </div>
+      <aside class="ticket" aria-live="polite">
+        <h3>Tu crepa</h3>
+        <p class="nombre" id="nombre"></p>
+        <ul id="lineas"></ul>
+        <div class="total"><span>Total</span><span id="total">$0</span></div>
+        <p class="pie">Precios en MXN, IVA incluido.</p>
+        <button class="btn" type="button" id="reiniciar">Empezar de nuevo</button>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="firma">The Mafian Creperie</p>
+    <div class="datos">
+      <div><h4>Dónde</h4><p>Calle Sicilia 29, local 3<br>Ciudad de México</p></div>
+      <div><h4>Cuándo</h4><p>Lunes a domingo<br>12:00 a 22:00</p></div>
+      <div><h4>Contacto</h4><p>@themafiancreperie<br>55 1234 5678</p></div>
+    </div>
+    <p class="legal">Precios en pesos mexicanos, IVA incluido. Bebidas y crepas con licor solo para mayores de 18 años.<br>Página de muestra: precios y platillos ilustrativos.</p>
+  </div>
+</footer>
+
+<script>
+const MENU = [
+  { id:"dulces", nav:"Crepas dulces", titulo:"Crepas dulces",
+    intro:"Masa fina hecha al momento, doradita por fuera y suave por dentro.",
+    items:[
+      {n:"La Familia", d:"Nutella, fresa, plátano y nuez, con lluvia de galleta.", p:119, t:["fav"]},
+      {n:"El Consigliere", d:"Cajeta, nuez caramelizada y una bola de helado de vainilla.", p:125},
+      {n:"Cosa Nostra", d:"Nutella, Ferrero Rocher triturado y crema batida.", p:135},
+      {n:"La Omertà", d:"Queso crema, frutos rojos y crumble de galleta. De esa no se habla.", p:115},
+      {n:"Sicilia", d:"Mascarpone, ralladura de limón amarillo y pistache.", p:129},
+      {n:"Dulce Venganza", d:"Chocolate amargo 70 %, frambuesa y un toque de sal de mar.", p:122},
+      {n:"Chicago 1929", d:"Crema de cacahuate, chocolate, plátano y tocino caramelizado.", p:132, t:["nuevo"]},
+      {n:"El Soplón", d:"La clásica: leche condensada, plátano y canela.", p:89}
+    ]},
+  { id:"saladas", nav:"Crepas saladas", titulo:"Crepas saladas",
+    intro:"Para cuando el hambre va en serio.",
+    items:[
+      {n:"El Jefe", d:"Jamón serrano, queso brie, arúgula y miel de abeja.", p:149, t:["fav"]},
+      {n:"La Lupara", d:"Pollo al pesto, mozzarella y jitomate deshidratado.", p:139},
+      {n:"Napoli", d:"Pepperoni, mozzarella, salsa pomodoro y albahaca fresca.", p:129},
+      {n:"Palermo", d:"Champiñones, espinaca, queso de cabra y nuez.", p:135, t:["veg"]},
+      {n:"La Coartada", d:"Salmón ahumado, queso crema, alcaparras y eneldo.", p:165},
+      {n:"Capo Ranchero", d:"Arrachera, queso Oaxaca, chimichurri y pico de gallo.", p:159, t:["pica"]},
+      {n:"El Contador", d:"Jamón de pavo y queso manchego. Sin cuentas pendientes.", p:95}
+    ]},
+  { id:"licor", nav:"Con licor", titulo:"Crepas con licor",
+    intro:"Flambeadas frente a ti. Solo para mayores de 18 años.",
+    items:[
+      {n:"Suzette del Don", d:"Flambeada en Grand Marnier con naranja y mantequilla.", p:159, t:["licor","fav"]},
+      {n:"Humo de Habano", d:"Nutella, whisky y nuez ahumada.", p:165, t:["licor"]},
+      {n:"Baileys Affair", d:"Baileys, chocolate blanco y fresa.", p:155, t:["licor"]},
+      {n:"Amaretto Siciliano", d:"Amaretto, cereza, almendra y helado de vainilla.", p:159, t:["licor"]},
+      {n:"Ron y Plátano", d:"Plátano flambeado en ron, cajeta y helado.", p:149, t:["licor"]}
+    ]},
+  { id:"cafe", nav:"Café", titulo:"Café caliente o frío",
+    intro:"Grano de Chiapas y Veracruz, tostado medio. Todos se preparan calientes o fríos.",
+    cols:["12 oz","16 oz"],
+    items:[
+      {n:"Espresso", d:"Corto e intenso, de grano de altura.", p:[40,50], lbl:["sencillo","doble"]},
+      {n:"Americano", d:"Largo, limpio y sin rodeos.", p:[45,55]},
+      {n:"Capuchino", d:"Espuma densa, espolvoreado con cacao.", p:[55,65]},
+      {n:"Latte", d:"Vainilla, caramelo o avellana sin costo extra.", p:[58,68]},
+      {n:"Chocolate", d:"Mexicano con canela o belga semiamargo.", p:[55,65]},
+      {n:"Té", d:"Negro, verde, chai o earl grey.", p:[42,50]},
+      {n:"Tisanas", d:"Frutos rojos, manzanilla con miel o jamaica con canela.", p:[45,55]}
+    ],
+    nota:"Leche vegetal (almendra, avena o coco) +$12 · Shot extra de espresso +$15"},
+  { id:"frias", nav:"Bebidas frías", titulo:"Bebidas frías",
+    intro:"Frías, cremosas y con todo encima.",
+    cols:["12 oz","16 oz"],
+    items:[
+      {n:"Frappés", d:"Mocha mafioso, Oreo, cajeta, chai o taro.", p:[75,85], t:["fav"]},
+      {n:"Smoothies", d:"Fresa-plátano, mango-maracuyá o frutos rojos.", p:[72,82]},
+      {n:"Malteadas", d:"Vainilla, chocolate, fresa o Nutella.", p:[79,89]},
+      {n:"Sodas italianas", d:"Frutos rojos, mora azul, manzana verde o mango.", p:[59,69]},
+      {n:"Eskimos", d:"Vainilla, fresa, chocolate o cajeta.", p:[55,65]},
+      {n:"Latte macchiato", d:"Leche fría en capas con espresso encima.", p:[65,75]}
+    ],
+    nota:"Crema batida, chispas o jarabe extra +$10"},
+  { id:"algomas", nav:"Y algo más", titulo:"Y algo más",
+    intro:"Postres y antojos para cerrar el trato.",
+    items:[
+      {n:"Affogato de la Casa", d:"Helado de vainilla bañado en espresso doble y cajeta.", p:79, t:["fav"]},
+      {n:"Affogato Corretto", d:"El mismo, con un shot de Amaretto o Baileys.", p:109, t:["licor"]},
+      {n:"Waffle de la Familia", d:"Waffle belga con fruta, Nutella y helado.", p:115},
+      {n:"Fresas con crema", d:"Fresas frescas, crema dulce y nuez.", p:69, t:["veg"]},
+      {n:"Bola de helado", d:"Vainilla, chocolate, fresa o pistache.", p:35},
+      {n:"Galleta de la casa", d:"Chocolate chip gigante, recién horneada.", p:39, t:["nuevo"]}
+    ]}
+];
+
+const TAGS = {fav:["fav","Favorito del Don"], nuevo:["nuevo","Nuevo"], licor:["licor","Con licor · 18+"], pica:["pica","Picante"], veg:["","Vegetariana"]};
+const ORN = `<svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M2 9h52M96 9h52" stroke="currentColor" stroke-width="1"/><path d="M60 9l7-6 8 6-8 6z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="81" cy="9" r="2.2" fill="currentColor"/><circle cx="89" cy="9" r="1.4" fill="currentColor"/><circle cx="54" cy="9" r="1.6" fill="currentColor"/><circle cx="96" cy="9" r="1.6" fill="currentColor"/></svg>`;
+const $ = s => document.querySelector(s);
+const norm = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+const peso = n => "$" + n;
+
+/* ---- render menú ---- */
+const menuEl = $("#menu");
+menuEl.innerHTML = MENU.map(sec => `
+  <section class="seccion" id="${sec.id}" data-nav="${sec.nav}">
+    <div class="titulo"><h2>${sec.titulo}</h2><p>${sec.intro}</p>${ORN}</div>
+    ${sec.cols ? `<p class="tamanos">Precios por tamaño: ${sec.cols[0]} / ${sec.cols[1]}</p>` : ""}
+    <div class="lista">
+      ${sec.items.map(it => {
+        const tags = (it.t||[]).map(k => `<span class="chip ${TAGS[k][0]}">${TAGS[k][1]}</span>`).join("");
+        const precio = Array.isArray(it.p)
+          ? (it.lbl ? `<small>${it.lbl[0]}</small>${peso(it.p[0])}<span class="sep">/</span><small>${it.lbl[1]}</small>${peso(it.p[1])}`
+                    : `${peso(it.p[0])}<span class="sep">/</span>${peso(it.p[1])}`)
+          : peso(it.p);
+        const buscar = norm([it.n,it.d,sec.titulo,(it.t||[]).map(k=>TAGS[k][1]).join(" ")].join(" "));
+        return `<article class="item" data-buscar="${buscar}">
+          <div class="linea"><h3>${it.n}</h3><span class="puntos"></span><span class="precio">${precio}</span></div>
+          <p>${it.d}</p>${tags ? `<div class="chips">${tags}</div>` : ""}
+        </article>`;
+      }).join("")}
+    </div>
+    ${sec.nota ? `<p class="nota">${sec.nota}</p>` : ""}
+  </section>`).join("");
+
+/* ---- tabs ---- */
+const secciones = [...document.querySelectorAll("section[data-nav]")];
+const tabs = $("#tabs");
+tabs.innerHTML = secciones.map(s => `<a href="#${s.id}" data-id="${s.id}">${s.dataset.nav}</a>`).join("");
+const marcar = id => tabs.querySelectorAll("a").forEach(a => {
+  const on = a.dataset.id === id;
+  a.setAttribute("aria-current", on ? "true" : "false");
+  if (on) a.scrollIntoView({block:"nearest", inline:"center", behavior:"smooth"});
+});
+let actual = null;
+const io = new IntersectionObserver(entries => {
+  const vis = entries.filter(e => e.isIntersecting).sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+  if (vis && vis.target.id !== actual) { actual = vis.target.id; marcar(actual); }
+}, {rootMargin:"-30% 0px -60% 0px"});
+secciones.forEach(s => io.observe(s));
+
+/* ---- búsqueda ---- */
+const q = $("#q"), vacio = $("#vacio");
+function filtrar(){
+  const t = norm(q.value.trim());
+  let total = 0;
+  secciones.forEach(sec => {
+    if (sec.id === "arma") { sec.classList.toggle("oculto", !!t); return; }
+    const cosas = sec.querySelectorAll("[data-buscar]");
+    let n = 0;
+    cosas.forEach(el => { const ok = !t || norm(el.dataset.buscar).includes(t); el.classList.toggle("oculto", !ok); if (ok) n++; });
+    sec.classList.toggle("oculto", n === 0);
+    total += n;
+  });
+  vacio.classList.toggle("oculto", total > 0);
+  $("#vacioQ").textContent = q.value.trim();
+}
+q.addEventListener("input", filtrar);
+$("#limpiar").addEventListener("click", () => { q.value = ""; filtrar(); q.focus(); });
+
+/* ---- arma tu crepa ---- */
+const BASES = {
+  dulce:{n:"Dulce", p:65, ing:[["Nutella",22],["Cajeta",18],["Fresa",18],["Plátano",12],["Nuez",15],["Ferrero Rocher",28],["Helado de vainilla",25],["Crema batida",15],["Frutos rojos",22],["Shot de Baileys (18+)",35]]},
+  salada:{n:"Salada", p:75, ing:[["Jamón serrano",35],["Jamón de pavo",18],["Pollo",28],["Arrachera",45],["Queso manchego",18],["Queso de cabra",25],["Mozzarella",18],["Champiñones",15],["Espinaca",12],["Pesto",15]]}
+};
+const MAX = 5;
+const NOMBRES = ["Don","Doña","El Capo","La Jefa","El Padrino del Barrio","Il Signore"];
+const APELLIDOS = ["Fresolini","Crepanzo","Nutellucci","Cajetone","Manchegoni","Pistacchio","Chocolatti","Serranetti"];
+let base = "dulce", sel = new Set(), alias = "";
+function nuevoAlias(){ alias = NOMBRES[Math.floor(Math.random()*NOMBRES.length)] + " " + APELLIDOS[Math.floor(Math.random()*APELLIDOS.length)]; }
+function pintarBases(){
+  $("#bases").innerHTML = Object.entries(BASES).map(([k,b]) =>
+    `<button type="button" class="base" data-k="${k}" aria-pressed="${k===base}">${b.n} · ${peso(b.p)}</button>`).join("");
+}
+function pintarIngr(){
+  const b = BASES[base];
+  $("#ingr").innerHTML = b.ing.map(([n,p],i) => {
+    const on = sel.has(i);
+    return `<button type="button" class="ing" data-i="${i}" aria-pressed="${on}" ${!on && sel.size>=MAX ? "disabled" : ""}>${n}<span>+${peso(p)}</span></button>`;
+  }).join("");
+  $("#cuenta").textContent = `(${sel.size} de ${MAX})`;
+}
+function pintarTicket(){
+  const b = BASES[base];
+  const lineas = [[`Crepa ${b.n.toLowerCase()}`, b.p], ...[...sel].map(i => b.ing[i])];
+  $("#lineas").innerHTML = lineas.map(([n,p]) => `<li><span>${n}</span><span>${peso(p)}</span></li>`).join("");
+  $("#total").textContent = peso(lineas.reduce((a,[,p]) => a + p, 0));
+  $("#nombre").textContent = sel.size ? `La “${alias}”` : "Elige tus ingredientes";
+}
+function todo(){ pintarBases(); pintarIngr(); pintarTicket(); }
+$("#bases").addEventListener("click", e => {
+  const btn = e.target.closest(".base"); if (!btn || btn.dataset.k === base) return;
+  base = btn.dataset.k; sel.clear(); nuevoAlias(); todo();
+});
+$("#ingr").addEventListener("click", e => {
+  const btn = e.target.closest(".ing"); if (!btn || btn.disabled) return;
+  const i = +btn.dataset.i; sel.has(i) ? sel.delete(i) : sel.add(i);
+  pintarIngr(); pintarTicket();
+});
+$("#reiniciar").addEventListener("click", () => { base = "dulce"; sel.clear(); nuevoAlias(); todo(); });
+nuevoAlias(); todo();
+</script>
+</body>
+</html>
