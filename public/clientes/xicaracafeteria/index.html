@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#0e231a">
+<title>Xícara Cafetería · Menú</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bosque:#0e231a;
+  --bosque-2:#15301f;
+  --bosque-3:#1d3d2a;
+  --hoja:#3f8a4e;
+  --oro:#c9a45c;
+  --oro-claro:#e4c88a;
+  --crema:#f3ead8;
+  --humo:#a9b8a8;
+  --linea:rgba(201,164,92,.25);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bosque);color:var(--crema);font:400 1.05rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;padding-inline:env(safe-area-inset-left,0px) env(safe-area-inset-right,0px)}
+img{max-width:100%;display:block}
+a{color:var(--oro-claro)}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* HERO */
+.hero{text-align:center;padding:calc(env(safe-area-inset-top,0px) + 4rem) 0 3.2rem;background:radial-gradient(700px 360px at 50% 0%,rgba(63,138,78,.22),transparent 70%)}
+.marca{margin:0;display:flex;flex-direction:column;align-items:center;font-weight:500}
+.marca svg{width:clamp(46px,9vw,64px);height:auto;color:var(--hoja);margin-bottom:.35rem}
+.marca .nom{font:600 clamp(3.2rem,13vw,5.6rem)/1 var(--serif);letter-spacing:.06em;color:var(--crema)}
+.marca .caf{display:flex;align-items:center;gap:.9rem;font:500 clamp(.8rem,2.6vw,1rem)/1 var(--sans);letter-spacing:.5em;text-transform:uppercase;color:var(--oro);margin-top:.9rem;padding-left:.5em}
+.marca .caf::before,.marca .caf::after{content:"";width:clamp(24px,8vw,56px);height:1px;background:var(--oro);opacity:.7}
+.hero .lema{font:italic 500 clamp(1.5rem,4.4vw,2.1rem)/1.3 var(--serif);color:var(--oro-claro);margin:2rem auto .6rem;max-width:22ch}
+.hero .sub{color:var(--humo);max-width:44ch;margin:0 auto 1.8rem}
+.cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn{font:700 1rem/1 var(--sans);padding:.95rem 1.5rem;border-radius:999px;border:1.5px solid var(--oro);background:var(--oro);color:var(--bosque);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--oro-claro)}
+.btn:hover{filter:brightness(1.08)}
+.horario{margin-top:1.6rem;color:var(--humo);font-size:.95rem}
+.horario strong{color:var(--crema);font-weight:500}
+
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(14,35,26,.98);border-block:1px solid var(--linea)}
+.nav-inner{display:flex;align-items:center;gap:1rem;padding:.55rem 0}
+.tabs{display:flex;gap:.25rem;overflow-x:auto;scrollbar-width:none;flex:1;-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);mask-image:linear-gradient(90deg,#000 90%,transparent)}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{white-space:nowrap;text-decoration:none;color:#d3dccf;font-weight:500;font-size:.98rem;padding:.5rem .95rem;border-radius:999px;border:1px solid transparent;transition:color .2s,background .2s}
+.tabs a:hover{color:var(--oro-claro);border-color:var(--linea)}
+.tabs a[aria-current="true"]{background:var(--oro);color:var(--bosque);font-weight:700}
+.buscar{position:relative;flex:0 0 auto}
+.buscar input{font:400 .98rem var(--sans);color:var(--crema);background:var(--bosque-2);border:1px solid var(--linea);border-radius:999px;padding:.55rem .9rem .55rem 2.1rem;width:13rem;max-width:42vw}
+.buscar input::placeholder{color:var(--humo)}
+.buscar svg{position:absolute;left:.75rem;top:50%;translate:0 -50%;width:15px;height:15px;stroke:var(--humo)}
+
+/* SECCIONES */
+.seccion{padding:3.5rem 0 .5rem}
+.titulo{text-align:center;margin-bottom:2rem}
+.titulo h2{font:600 clamp(2rem,6vw,2.9rem)/1.15 var(--serif);margin:0;color:var(--crema)}
+.titulo p{margin:.5rem auto 0;color:var(--humo);max-width:46ch}
+.orn{display:block;width:120px;height:14px;margin:.9rem auto 0;color:var(--oro)}
+
+/* DESTACADOS */
+.don{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.foto{position:relative;margin:0;background:var(--bosque-2);border:1px solid var(--linea);border-radius:18px;overflow:hidden}
+.foto img{width:100%;aspect-ratio:4/4.4;object-fit:cover}
+.foto figcaption{padding:1rem 1.15rem 1.2rem}
+.foto .fila{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.foto h3{margin:0;font:600 1.3rem/1.2 var(--serif)}
+.foto .precio{color:var(--oro-claro);font-weight:700;font-size:1.15rem}
+.foto p{margin:.3rem 0 0;color:var(--humo);font-size:.98rem}
+.sello{position:absolute;top:.8rem;left:.8rem;background:rgba(14,35,26,.88);color:var(--oro-claro);border:1px solid var(--oro);font-size:.82rem;font-weight:700;padding:.25rem .7rem;border-radius:999px}
+
+/* MENÚ */
+.lista{display:grid;gap:.2rem 3.5rem;grid-template-columns:1fr}
+@media (min-width:860px){.lista{grid-template-columns:1fr 1fr}}
+.item{padding:.95rem 0;border-bottom:1px solid rgba(201,164,92,.14)}
+.item .linea{display:flex;align-items:baseline;gap:.6rem}
+.item h3{margin:0;font:600 1.15rem/1.25 var(--serif)}
+.item .puntos{flex:1;border-bottom:1.5px dotted rgba(201,164,92,.4);translate:0 -.25em;min-width:1.5rem}
+.item .precio{color:var(--oro-claro);font-weight:700;white-space:nowrap;font-variant-numeric:lining-nums tabular-nums}
+.item .precio small{color:var(--humo);font-weight:400;font-size:.8rem;margin-right:.15rem}
+.item .precio .sep{color:var(--oro);margin:0 .35rem;font-weight:400}
+.item p{margin:.2rem 0 0;color:var(--humo);font-size:.96rem;line-height:1.45;max-width:52ch}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.45rem}
+.chip{font-size:.76rem;font-weight:700;padding:.1rem .6rem;border-radius:999px;border:1px solid var(--linea);color:var(--humo)}
+.chip.fav{background:var(--oro);color:var(--bosque);border-color:var(--oro)}
+.chip.veg{border-color:var(--hoja);color:#9fd3a8}
+.cols{display:flex;justify-content:flex-end;gap:1.4rem;color:var(--humo);font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;padding-bottom:.3rem}
+.nota{text-align:center;color:var(--humo);font-size:.92rem;margin:1.2rem 0 0}
+#vacio{display:none;text-align:center;padding:4rem 0;color:var(--humo)}
+
+/* GALERÍA */
+.galeria{display:grid;gap:.8rem;grid-template-columns:repeat(3,1fr)}
+.galeria img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:1px solid var(--linea)}
+@media (max-width:640px){.galeria{grid-template-columns:1fr 1fr}.galeria img:last-child{display:none}}
+
+/* FOOTER */
+footer{margin-top:4rem;border-top:1px solid var(--linea);padding:3rem 0 2.5rem;text-align:center;color:var(--humo)}
+footer .firma{font:600 2rem/1 var(--serif);letter-spacing:.08em;color:var(--crema);margin:0 0 .3rem}
+footer .firma-s{color:var(--oro);letter-spacing:.4em;text-transform:uppercase;font-size:.75rem;margin:0 0 1.6rem;padding-left:.4em}
+.datos{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:760px;margin:0 auto 2rem}
+.datos h4{margin:0 0 .2rem;color:var(--crema);font:600 1.05rem var(--serif)}
+.datos p{margin:0;font-size:.98rem}
+.legal{font-size:.85rem}
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <h1 class="marca" aria-label="Xícara Cafetería">
+    <svg viewBox="0 0 64 56" aria-hidden="true"><path d="M8 48C6 24 22 6 56 6c0 28-14 44-40 44-3 0-5 0-8-2z" fill="currentColor"/><path d="M8 48C20 34 32 24 46 14" stroke="#0e231a" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+    <span class="nom">XICARA</span>
+    <span class="caf">Cafetería</span>
+  </h1>
+  <p class="lema">Más que una cafetería, somos tu escape del estrés.</p>
+  <p class="sub">Café de alta calidad con rapidez y calidez. Ven a recargar energía.</p>
+  <div class="cta">
+    <a class="btn" href="#cafe">Ver el menú</a>
+    <a class="btn ghost" href="#galeria">Ver galería</a>
+  </div>
+  <p class="horario">Abierto todos los días · <strong>8:00 a 21:00</strong></p>
+</header>
+
+<nav class="nav" aria-label="Secciones del menú">
+  <div class="wrap nav-inner">
+    <div class="tabs" id="tabs"></div>
+    <label class="buscar">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Busca: latte, matcha…" aria-label="Buscar en el menú" autocomplete="off">
+    </label>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="seccion" id="don" data-nav="Favoritos">
+    <div class="titulo">
+      <h2>Lo que más piden</h2>
+      <p>Las bebidas que nuestros clientes no dejan de pedir.</p>
+      <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M2 9h56M92 9h56" stroke="currentColor" stroke-width="1" fill="none"/><path d="M75 2l6 7-6 7-6-7z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+    </div>
+    <div class="don">
+      <figure class="foto" data-buscar="xocolate chocolate cacao chiapas especialidad">
+        <img style="object-position:50% 78%" src="img/xocolate.jpg" alt="Xocolate caliente con arte latte en taza blanca" loading="lazy">
+        <span class="sello">Mezcla exclusiva</span>
+        <figcaption>
+          <div class="fila"><h3>Xocolate de la Casa</h3><span class="precio">$65</span></div>
+          <p>Cacao 100% mexicano de Chiapas. Cremoso e intenso, caliente o frío.</p>
+        </figcaption>
+      </figure>
+      <figure class="foto" data-buscar="te helado negro verde sin azucar limon">
+        <img src="img/te-helado.jpg" alt="Té helado negro y té helado verde, sin azúcar" loading="lazy">
+        <span class="sello">Sin azúcar</span>
+        <figcaption>
+          <div class="fila"><h3>Té Helado</h3><span class="precio">$48</span></div>
+          <p>Té negro o té verde, ligero, natural y refrescante.</p>
+        </figcaption>
+      </figure>
+      <figure class="foto" data-buscar="matcha cafe latte coco cold foam">
+        <img src="img/matcha-cafe.jpg" alt="Un matcha latte y un café latte para llevar" loading="lazy">
+        <span class="sello">Favorito</span>
+        <figcaption>
+          <div class="fila"><h3>Coconut Matcha Cold Foam</h3><span class="precio">$75</span></div>
+          <p>Matcha premium con leche de coco y espuma fría. Energía natural.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div id="menu"></div>
+  <div id="vacio">No encontramos nada con esa búsqueda. <br><a href="#" id="limpiar">Limpiar búsqueda</a></div>
+
+  <section class="seccion" id="galeria" data-nav="Galería">
+    <div class="titulo">
+      <h2>Momentos Xícara</h2>
+      <p>Un poco de lo que pasa en la cafetería.</p>
+      <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M2 9h56M92 9h56" stroke="currentColor" stroke-width="1" fill="none"/><path d="M75 2l6 7-6 7-6-7z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+    </div>
+    <div class="galeria">
+      <img src="img/jarra.jpg" alt="Una jarra gigante de bebida azul con hielo" loading="lazy">
+      <img src="img/galleta.jpg" alt="Galleta de avena y bebida de matcha con coco" loading="lazy">
+      <img src="img/matcha-cafe.jpg" alt="Matcha y café para llevar" loading="lazy">
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="firma">XICARA</p>
+  <p class="firma-s">Cafetería</p>
+  <div class="datos wrap">
+    <div><h4>Dirección</h4><p>Calle Ejemplo 123, Col. Centro<br>(dato de muestra)</p></div>
+    <div><h4>Horario</h4><p>Todos los días<br>8:00 a 21:00</p></div>
+    <div><h4>Síguenos</h4><p><a href="https://www.instagram.com/xicaracafeteria/" rel="noopener">Instagram @xicaracafeteria</a></p></div>
+  </div>
+  <p class="legal">Página de muestra. Precios, dirección y horario son de ejemplo y se reemplazarán por los reales.</p>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s);
+const peso = n => "$" + n;
+const TAGS = {fav:["fav","Favorito"], nuevo:["","Nuevo"], veg:["veg","Vegano con leche vegetal"]};
+
+const MENU = [
+  { id:"cafe", nav:"Café", titulo:"Café", intro:"Café de alta calidad, preparado al momento.", cols:["12 oz","16 oz"],
+    nota:"Leche vegetal (almendra, avena o coco) +$12",
+    items:[
+      {n:"Espresso", d:"Sencillo o doble, intenso y aromático.", p:[38,48], lbl:["sencillo","doble"]},
+      {n:"Americano", d:"Espresso largo con agua caliente.", p:[42,50]},
+      {n:"Capuchino", d:"Espresso, leche vaporizada y espuma cremosa.", p:[55,65], t:["fav"]},
+      {n:"Latte", d:"Suave y cremoso, con arte latte.", p:[58,68]},
+      {n:"Moka", d:"Espresso, chocolate y leche vaporizada.", p:[62,72]},
+      {n:"Flat White", d:"Doble espresso con leche texturizada.", p:[62,72]}
+    ]},
+  { id:"frios", nav:"Café frío", titulo:"Café frío", intro:"Para los días de calor, o para cualquier día.", cols:["12 oz","16 oz"],
+    items:[
+      {n:"Iced Latte", d:"Espresso sobre hielo con leche fría.", p:[60,70]},
+      {n:"Cold Brew", d:"Infusión en frío por 18 horas. Suave y sin amargor.", p:[58,68], t:["fav"]},
+      {n:"Frappé de Café", d:"Café, hielo y crema batida.", p:[68,78]},
+      {n:"Frappé de Moka", d:"Café, chocolate, hielo y crema batida.", p:[72,82]}
+    ]},
+  { id:"matcha", nav:"Matcha", titulo:"Matcha", intro:"Matcha premium: energía natural y antioxidantes.", cols:["12 oz","16 oz"],
+    items:[
+      {n:"Matcha Latte", d:"Matcha premium con leche cremosa.", p:[62,72]},
+      {n:"Coconut Matcha Cold Foam", d:"Matcha con leche de coco y espuma fría.", p:[68,78], t:["fav"]},
+      {n:"Matcha Fresa", d:"Matcha, leche y puré de fresa en capas.", p:[70,80], t:["nuevo"]},
+      {n:"Matcha Tonic", d:"Matcha sobre agua tónica y hielo.", p:[66,76]}
+    ]},
+  { id:"xocolate", nav:"Xocolate y té", titulo:"Xocolate y té", intro:"Nuestra mezcla exclusiva de cacao y tés sin azúcar.", cols:["12 oz","16 oz"],
+    items:[
+      {n:"Xocolate de la Casa", d:"Cacao de Chiapas, cremoso e intenso. Caliente o frío.", p:[58,68], t:["fav"]},
+      {n:"Té Helado Negro", d:"Aromático y lleno de sabor. Sin azúcar.", p:[42,52]},
+      {n:"Té Helado Verde", d:"Ligero, natural y revitalizante. Sin azúcar.", p:[42,52]},
+      {n:"Chai Latte", d:"Té especiado con leche vaporizada.", p:[60,70]}
+    ]},
+  { id:"comer", nav:"Para acompañar", titulo:"Para acompañar", intro:"Algo dulce para tu café.",
+    items:[
+      {n:"Galleta de Avena", d:"Con granola y un toque de canela.", p:38, t:["nuevo"]},
+      {n:"Galleta de Chocolate", d:"Con chispas de chocolate semiamargo.", p:38},
+      {n:"Rol de Canela", d:"Tibio, con glaseado de queso crema.", p:52},
+      {n:"Pan de Plátano", d:"Con nuez, casero.", p:45}
+    ]}
+];
+
+const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+
+function precio(it, sec){
+  if (Array.isArray(it.p)) {
+    const l = it.lbl || sec.cols || [];
+    return it.p.map((v,i)=>`${l[i]?`<small>${l[i]}</small>`:""}${peso(v)}`).join('<span class="sep">·</span>');
+  }
+  return peso(it.p);
+}
+
+$("#menu").innerHTML = MENU.map(sec => `
+  <section class="seccion" id="${sec.id}" data-nav="${sec.nav}">
+    <div class="titulo">
+      <h2>${sec.titulo}</h2>
+      <p>${sec.intro}</p>
+      <svg class="orn" viewBox="0 0 150 18" aria-hidden="true"><path d="M2 9h56M92 9h56" stroke="currentColor" stroke-width="1" fill="none"/><path d="M75 2l6 7-6 7-6-7z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+    </div>
+    <div class="lista">
+      ${sec.items.map(it => `
+        <article class="item" data-buscar="${norm([it.n,it.d,sec.titulo,(it.t||[]).map(t=>TAGS[t][1]).join(" ")].join(" "))}">
+          <div class="linea"><h3>${it.n}</h3><span class="puntos"></span><span class="precio">${precio(it,sec)}</span></div>
+          <p>${it.d}</p>
+          ${it.t ? `<div class="chips">${it.t.map(t=>`<span class="chip ${TAGS[t][0]}">${TAGS[t][1]}</span>`).join("")}</div>` : ""}
+        </article>`).join("")}
+    </div>
+    ${sec.nota ? `<p class="nota">${sec.nota}</p>` : ""}
+  </section>`).join("");
+
+/* ---- pestañas ---- */
+const secciones = [...document.querySelectorAll("section[data-nav]")];
+const tabs = $("#tabs");
+tabs.innerHTML = secciones.map(s => `<a href="#${s.id}" data-id="${s.id}">${s.dataset.nav}</a>`).join("");
+const marcar = id => tabs.querySelectorAll("a").forEach(a => {
+  const on = a.dataset.id === id;
+  a.setAttribute("aria-current", on ? "true" : "false");
+  if (on) tabs.scrollTo({left: a.offsetLeft - (tabs.clientWidth - a.offsetWidth) / 2, behavior: "auto"});
+});
+let actual = null;
+const io = new IntersectionObserver(entries => {
+  const vis = entries.filter(e => e.isIntersecting).sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+  if (vis && vis.target.id !== actual) { actual = vis.target.id; marcar(actual); }
+}, {rootMargin:"-30% 0px -60% 0px"});
+secciones.forEach(s => io.observe(s));
+
+/* ---- búsqueda ---- */
+const q = $("#q");
+function filtrar(){
+  const t = norm(q.value.trim());
+  let total = 0;
+  document.querySelectorAll("[data-buscar]").forEach(el => {
+    const ok = !t || norm(el.dataset.buscar).includes(t);
+    el.style.display = ok ? "" : "none";
+    if (ok) total++;
+  });
+  secciones.forEach(s => {
+    const hay = [...s.querySelectorAll("[data-buscar]")].some(el => el.style.display !== "none");
+    const sinItems = !s.querySelector("[data-buscar]");
+    s.style.display = t && (sinItems || !hay) ? "none" : "";
+  });
+  $("#vacio").style.display = t && !total ? "block" : "none";
+}
+q.addEventListener("input", filtrar);
+$("#limpiar").addEventListener("click", e => { e.preventDefault(); q.value = ""; filtrar(); q.focus(); });
+</script>
+</body>
+</html>
