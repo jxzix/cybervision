@@ -235,7 +235,7 @@ export default function BotsIA() {
                   <motion.a 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    href="https://wa.me/525572832749?text=Hola%2C%20me%20interesa%20saber%20más%20sobre%20los%20servicios%20de%20CyberVision%20%F0%9F%91%80" 
+                    href={`https://wa.me/525572832749?text=${encodeURIComponent(`Hola, me interesa el ${plan.title} de Bots y Asistentes con IA de CyberVision (instalación ${plan.setup} + mensualidad ${plan.monthly}) 👀`)}`}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={`block w-full py-4 rounded-xl font-bold text-center transition-all ${

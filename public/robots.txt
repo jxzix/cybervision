@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /clientes/
+
+Sitemap: https://cybervision.com.mx/sitemap.xml

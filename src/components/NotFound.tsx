@@ -109,7 +109,7 @@ export default function NotFound() {
         }}
       >
         <img
-          src="/cyb_logo.png"
+          src="/cyb_logo_192.png"
           alt=""
           width={LOGO_W}
           height={LOGO_H}
