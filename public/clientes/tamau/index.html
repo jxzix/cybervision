@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#161412">
+<title>TAMAU · Joyería y accesorios con envíos a todo México y EE. UU.</title>
+<meta name="description" content="Collares, aretes, pulseras, anillos y piezas personalizadas en acero y plata 925. Envíos a todo México y EE. UU.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marfil:#faf7f2;
+  --papel:#f3ede3;
+  --blanco:#fffefc;
+  --negro:#161412;
+  --oro:#b8923a;
+  --oro-osc:#8f6f25;
+  --oro-claro:#dcc185;
+  --gris:#6f6760;
+  --linea:#e6ded0;
+  --display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --anun:36px;
+  --nav-h:76px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--marfil);color:var(--negro);font:400 1rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;padding-inline:env(safe-area-inset-left,0px) env(safe-area-inset-right,0px)}
+body.bloq{overflow:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3,p,ul,figure{margin:0}
+ul{padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--oro);outline-offset:3px}
+.wrap{width:min(1240px,100% - 2.5rem);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.etq{font:500 .75rem/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--oro-osc)}
+
+/* anuncio */
+.anuncio{background:var(--negro);color:var(--oro-claro);text-align:center;font:500 .72rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;height:var(--anun);display:flex;align-items:center;justify-content:center;gap:1.6rem;padding-top:env(safe-area-inset-top,0px);box-sizing:content-box}
+.anuncio span+span::before{content:"✦";margin-right:1.6rem;color:var(--oro)}
+@media (max-width:720px){.anuncio span:nth-child(n+3){display:none}}
+
+/* cabecera */
+.cab{position:sticky;top:0;z-index:50;background:var(--marfil);border-bottom:1px solid var(--linea)}
+.cab-in{height:var(--nav-h);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+.menu{display:flex;gap:1.5rem}
+.menu a{white-space:nowrap;font:500 .76rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:.5rem 0;border-bottom:1px solid transparent}
+.menu a:hover{border-bottom-color:var(--oro)}
+.logo{font:400 2.2rem/1 var(--display);letter-spacing:.34em;text-decoration:none;padding-left:.34em}
+.logo small{display:block;font:500 .55rem/1 var(--sans);letter-spacing:.5em;text-align:center;color:var(--oro-osc);margin-top:.3rem;padding-left:.5em}
+.tools{display:flex;justify-content:flex-end;gap:.4rem}
+.ic{position:relative;width:44px;height:44px;border:0;background:transparent;cursor:pointer;display:grid;place-items:center;border-radius:50%}
+.ic:hover{background:var(--papel)}
+.ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cnt{position:absolute;top:4px;right:2px;min-width:18px;height:18px;border-radius:9px;background:var(--oro);color:#fff;font:600 .68rem/18px var(--sans);text-align:center;padding:0 4px}
+.cnt[hidden]{display:none}
+.burger{display:none}
+.busca{display:none;border-top:1px solid var(--linea);background:var(--marfil)}
+.busca.on{display:block}
+.busca .wrap{display:flex;align-items:center;gap:.8rem;padding:.8rem 0}
+.busca input{flex:1;font:400 1.05rem var(--sans);border:0;border-bottom:1px solid var(--negro);background:transparent;padding:.6rem .2rem;color:var(--negro)}
+.busca input:focus{outline:none;border-bottom-color:var(--oro)}
+.panel-m{display:none}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font:500 .8rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:1.15rem 2rem;border:1px solid var(--negro);background:var(--negro);color:var(--marfil);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--oro-osc);border-color:var(--oro-osc)}
+.btn.claro{background:transparent;color:var(--negro)}
+.btn.claro:hover{background:var(--negro);color:var(--marfil);border-color:var(--negro)}
+.btn.wa{background:#1f9d4a;border-color:#1f9d4a;color:#fff}
+.btn.wa:hover{background:#188039;border-color:#188039}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+
+/* hero */
+.hero{padding:3.5rem 0 4.5rem;background:radial-gradient(900px 520px at 85% 15%,rgba(220,193,133,.35),transparent 70%),var(--marfil)}
+.hero-in{display:grid;grid-template-columns:1fr 1.05fr;gap:4rem;align-items:center}
+.hero h1{font:500 clamp(3rem,6.6vw,5.6rem)/1 var(--display);margin:1.2rem 0 1.4rem;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--oro-osc)}
+.hero p.lead{max-width:44ch;color:var(--gris);font-size:1.12rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+.hero .pts{display:flex;flex-wrap:wrap;gap:.5rem 2rem;margin-top:2.4rem;font:500 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--gris)}
+.hero .pts span::before{content:"✦";color:var(--oro);margin-right:.6rem}
+.mosaico{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:1rem;height:min(600px,62vw);min-height:420px}
+.mosaico figure{overflow:hidden;background:var(--papel)}
+.mosaico img{width:100%;height:100%;object-fit:cover}
+.mosaico .a{grid-row:1/3}
+
+/* secciones */
+section{padding:5.5rem 0}
+.titulo{text-align:center;margin-bottom:2.8rem}
+.titulo h2{font:500 clamp(2.1rem,4.4vw,3.2rem)/1.08 var(--display);margin-top:.9rem}
+.titulo h2 em{font-style:italic;color:var(--oro-osc)}
+.titulo p{color:var(--gris);margin-top:.8rem;max-width:56ch;margin-inline:auto}
+.alt{background:var(--papel)}
+
+/* categorías */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.cat{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--papel);text-decoration:none;color:#fff}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.cat:hover img{transform:scale(1.05)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(22,20,18,.72))}
+.cat span{position:absolute;left:1.2rem;right:1.2rem;bottom:1.1rem;z-index:2;font:500 1.65rem/1.05 var(--display)}
+.cat small{display:block;font:500 .68rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--oro-claro);margin-top:.5rem}
+
+/* banner hombre */
+.hombre{background:var(--negro);color:var(--marfil);padding:0}
+.hombre-in{display:grid;grid-template-columns:1.1fr .9fr;align-items:stretch}
+.hombre img{width:100%;height:100%;object-fit:cover;min-height:360px}
+.hombre .txt{padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center;gap:1.2rem}
+.hombre h2{font:500 clamp(2.2rem,4vw,3.4rem)/1.05 var(--display)}
+.hombre h2 em{font-style:italic;color:var(--oro-claro)}
+.hombre p{color:#c9c0b4;max-width:42ch}
+.hombre .btn{align-self:flex-start;background:var(--oro);border-color:var(--oro);color:var(--negro)}
+.hombre .btn:hover{background:var(--oro-claro);border-color:var(--oro-claro)}
+
+/* tienda */
+.barra{display:flex;flex-wrap:wrap;gap:1rem 1.4rem;align-items:center;justify-content:space-between;margin-bottom:2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips button{font:500 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:.8rem 1.1rem;border:1px solid var(--linea);background:var(--blanco);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chips button:hover{border-color:var(--negro)}
+.chips button[aria-pressed="true"]{background:var(--negro);border-color:var(--negro);color:var(--marfil)}
+.orden{display:flex;align-items:center;gap:.7rem;font:500 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.orden select{font:500 .9rem var(--sans);padding:.7rem 2rem .7rem .9rem;border:1px solid var(--linea);background:var(--blanco);color:var(--negro)}
+.res{color:var(--gris);font-size:.92rem;margin-bottom:1.2rem}
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:2.2rem 1.4rem}
+.prod{position:relative}
+.prod .fw{position:relative}
+.prod .foto{position:relative;display:block;width:100%;padding:0;border:0;background:var(--papel);aspect-ratio:4/5;overflow:hidden;cursor:pointer}
+.prod .foto img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.prod:hover .foto img{transform:scale(1.05)}
+.prod .tag{position:absolute;top:.7rem;left:.7rem;background:var(--negro);color:var(--oro-claro);font:500 .62rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:.45rem .6rem}
+.prod .add{position:absolute;left:.7rem;right:.7rem;bottom:.7rem;padding:.95rem;border:0;background:rgba(255,254,252,.96);color:var(--negro);font:500 .74rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s,background .2s,color .2s}
+.prod:hover .add,.prod .add:focus-visible{opacity:1;transform:none}
+.prod .add:hover{background:var(--negro);color:var(--marfil)}
+.prod h3{font:500 1.28rem/1.2 var(--display);margin-top:.9rem}
+.prod .pr{font:500 .95rem/1 var(--sans);color:var(--oro-osc);margin-top:.35rem}
+.vacio{text-align:center;padding:4rem 0;color:var(--gris);display:none}
+
+/* beneficios */
+.ben{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.ben li{text-align:center;padding:2rem 1rem;border:1px solid var(--linea);background:var(--blanco)}
+.ben svg{width:34px;height:34px;stroke:var(--oro-osc);fill:none;stroke-width:1.3;margin:0 auto .9rem;stroke-linecap:round;stroke-linejoin:round}
+.ben b{display:block;font:500 1.3rem/1.2 var(--display);margin-bottom:.3rem}
+.ben span{color:var(--gris);font-size:.92rem}
+
+/* preguntas */
+.faq{max-width:760px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--linea);padding:1.2rem 0}
+.faq summary{cursor:pointer;font:500 1.35rem/1.3 var(--display);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--oro-osc);font-size:1.6rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--gris);margin-top:.7rem}
+
+/* contacto */
+.cont{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--negro);color:var(--marfil);padding:4rem}
+.cont h2{font:500 clamp(2rem,3.6vw,3rem)/1.08 var(--display)}
+.cont h2 em{font-style:italic;color:var(--oro-claro)}
+.cont p{color:#c9c0b4;margin-top:.8rem}
+.cont ul{display:grid;gap:.9rem}
+.cont li a{display:flex;align-items:center;gap:.9rem;text-decoration:none;padding:1rem 1.2rem;border:1px solid rgba(220,193,133,.3);transition:border-color .2s,background .2s}
+.cont li a:hover{border-color:var(--oro-claro);background:rgba(220,193,133,.08)}
+.cont li b{font:500 .7rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--oro-claro);min-width:92px}
+
+footer.pie{background:var(--negro);color:#b8aea1;padding:3rem 0 2rem;text-align:center;border-top:1px solid rgba(220,193,133,.2)}
+.pie .logo{color:var(--marfil)}
+.pie nav{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;justify-content:center;margin:1.4rem 0}
+.pie nav a{font:500 .74rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+.pie nav a:hover{color:var(--oro-claro)}
+.pie .copy{font-size:.82rem;color:#857b6e}
+
+/* carrito */
+.vel{position:fixed;inset:0;z-index:80;background:rgba(22,20,18,.5);opacity:0;pointer-events:none;transition:opacity .25s}
+.vel.on{opacity:1;pointer-events:auto}
+.cajon{position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(440px,100%);background:var(--marfil);display:flex;flex-direction:column;transform:translateX(105%);visibility:hidden;transition:transform .3s,visibility .3s}
+.cajon.on{transform:none;visibility:visible;box-shadow:-20px 0 50px rgba(0,0,0,.2)}
+.cajon header{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.4rem;border-bottom:1px solid var(--linea);padding-top:calc(1.2rem + env(safe-area-inset-top,0px))}
+.cajon header h2{font:500 1.7rem/1 var(--display)}
+.cajon .cuerpo{flex:1;overflow-y:auto;padding:1rem 1.4rem}
+.linea-c{display:grid;grid-template-columns:78px 1fr auto;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--linea);align-items:start}
+.linea-c img{width:78px;height:98px;object-fit:cover}
+.linea-c h3{font:500 1.15rem/1.2 var(--display)}
+.linea-c .nt{font-size:.82rem;color:var(--gris);margin-top:.2rem}
+.cant{display:inline-flex;align-items:center;border:1px solid var(--linea);margin-top:.6rem;background:var(--blanco)}
+.cant button{width:32px;height:32px;border:0;background:transparent;cursor:pointer;font-size:1.1rem}
+.cant span{min-width:28px;text-align:center;font:500 .9rem var(--sans)}
+.linea-c .pp{font:500 .95rem var(--sans);color:var(--oro-osc);text-align:right}
+.linea-c .quita{display:block;margin-top:.5rem;font-size:.78rem;color:var(--gris);background:none;border:0;cursor:pointer;text-decoration:underline;padding:0}
+.vacio-c{text-align:center;color:var(--gris);padding:3rem 1rem}
+.vacio-c svg{width:46px;height:46px;stroke:var(--oro);fill:none;stroke-width:1.2;margin:0 auto 1rem}
+.cajon footer{border-top:1px solid var(--linea);padding:1.2rem 1.4rem calc(1.2rem + env(safe-area-inset-bottom,0px));background:var(--blanco)}
+.sub{display:flex;justify-content:space-between;font:500 1.15rem/1 var(--sans);margin-bottom:.4rem}
+.sub b{font-weight:600}
+.peq{font-size:.82rem;color:var(--gris);margin-bottom:.9rem}
+.cajon .campo{margin-bottom:.7rem}
+.cajon label{display:block;font:500 .68rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gris);margin-bottom:.35rem}
+.cajon input,.cajon select{width:100%;font:400 .98rem var(--sans);padding:.75rem .8rem;border:1px solid var(--linea);background:var(--marfil);color:var(--negro)}
+.cajon .dos{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.err{color:#b3362b;font-size:.85rem;min-height:1.2rem}
+.cajon .btn{width:100%}
+
+/* modal producto */
+dialog.vista{border:0;padding:0;background:var(--marfil);width:min(920px,94vw);max-height:92vh;overflow:auto}
+dialog.vista::backdrop{background:rgba(22,20,18,.6)}
+.vista-in{display:grid;grid-template-columns:1fr 1fr}
+.vista-in img{width:100%;height:100%;object-fit:cover;min-height:360px;max-height:80vh}
+.vista-in .info{padding:2.4rem 2.2rem;display:flex;flex-direction:column;gap:.9rem}
+.vista h2{font:500 2.2rem/1.1 var(--display)}
+.vista .pr{font:500 1.4rem/1 var(--sans);color:var(--oro-osc)}
+.vista p{color:var(--gris)}
+.vista textarea{width:100%;min-height:84px;font:400 .98rem/1.4 var(--sans);padding:.8rem;border:1px solid var(--linea);background:var(--blanco);resize:vertical}
+.vista label{font:500 .68rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+.vista .cierra{position:absolute;top:.6rem;right:.6rem;z-index:3;background:rgba(255,254,252,.9)}
+.mini-b{display:grid;gap:.5rem;font-size:.88rem;color:var(--gris);padding-top:.5rem;border-top:1px solid var(--linea)}
+.mini-b span::before{content:"✦";color:var(--oro);margin-right:.6rem}
+
+.aviso{position:fixed;left:50%;bottom:calc(1.4rem + env(safe-area-inset-bottom,0px));z-index:120;transform:translate(-50%,20px);background:var(--negro);color:var(--marfil);padding:.9rem 1.4rem;font:500 .85rem var(--sans);letter-spacing:.06em;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:92vw}
+.aviso.on{opacity:1;transform:translate(-50%,0)}
+
+/* aparición */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.cat img,.prod .foto img,.cajon,.vel{transition:none}}
+
+@media (max-width:1020px){
+  section{padding:4rem 0}
+  .menu{display:none}
+  .burger{display:grid}
+  .cab-in{grid-template-columns:auto 1fr auto}
+  .logo{justify-self:center;font-size:1.9rem}
+  .panel-m.on{display:block;border-top:1px solid var(--linea);background:var(--marfil);padding:.4rem 1.25rem 1.2rem}
+  .panel-m a{display:block;padding:1rem 0;border-bottom:1px solid var(--linea);font:500 .85rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none}
+  .hero-in{grid-template-columns:1fr;gap:3rem}
+  .mosaico{height:min(520px,100vw);min-height:360px}
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .hombre-in{grid-template-columns:1fr}
+  .hombre .txt{padding:2.6rem 1.6rem}
+  .prods{grid-template-columns:repeat(3,1fr)}
+  .ben{grid-template-columns:repeat(2,1fr)}
+  .cont{grid-template-columns:1fr;padding:2.6rem 1.6rem;gap:2rem}
+}
+@media (max-width:720px){
+  .prods{grid-template-columns:repeat(2,1fr);gap:1.6rem .8rem}
+  .prod .add{opacity:1;transform:none;padding:.75rem;font-size:.66rem;letter-spacing:.14em;left:.4rem;right:.4rem;bottom:.4rem}
+  .prod h3{font-size:1.1rem}
+  .vista-in{grid-template-columns:1fr}
+  .vista-in img{min-height:260px;max-height:48vh}
+  .vista-in .info{padding:1.6rem 1.3rem}
+  .barra{flex-direction:column;flex-wrap:nowrap;align-items:stretch}
+  .barra>*{min-width:0;max-width:100%}
+  .chips{overflow-x:auto;flex-wrap:nowrap;padding-bottom:.4rem;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
+  .chips button{white-space:nowrap}
+  .orden{justify-content:space-between}
+  .ben{grid-template-columns:1fr}
+  .cat span{font-size:1.3rem}
+}
+</style>
+</head>
+<body>
+
+<div class="anuncio"><span>Envíos a todo México</span><span>Envíos a todo EE. UU.</span><span>Meses sin intereses</span></div>
+
+<header class="cab" id="cab">
+  <div class="wrap cab-in">
+    <nav class="menu" aria-label="Principal">
+      <a href="#tienda" data-cat="todo">Tienda</a>
+      <a href="#tienda" data-cat="hombre">Hombre</a>
+      <a href="#tienda" data-cat="mama">Regalos para mamá</a>
+      <a href="#categorias">Colecciones</a>
+    </nav>
+    <button class="ic burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <a class="logo" href="#inicio" aria-label="TAMAU, inicio">TAMAU<small>JOYERÍA Y ACCESORIOS</small></a>
+    <div class="tools">
+      <button class="ic" id="b-busca" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <button class="ic" id="b-carro" aria-label="Abrir carrito"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cnt" id="cnt" hidden>0</span></button>
+    </div>
+  </div>
+  <div class="busca" id="busca"><div class="wrap"><label class="sr" for="q">Buscar productos</label><input id="q" type="search" placeholder="Busca collares, aretes, perla…" autocomplete="off"><button class="ic" id="b-busca-x" aria-label="Cerrar búsqueda"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div></div>
+  <nav class="panel-m" id="panel-m" aria-label="Menú móvil">
+    <a href="#tienda" data-cat="todo">Toda la tienda</a>
+    <a href="#tienda" data-cat="hombre">Hombre</a>
+    <a href="#tienda" data-cat="mama">Regalos para mamá</a>
+    <a href="#categorias">Colecciones</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <span class="etq">Joyería · Acero · Plata 925 · Perla natural</span>
+      <h1>Joyas para <em>contar tu historia</em></h1>
+      <p class="lead">Collares, aretes, pulseras y piezas personalizadas para regalar o regalarte. Enviamos a todo México y a Estados Unidos.</p>
+      <div class="cta">
+        <a class="btn" href="#tienda" data-cat="todo">Comprar ahora</a>
+        <a class="btn claro" href="#tienda" data-cat="mama">Regalos para mamá</a>
+      </div>
+      <div class="pts"><span>Envíos a todo México</span><span>Meses sin intereses</span><span>Piezas personalizadas</span></div>
+    </div>
+    <div class="mosaico">
+      <figure class="a"><img src="img/h3.jpg" alt="Collares en tarjetas de regalo con empaque TAMAU" width="1600" height="900"></figure>
+      <figure><img src="img/h2.jpg" alt="Tarjeta de regalo con sello de cera" width="1024" height="1536"></figure>
+      <figure><img src="img/p17.jpg" alt="Set de perla natural en caja de regalo" width="760" height="507"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="categorias">
+  <div class="wrap">
+    <div class="titulo rv"><span class="etq">Colecciones</span><h2>Encuentra tu <em>pieza favorita</em></h2></div>
+    <div class="cats" id="cats"></div>
+  </div>
+</section>
+
+<section class="hombre rv">
+  <div class="hombre-in">
+    <img src="img/h1.jpg" alt="Colección TAMAU Hombres con Andy Benavides Tops" loading="lazy" width="1600" height="890">
+    <div class="txt">
+      <span class="etq" style="color:var(--oro-claro)">Colección hombre</span>
+      <h2>Cadenas, brazaletes y <em>piezas con carácter</em></h2>
+      <p>Plata 925, grabados y llaveros personalizados, en colaboración con Andy Benavides Tops.</p>
+      <a class="btn" href="#tienda" data-cat="hombre">Ver colección hombre</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="tienda">
+  <div class="wrap">
+    <div class="titulo rv"><span class="etq">La tienda</span><h2>Toda la <em>colección</em></h2><p>Elige tus piezas, agrégalas al carrito y envía tu pedido por WhatsApp en un minuto.</p></div>
+    <div class="barra">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por categoría"></div>
+      <label class="orden">Ordenar <select id="orden"><option value="rel">Destacados</option><option value="menor">Precio: menor a mayor</option><option value="mayor">Precio: mayor a menor</option></select></label>
+    </div>
+    <p class="res" id="res" aria-live="polite"></p>
+    <div class="prods" id="prods"></div>
+    <p class="vacio" id="vacio">No encontramos piezas con esa búsqueda. <a href="#tienda" id="limpia">Ver toda la tienda</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <ul class="ben">
+      <li class="rv"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7zM7 19a1.5 1.5 0 1 0 0-.01M17 19a1.5 1.5 0 1 0 0-.01"/></svg><b>Envíos a todo México y EE. UU.</b><span>Recibe tus piezas donde estés.</span></li>
+      <li class="rv"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg><b>Meses sin intereses</b><span>Diferentes formas de pago.</span></li>
+      <li class="rv"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6L12 16.7 6.7 19.6l1.1-6L3.4 9.4l6-.8z"/></svg><b>Piezas personalizadas</b><span>Grabados, iniciales y fotografías.</span></li>
+      <li class="rv"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.3L3 20l1.3-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg><b>Atención por WhatsApp</b><span>Resolvemos tus dudas al momento.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="titulo rv"><span class="etq">Preguntas frecuentes</span><h2>Antes de <em>comprar</em></h2></div>
+    <div class="faq rv">
+      <details><summary>¿Hacen envíos?</summary><p>Sí, enviamos a todo México y a todo Estados Unidos.</p></details>
+      <details><summary>¿Puedo pagar a meses?</summary><p>Sí, contamos con meses sin intereses y diferentes formas de pago. Te confirmamos las opciones al hacer tu pedido.</p></details>
+      <details><summary>¿Cómo hago mi pedido?</summary><p>Agrega tus piezas al carrito, escribe tu nombre y país, y envía el pedido por WhatsApp. Te confirmamos disponibilidad y el total con envío.</p></details>
+      <details><summary>¿Puedo personalizar una pieza?</summary><p>Sí. En las piezas personalizables puedes escribir el nombre, la inicial o la idea que quieres, y se incluye en tu pedido.</p></details>
+      <details><summary>¿Y si tengo un cambio o devolución?</summary><p>Consulta nuestra <a href="https://tamau.mx/politica-de-devoluciones/" target="_blank" rel="noopener" style="color:var(--oro-osc)">política de devoluciones</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="cont rv">
+      <div><span class="etq" style="color:var(--oro-claro)">Contacto</span><h2 style="margin-top:.9rem">Hablemos de tu <em>próxima joya</em></h2><p>Escríbenos y te ayudamos a elegir, personalizar y enviar tu pedido.</p></div>
+      <ul>
+        <li><a href="https://wa.me/523328223268?text=%C2%A1Hola%20TAMAU!%20Quiero%20informaci%C3%B3n" target="_blank" rel="noopener"><b>WhatsApp</b>33 2822 3268</a></li>
+        <li><a href="mailto:info@tamau.mx"><b>Correo</b>info@tamau.mx</a></li>
+        <li><a href="https://www.instagram.com/tamaumx/" target="_blank" rel="noopener"><b>Instagram</b>@tamaumx</a></li>
+        <li><a href="https://www.facebook.com/Tamaumx-108054001032369" target="_blank" rel="noopener"><b>Facebook</b>Tamaumx</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Volver al inicio">TAMAU<small>JOYERÍA Y ACCESORIOS</small></a>
+    <nav aria-label="Pie">
+      <a href="#tienda" data-cat="todo">Tienda</a><a href="#categorias">Colecciones</a><a href="#contacto">Contacto</a>
+      <a href="https://tamau.mx/aviso-de-privacidad/" target="_blank" rel="noopener">Aviso de privacidad</a>
+      <a href="https://tamau.mx/terminos-y-condiciones/" target="_blank" rel="noopener">Términos y condiciones</a>
+      <a href="https://tamau.mx/politica-de-devoluciones/" target="_blank" rel="noopener">Devoluciones</a>
+    </nav>
+    <p class="copy">© TAMAU · Versión de muestra diseñada por CyberVision. El carrito y el pago en línea se conectan en la versión final.</p>
+  </div>
+</footer>
+
+<div class="vel" id="vel"></div>
+<aside class="cajon" id="cajon" aria-label="Carrito de compras" aria-hidden="true">
+  <header><h2>Tu carrito</h2><button class="ic" id="b-cierra" aria-label="Cerrar carrito"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+  <div class="cuerpo" id="lineas"></div>
+  <footer id="pie-c">
+    <div class="sub"><span>Subtotal</span><b id="subtotal">$0</b></div>
+    <p class="peq">El envío y el pago se confirman por WhatsApp.</p>
+    <div class="dos">
+      <div class="campo"><label for="c-nombre">Tu nombre</label><input id="c-nombre" type="text" autocomplete="name" placeholder="Nombre"></div>
+      <div class="campo"><label for="c-pais">País</label><select id="c-pais"><option>México</option><option>Estados Unidos</option></select></div>
+    </div>
+    <p class="err" id="c-err" role="alert"></p>
+    <button class="btn wa" id="b-pedir" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm5.4-7.3c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.4 3.4 14.7 14.7 0 0 0 5.6 4.9c2.1.9 2.9 1 3.9.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.3z"/></svg>Pedir por WhatsApp</button>
+  </footer>
+</aside>
+
+<dialog class="vista" id="vista" aria-label="Detalle del producto">
+  <button class="ic cierra" id="v-x" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="vista-in">
+    <img id="v-img" alt="" width="760" height="950">
+    <div class="info">
+      <span class="etq" id="v-cat"></span>
+      <h2 id="v-n"></h2>
+      <div class="pr" id="v-p"></div>
+      <p id="v-d"></p>
+      <div id="v-pers"><label for="v-nota">Personalización (opcional)</label><textarea id="v-nota" placeholder="Nombre, inicial, fecha o la idea que tienes…"></textarea></div>
+      <button class="btn" id="v-add" type="button">Agregar al carrito</button>
+      <div class="mini-b"><span>Envíos a todo México y EE. UU.</span><span>Meses sin intereses</span></div>
+    </div>
+  </div>
+</dialog>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script>
+document.documentElement.classList.add("js");
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const WA = "523328223268";
+const peso = n => "$" + n.toLocaleString("es-MX");
+
+/* ---------- catálogo (datos de tamau.mx) ---------- */
+const CATS = {
+  todo:{n:"Todo"}, hombre:{n:"Hombre"}, mama:{n:"Regalos para mamá"},
+  collares:{n:"Collares"}, aretes:{n:"Aretes"}, pulseras:{n:"Pulseras"}, anillos:{n:"Anillos"}, lentes:{n:"Lentes de sol"}
+};
+const P = [
+ // id, nombre, precio, desde?, categorías, etiqueta, personalizable
+ ["01","Brazalete grabado",899,0,["hombre","pulseras"],"Personalizable",1],
+ ["02","Cadena plata 925",1699,0,["hombre","collares"],"Plata 925",0],
+ ["03","Cadena torzal plata 925",1899,0,["hombre","collares"],"Plata 925",0],
+ ["04","Collar inicial piedras",899,0,["hombre","mama","collares"],"Personalizable",1],
+ ["05","Llavero vinipiel personalizado",799,0,["hombre"],"Personalizable",1],
+ ["06","Relicarios",599,1,["hombre","mama","collares"],"",1],
+ ["07","Collar niños",699,1,["mama","collares"],"",1],
+ ["08","Collar abrazo",649,0,["mama","collares"],"",0],
+ ["09","Collar libro",899,1,["mama","collares"],"",1],
+ ["10","Collar placa piedra",599,0,["mama","collares"],"",1],
+ ["11","Collar placas",799,0,["mama","collares"],"Personalizable",1],
+ ["12","Collar sobre",799,0,["mama","collares"],"",1],
+ ["13","Inicial piedra de nacimiento y perla natural",799,0,["mama","collares"],"Perla natural",1],
+ ["14","Medalla bebé",649,0,["mama","collares"],"",1],
+ ["15","Nidito acero y perla natural",449,0,["mama","collares"],"Perla natural",0],
+ ["16","Perla natural rectangular",1499,0,["mama","collares"],"Perla natural",0],
+ ["17","Set perla natural",1399,0,["mama","collares"],"Perla natural",0],
+ ["18","Pulsera placas",599,0,["mama","pulseras"],"Personalizable",1],
+ ["19","Butterfly silver",299,0,["collares"],"",0],
+ ["20","Cadena rock corazón",399,0,["collares"],"",0],
+ ["21","Choker perla",299,0,["collares"],"",0],
+ ["22","Círculo con orejita",599,0,["collares"],"",0],
+ ["23","Círculo corazón",599,0,["collares"],"",0],
+ ["24","Collar cabeza de toro",449,0,["collares"],"",0],
+ ["25","Collar caracol",349,0,["collares"],"",0],
+ ["26","Collar con dijes de doble cadena",699,0,["collares"],"",0],
+ ["27","Aretes 2 pétalos",229,0,["aretes"],"",0],
+ ["28","Aretes 3 corazones",249,0,["aretes"],"",0],
+ ["29","Aretes 3 hojas perlas colgantes",349,0,["aretes"],"",0],
+ ["30","Aretes 3 perlas colgantes",259,0,["aretes"],"",0],
+ ["31","Aretes 3 pétalos azul",249,0,["aretes"],"",0],
+ ["32","Aretes abanico con perlas",279,0,["aretes"],"",0],
+ ["33","Aretes zirconia tricolor",659,0,["aretes"],"",0],
+ ["34","Aretes zirconia cuadrado",279,0,["aretes"],"",0],
+ ["35","Collar trébol colorido",399,0,["collares"],"",0],
+ ["36","Aretes two perla",259,0,["aretes"],"",0],
+ ["37","Brazalete cadena gruesa",349,0,["pulseras"],"",0],
+ ["38","Brazalete de corazón",399,0,["pulseras"],"",0],
+ ["39","Pulsera corazón chic",249,0,["pulseras"],"",0],
+ ["40","Pulsera cadena love",249,0,["pulseras"],"",0],
+ ["41","Anillo ajustable",249,0,["anillos"],"",0],
+ ["42","Anillo",199,0,["anillos"],"",0],
+ ["43","Lentes de sol",299,0,["lentes"],"",0],
+ ["44","Lentes de sol",299,0,["lentes"],"",0]
+].map(([id,n,p,d,c,t,pers],i)=>({id,n,p,desde:!!d,c,t,pers:!!pers,img:"img/p"+id+".jpg",i}));
+const POR = id => P.find(x => x.id === id);
+
+/* ---------- colecciones ---------- */
+const COL = [
+  ["collares","p24","Collares"],["aretes","p29","Aretes"],["pulseras","p37","Pulseras"],["anillos","p41","Anillos"],
+  ["mama","p14","Regalos para mamá"],["hombre","p02","Hombre"],["lentes","p43","Lentes de sol"],["todo","p21","Toda la tienda"]
+];
+$("#cats").innerHTML = COL.map(([k,img,t]) => {
+  const n = k==="todo" ? P.length : P.filter(p => p.c.includes(k)).length;
+  return `<a class="cat rv" href="#tienda" data-cat="${k}"><img src="img/${img}.jpg" alt="${t}" loading="lazy" width="760" height="950"><span>${t}<small>${n} piezas</small></span></a>`;
+}).join("");
+
+/* ---------- tienda: filtros, orden y búsqueda ---------- */
+let cat = "todo", orden = "rel", texto = "";
+const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const chips = $("#chips");
+chips.innerHTML = Object.entries(CATS).map(([k,v]) => `<button type="button" data-k="${k}" aria-pressed="${k===cat}">${v.n}</button>`).join("");
+
+function pintar(){
+  let l = P.filter(p => (cat==="todo" || p.c.includes(cat)) && (!texto || norm(p.n+" "+p.c.map(c=>CATS[c].n).join(" ")+" "+p.t).includes(texto)));
+  if (orden==="menor") l = [...l].sort((a,b)=>a.p-b.p);
+  if (orden==="mayor") l = [...l].sort((a,b)=>b.p-a.p);
+  $("#prods").innerHTML = l.map(p => `
+    <article class="prod">
+      <div class="fw">
+        <button class="foto" type="button" data-ver="${p.id}" aria-label="Ver ${p.n}">
+          <img src="${p.img}" alt="${p.n}" loading="lazy" width="760" height="950">
+          ${p.t ? `<span class="tag">${p.t}</span>` : ""}
+        </button>
+        <button class="add" type="button" data-add="${p.id}">Agregar</button>
+      </div>
+      <h3>${p.n}</h3>
+      <div class="pr">${p.desde ? "Desde " : ""}${peso(p.p)}</div>
+    </article>`).join("");
+  $("#vacio").style.display = l.length ? "none" : "block";
+  $("#res").textContent = l.length + (l.length===1 ? " pieza" : " piezas") + (cat!=="todo" ? " en " + CATS[cat].n : "") + (texto ? " para “" + $("#q").value.trim() + "”" : "");
+  chips.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.k === cat));
+}
+function irCat(k){ cat = k; texto = ""; $("#q").value = ""; pintar(); }
+chips.addEventListener("click", e => { const b = e.target.closest("button"); if (b) { cat = b.dataset.k; pintar(); } });
+$("#orden").addEventListener("change", e => { orden = e.target.value; pintar(); });
+$("#limpia").addEventListener("click", () => { irCat("todo"); });
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-cat]");
+  if (a) { irCat(a.dataset.cat); $("#panel-m").classList.remove("on"); $("#burger").setAttribute("aria-expanded","false"); }
+});
+
+/* búsqueda */
+const busca = $("#busca"), q = $("#q");
+$("#b-busca").addEventListener("click", () => { busca.classList.toggle("on"); if (busca.classList.contains("on")) q.focus(); });
+$("#b-busca-x").addEventListener("click", () => { busca.classList.remove("on"); q.value = ""; texto = ""; pintar(); });
+q.addEventListener("input", () => {
+  texto = norm(q.value.trim());
+  if (texto) { cat = "todo"; document.getElementById("tienda").scrollIntoView({behavior:"smooth"}); }
+  pintar();
+});
+
+/* menú móvil */
+$("#burger").addEventListener("click", () => {
+  const on = $("#panel-m").classList.toggle("on");
+  $("#burger").setAttribute("aria-expanded", on);
+});
+
+/* ---------- carrito ---------- */
+let carro = [];
+try { carro = JSON.parse(localStorage.getItem("tamau-carro") || "[]").filter(x => POR(x.id)); } catch(e) { carro = []; }
+const guardar = () => { try { localStorage.setItem("tamau-carro", JSON.stringify(carro)); } catch(e) {} };
+const cajon = $("#cajon"), vel = $("#vel");
+function abrir(on){
+  cajon.classList.toggle("on", on); vel.classList.toggle("on", on);
+  cajon.setAttribute("aria-hidden", !on);
+  document.body.classList.toggle("bloq", on);
+}
+$("#b-carro").addEventListener("click", () => abrir(true));
+$("#b-cierra").addEventListener("click", () => abrir(false));
+vel.addEventListener("click", () => abrir(false));
+document.addEventListener("keydown", e => { if (e.key === "Escape") abrir(false); });
+
+let tAviso;
+function aviso(t){ const a = $("#aviso"); a.textContent = t; a.classList.add("on"); clearTimeout(tAviso); tAviso = setTimeout(() => a.classList.remove("on"), 2200); }
+
+function agregar(id, nota = ""){
+  const ya = carro.find(x => x.id === id && x.nota === nota);
+  if (ya) ya.q++; else carro.push({id, q:1, nota});
+  guardar(); dibujar();
+  aviso("Agregado al carrito ✦ " + POR(id).n);
+}
+function total(){ return carro.reduce((s,x) => s + POR(x.id).p * x.q, 0); }
+function dibujar(){
+  const n = carro.reduce((s,x) => s + x.q, 0);
+  const c = $("#cnt"); c.textContent = n; c.hidden = n === 0;
+  $("#subtotal").textContent = peso(total()) + (carro.some(x => POR(x.id).desde) ? "+" : "");
+  $("#pie-c").style.display = n ? "" : "none";
+  $("#lineas").innerHTML = n ? carro.map((x,i) => { const p = POR(x.id); return `
+    <div class="linea-c">
+      <img src="${p.img}" alt="${p.n}" width="78" height="98">
+      <div><h3>${p.n}</h3>${x.nota ? `<div class="nt">Personalización: ${x.nota.replace(/</g,"&lt;")}</div>` : ""}
+        <div class="cant"><button type="button" data-m="${i}" aria-label="Menos">–</button><span>${x.q}</span><button type="button" data-p="${i}" aria-label="Más">+</button></div></div>
+      <div class="pp">${peso(p.p*x.q)}<button class="quita" type="button" data-q="${i}">Quitar</button></div>
+    </div>`; }).join("") :
+    `<div class="vacio-c"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><p>Tu carrito está vacío.</p><p style="margin-top:.4rem">Agrega tus piezas favoritas.</p></div>`;
+}
+$("#lineas").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.p !== undefined) carro[+b.dataset.p].q++;
+  if (b.dataset.m !== undefined) { const x = carro[+b.dataset.m]; x.q--; if (x.q < 1) carro.splice(+b.dataset.m,1); }
+  if (b.dataset.q !== undefined) carro.splice(+b.dataset.q,1);
+  guardar(); dibujar();
+});
+
+$("#prods").addEventListener("click", e => {
+  const a = e.target.closest("[data-add]"), v = e.target.closest("[data-ver]");
+  if (a) agregar(a.dataset.add);
+  else if (v) verProducto(v.dataset.ver);
+});
+
+/* ---------- ficha de producto ---------- */
+const vista = $("#vista");
+let actual = null;
+function verProducto(id){
+  const p = POR(id); actual = p;
+  $("#v-img").src = p.img; $("#v-img").alt = p.n;
+  $("#v-cat").textContent = p.c.filter(c => c!=="todo").map(c => CATS[c].n).slice(0,2).join(" · ");
+  $("#v-n").textContent = p.n;
+  $("#v-p").textContent = (p.desde ? "Desde " : "") + peso(p.p);
+  $("#v-d").textContent = p.pers ? "Pieza personalizable. Cuéntanos qué te gustaría grabar o incluir y lo agregamos a tu pedido." : "Pieza lista para enviar a todo México y EE. UU.";
+  $("#v-pers").style.display = p.pers ? "" : "none";
+  $("#v-nota").value = "";
+  vista.showModal();
+}
+$("#v-x").addEventListener("click", () => vista.close());
+vista.addEventListener("click", e => { if (e.target === vista) vista.close(); });
+$("#v-add").addEventListener("click", () => { agregar(actual.id, actual.pers ? $("#v-nota").value.trim() : ""); vista.close(); abrir(true); });
+
+/* ---------- pedido por WhatsApp ---------- */
+$("#b-pedir").addEventListener("click", () => {
+  const err = $("#c-err"), nombre = $("#c-nombre").value.trim();
+  if (!carro.length) { err.textContent = "Agrega al menos una pieza."; return; }
+  if (!nombre) { err.textContent = "Escribe tu nombre para poder atenderte."; $("#c-nombre").focus(); return; }
+  err.textContent = "";
+  const lineas = carro.map(x => { const p = POR(x.id); return "• " + x.q + " × " + p.n + " — " + peso(p.p*x.q) + (p.desde ? " (desde)" : "") + (x.nota ? "\n   Personalización: " + x.nota : ""); }).join("\n");
+  const msg = "¡Hola TAMAU! Quiero hacer este pedido 🛍️\n\n" + lineas + "\n\nSubtotal: " + peso(total()) + "\nNombre: " + nombre + "\nEnvío a: " + $("#c-pais").value + "\n\n¿Me confirman disponibilidad, total con envío y formas de pago?";
+  window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+});
+
+/* ---------- aparición suave + arranque ---------- */
+function activarRv(){
+  const rv = $$(".rv:not(.in)");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {rootMargin:"0px 0px -4% 0px", threshold:0});
+    rv.forEach(el => io.observe(el));
+  } else rv.forEach(el => el.classList.add("in"));
+}
+const revisar = () => $$(".rv:not(.in)").forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight * 1.05) el.classList.add("in"); });
+window.addEventListener("scroll", revisar, {passive:true});
+pintar(); dibujar(); activarRv(); setTimeout(revisar, 600);
+</script>
+</body>
+</html>
