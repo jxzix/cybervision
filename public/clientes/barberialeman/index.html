@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#14100d">
+<title>Barbería Alemán · Coyoacán, CDMX</title>
+<meta name="description" content="Barbería Alemán en Coyoacán: corte a tijera, fade y ritual de barba. Desde 2018. Reserva tu cita en línea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --carbon:#14100d;
+  --carbon-2:#1b1612;
+  --carbon-3:#251e18;
+  --crema:#f4ead7;
+  --cobre:#c58b3f;
+  --cobre-claro:#e3b872;
+  --rojo:#a8262a;
+  --humo:#b5a893;
+  --linea:rgba(227,184,114,.2);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --label:"Oswald","Arial Narrow",Arial,sans-serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --nav-h:72px;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--carbon);color:var(--crema);font:400 1.05rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;padding-inline:env(safe-area-inset-left,0px) env(safe-area-inset-right,0px)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,p,ul,figure,blockquote{margin:0}
+ul{padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--cobre-claro);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1160px,100% - 2.5rem);margin-inline:auto}
+.etiqueta{font:500 .85rem/1 var(--label);letter-spacing:.28em;text-transform:uppercase;color:var(--cobre-claro)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font:500 .95rem/1 var(--label);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:1.05rem 1.7rem;border-radius:2px;border:1.5px solid var(--cobre);background:var(--cobre);color:var(--carbon);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--cobre-claro);border-color:var(--cobre-claro)}
+.btn.ghost{background:transparent;color:var(--cobre-claro)}
+.btn.ghost:hover{background:rgba(227,184,114,.12)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* barra superior */
+.nav{position:fixed;inset:0 0 auto;z-index:50;height:calc(var(--nav-h) + env(safe-area-inset-top,0px));padding-top:env(safe-area-inset-top,0px);background:transparent;border-bottom:1px solid transparent;transition:background .25s,border-color .25s}
+.nav.solid,.nav.abierto{background:var(--carbon);border-bottom-color:var(--linea)}
+.nav-in{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.marca{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.sello{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#c4383c,var(--rojo) 60%,#7a1a1d);display:grid;place-items:center;font:700 1.25rem/1 var(--serif);color:#f6d9a8;box-shadow:inset 0 0 0 2px rgba(246,217,168,.35)}
+.marca-t{display:flex;flex-direction:column;line-height:1}
+.marca-t b{font:600 1.35rem/1 var(--serif);letter-spacing:.14em}
+.marca-t small{font:500 .62rem/1 var(--label);letter-spacing:.5em;color:var(--cobre-claro);margin-top:.3rem;padding-left:.1em}
+.links{display:flex;align-items:center;gap:1.9rem}
+.links a{font:500 .85rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--crema);opacity:.85;padding:.4rem 0;border-bottom:1px solid transparent}
+.links a:hover{opacity:1;border-bottom-color:var(--cobre)}
+.links .btn{padding:.85rem 1.3rem;opacity:1;color:var(--carbon);border-bottom:1.5px solid var(--cobre)}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;color:var(--crema);cursor:pointer;border-radius:4px}
+.burger span,.burger span::before,.burger span::after{display:block;width:24px;height:2px;background:currentColor;position:relative;margin:auto;transition:transform .2s,background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-7px}
+.burger span::after{top:7px}
+.nav.abierto .burger span{background:transparent}
+.nav.abierto .burger span::before{top:0;transform:rotate(45deg)}
+.nav.abierto .burger span::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 2rem) 0 4rem;background:radial-gradient(900px 500px at 85% 20%,rgba(197,139,63,.16),transparent 70%),var(--carbon)}
+.hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
+.hero h1{font:700 clamp(2.8rem,6.4vw,5.2rem)/1.04 var(--serif);margin:1.2rem 0 1.4rem;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;font-weight:600;color:var(--cobre-claro)}
+.hero p{max-width:46ch;color:#d9ccb5;font-size:1.15rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+.hero .dato{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;font:500 .82rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--humo)}
+.hero .dato span::before{content:"✦";color:var(--cobre);margin-right:.6rem}
+.marco{position:relative;justify-self:end;width:min(430px,100%)}
+.marco::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1.5px solid var(--cobre);border-radius:200px 200px 6px 6px;opacity:.7}
+.marco img{position:relative;width:100%;aspect-ratio:3/4.2;object-fit:cover;object-position:50% 55%;border-radius:200px 200px 6px 6px}
+.marco .badge{position:absolute;left:-1.4rem;bottom:2.2rem;background:var(--carbon);border:1px solid var(--cobre);padding:1rem 1.2rem;text-align:center;z-index:2}
+.marco .badge b{display:block;font:700 2rem/1 var(--serif);color:var(--cobre-claro)}
+.marco .badge small{font:500 .7rem/1.3 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--humo)}
+
+/* franja */
+.franja{background:var(--carbon-2);border-block:1px solid var(--linea)}
+.franja ul{display:grid;grid-template-columns:repeat(4,1fr)}
+.franja li{padding:1.5rem 1rem;text-align:center;font:500 .85rem/1.4 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--crema);border-right:1px solid var(--linea)}
+.franja li:last-child{border-right:0}
+.franja li b{display:block;color:var(--cobre-claro);font-weight:500;font-size:1.05rem;margin-bottom:.2rem}
+
+/* secciones */
+section{padding:6rem 0}
+.cabeza{text-align:center;max-width:640px;margin:0 auto 3.2rem}
+.cabeza h2{font:700 clamp(2.1rem,4.6vw,3.2rem)/1.12 var(--serif);margin:.9rem 0 1rem}
+.cabeza h2 em{font-style:italic;font-weight:600;color:var(--cobre-claro)}
+.cabeza p{color:var(--humo)}
+.alt{background:var(--carbon-2)}
+
+/* precios */
+.precios{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.caja{background:var(--carbon-2);border:1px solid var(--linea);padding:2rem 1.8rem 1.6rem}
+.alt .caja{background:var(--carbon)}
+.caja h3{font:600 1.5rem/1.2 var(--serif);margin-bottom:.3rem}
+.caja .sub{font:500 .75rem/1.4 var(--label);letter-spacing:.22em;text-transform:uppercase;color:var(--cobre-claro);margin-bottom:1.1rem}
+.fila{padding:.85rem 0;border-top:1px solid var(--linea)}
+.fila .l{display:flex;align-items:baseline;gap:.6rem}
+.fila .n{font:500 1.02rem/1.3 var(--sans);font-weight:700}
+.fila .p{flex:1;border-bottom:1.5px dotted rgba(227,184,114,.4);translate:0 -.28em;min-width:1rem}
+.fila .m{font:500 1.25rem/1 var(--label);color:var(--cobre-claro);letter-spacing:.04em;white-space:nowrap}
+.fila small{display:block;color:var(--humo);font-size:.9rem;line-height:1.45;margin-top:.25rem;max-width:42ch}
+.nota{margin-top:2.4rem;text-align:center;color:var(--humo);font-size:.95rem}
+.reserva{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+
+/* estilos */
+.estilos{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.estilos figure{position:relative;overflow:hidden;background:var(--carbon-3);border:1px solid var(--linea)}
+.estilos img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .5s}
+.estilos figure:hover img{transform:scale(1.04)}
+
+/* nosotros */
+.nos{display:grid;grid-template-columns:.9fr 1.1fr;gap:4.5rem;align-items:center}
+.nos-foto{position:relative}
+.nos-foto::after{content:"";position:absolute;inset:-16px 16px 16px -16px;border:1.5px solid var(--cobre);opacity:.6;z-index:0}
+.nos-foto img{position:relative;z-index:1;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%}
+.nos h2{font:700 clamp(2.1rem,4.4vw,3.1rem)/1.12 var(--serif);margin:.9rem 0 1.2rem}
+.nos h2 em{font-style:italic;font-weight:600;color:var(--cobre-claro)}
+.nos p{color:#d9ccb5;max-width:52ch}
+.nos blockquote{margin:2rem 0;padding-left:1.4rem;border-left:3px solid var(--cobre);font:italic 500 1.25rem/1.55 var(--serif);color:var(--crema)}
+.nos blockquote cite{display:block;margin-top:.8rem;font:500 .8rem/1 var(--label);letter-spacing:.22em;text-transform:uppercase;color:var(--cobre-claro);font-style:normal}
+.cifras{display:flex;gap:2.4rem;flex-wrap:wrap;margin-top:1.6rem}
+.cifras div b{display:block;font:700 2.4rem/1 var(--serif);color:var(--cobre-claro)}
+.cifras div span{font:500 .75rem/1.3 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--humo)}
+
+/* galería */
+.taller{columns:3;column-gap:1rem}
+.taller button{display:block;width:100%;margin:0 0 1rem;padding:0;border:1px solid var(--linea);background:var(--carbon-3);cursor:zoom-in;break-inside:avoid;overflow:hidden}
+.taller img{width:100%;height:auto;transition:transform .5s}
+.taller button:hover img{transform:scale(1.04)}
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(92vw,1100px);max-height:92vh;color:var(--crema)}
+dialog.lb::backdrop{background:rgba(10,8,6,.94)}
+dialog.lb img{max-width:100%;max-height:86vh;margin:auto;object-fit:contain}
+.lb-b{position:fixed;top:50%;translate:0 -50%;width:48px;height:48px;border-radius:50%;border:1px solid var(--cobre);background:rgba(20,16,13,.8);color:var(--cobre-claro);font-size:1.5rem;cursor:pointer}
+.lb-b.prev{left:1rem}.lb-b.next{right:1rem}
+.lb-x{position:fixed;top:1rem;right:1rem;width:44px;height:44px;border-radius:50%;border:1px solid var(--cobre);background:rgba(20,16,13,.8);color:var(--cobre-claro);font-size:1.3rem;cursor:pointer}
+
+/* equipo */
+.equipo{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.persona{text-align:center;background:var(--carbon);border:1px solid var(--linea);padding:2.4rem 1.6rem}
+.persona.fuerte{border-color:var(--cobre)}
+.mono{width:96px;height:96px;margin:0 auto 1.3rem;border-radius:50%;border:1.5px solid var(--cobre);display:grid;place-items:center;font:600 2rem/1 var(--serif);color:var(--cobre-claro);background:var(--carbon-3)}
+.persona h3{font:600 1.5rem/1.2 var(--serif)}
+.persona .rol{font:500 .75rem/1 var(--label);letter-spacing:.24em;text-transform:uppercase;color:var(--cobre-claro);margin:.5rem 0 1rem}
+.persona p{color:var(--humo);font-size:.98rem}
+.persona .cita{margin-top:1rem;font:italic 500 1.05rem/1.55 var(--serif);color:var(--crema)}
+
+/* reseñas */
+.resenas{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.resena{background:var(--carbon-2);border:1px solid var(--linea);padding:2rem 1.9rem}
+.alt .resena{background:var(--carbon)}
+.resena::before{content:"“";display:block;font:700 4rem/.6 var(--serif);color:var(--cobre);height:1.6rem}
+.resena p{color:#e3d7c0;font-size:1.02rem}
+.resena footer{margin-top:1.3rem;font:500 .8rem/1 var(--label);letter-spacing:.22em;text-transform:uppercase;color:var(--cobre-claro)}
+
+/* horario + contacto */
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:stretch}
+.tarjeta{background:var(--carbon-2);border:1px solid var(--linea);padding:2.2rem 2rem}
+.tarjeta h3{font:600 1.6rem/1.2 var(--serif);margin-bottom:1rem}
+.estado{display:inline-flex;align-items:center;gap:.6rem;font:500 .82rem/1 var(--label);letter-spacing:.18em;text-transform:uppercase;padding:.55rem .9rem;border:1px solid var(--linea);margin-bottom:1.2rem;color:var(--humo)}
+.estado i{width:9px;height:9px;border-radius:50%;background:#777}
+.estado.on{color:#bfe3b4;border-color:rgba(120,190,110,.5)}
+.estado.on i{background:#6fcf5f}
+.estado.off{color:#e6b9b2;border-color:rgba(200,110,100,.5)}
+.estado.off i{background:#d9574b}
+.horas li{display:flex;justify-content:space-between;padding:.7rem 0;border-top:1px solid var(--linea);font:500 1rem/1 var(--sans)}
+.horas li span:last-child{font:500 1.05rem/1 var(--label);letter-spacing:.06em;color:var(--cobre-claro)}
+.horas li.hoy{color:var(--cobre-claro);font-weight:700}
+.horas li.hoy span:first-child::after{content:"Hoy";margin-left:.7rem;font:500 .7rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;background:var(--cobre);color:var(--carbon);padding:.25rem .5rem;vertical-align:middle}
+.datos li{padding:.9rem 0;border-top:1px solid var(--linea)}
+.datos li:first-child{border-top:0;padding-top:0}
+.datos .k{display:block;font:500 .75rem/1 var(--label);letter-spacing:.24em;text-transform:uppercase;color:var(--cobre-claro);margin-bottom:.4rem}
+.datos a{text-decoration:none;border-bottom:1px solid var(--linea)}
+.datos a:hover{border-bottom-color:var(--cobre)}
+.mapa{margin-top:2rem;border:1px solid var(--linea);overflow:hidden}
+.mapa iframe{display:block;width:100%;height:340px;border:0;filter:grayscale(.35) contrast(1.05)}
+
+/* cierre */
+.cierre{background:linear-gradient(180deg,rgba(20,16,13,.88),rgba(20,16,13,.94)),url("img/nosotros.jpg") 50% 35%/cover;text-align:center;padding:6.5rem 0}
+.cierre h2{font:700 clamp(2.1rem,5vw,3.4rem)/1.1 var(--serif);margin:1rem 0 1.2rem}
+.cierre h2 em{font-style:italic;color:var(--cobre-claro);font-weight:600}
+.cierre p{color:#d9ccb5;max-width:48ch;margin:0 auto 2rem}
+
+footer.pie{background:#0f0c0a;border-top:1px solid var(--linea);padding:3rem 0 2.2rem}
+.pie-in{display:flex;flex-wrap:wrap;gap:1.6rem 3rem;align-items:center;justify-content:space-between}
+.pie nav{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem}
+.pie nav a{font:500 .8rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--humo)}
+.pie nav a:hover{color:var(--cobre-claro)}
+.pie .copy{display:block;width:100%;text-align:center;color:#7c705f;font-size:.85rem;border-top:1px solid var(--linea);padding-top:1.4rem;margin-top:.4rem}
+
+/* móvil fijo */
+.barra-m{display:none}
+.wa-f{position:fixed;right:1.2rem;bottom:1.2rem;z-index:40;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.wa-f svg{width:30px;height:30px;fill:#fff}
+
+/* aparición suave */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.estilos img,.taller img{transition:none}}
+
+/* responsive */
+@media (max-width:980px){
+  section{padding:4.5rem 0}
+  .links{display:none}
+  .burger{display:block}
+  .nav.abierto .links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--carbon);border-bottom:1px solid var(--linea);padding:.6rem 1.25rem 1.4rem}
+  .nav.abierto .links a{padding:1rem 0;border-bottom:1px solid var(--linea);font-size:.95rem}
+  .nav.abierto .links .btn{margin-top:1rem;text-align:center;border-bottom:1.5px solid var(--cobre)}
+  .hero{min-height:auto;padding-bottom:3.5rem}
+  .hero-in{grid-template-columns:1fr;gap:3.2rem}
+  .marco{justify-self:center;width:min(360px,86%)}
+  .marco .badge{left:-.6rem}
+  .franja ul{grid-template-columns:1fr 1fr}
+  .franja li:nth-child(2){border-right:0}
+  .franja li:nth-child(-n+2){border-bottom:1px solid var(--linea)}
+  .precios{grid-template-columns:1fr}
+  .estilos{grid-template-columns:repeat(2,1fr)}
+  .nos{grid-template-columns:1fr;gap:3rem}
+  .nos-foto{max-width:420px;margin-inline:auto}
+  .taller{columns:2}
+  .equipo{grid-template-columns:1fr}
+  .resenas{grid-template-columns:1fr}
+  .dos{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  body{padding-bottom:calc(74px + env(safe-area-inset-bottom,0px))}
+  .hero h1{font-size:clamp(2.5rem,12vw,3.4rem)}
+  .barra-m{display:flex;gap:.7rem;position:fixed;inset:auto 0 0;z-index:45;padding:.8rem 1.1rem calc(.8rem + env(safe-area-inset-bottom,0px));background:var(--carbon);border-top:1px solid var(--linea)}
+  .barra-m .btn{flex:1;padding:1rem}
+  .barra-m .wa{flex:0 0 52px;padding:0;background:#25d366;border-color:#25d366}
+  .barra-m .wa svg{fill:#fff;width:26px;height:26px}
+  .wa-f{display:none}
+  .caja{padding:1.6rem 1.3rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="marca" href="#inicio" aria-label="Barbería Alemán, inicio">
+      <span class="sello" aria-hidden="true">A</span>
+      <span class="marca-t"><b>ALEMÁN</b><small>BARBERÍA</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="links"><span></span></button>
+    <nav class="links" id="links" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#taller">Galería</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn" href="https://booking.setmore.com/scheduleappointment/d522272c-90d6-4eec-b766-38db0a0a7bb6" target="_blank" rel="noopener">Reservar cita</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap hero-in">
+    <div>
+      <span class="etiqueta">Barbería · Coyoacán · Desde 2018</span>
+      <h1>El arte de la barbería <em>en cada corte</em></h1>
+      <p>Corte a tijera, fade y ritual de barba con toalla caliente. Técnica clásica, estilo de hoy y un lugar donde tu opinión es lo más importante.</p>
+      <div class="cta">
+        <a class="btn" href="https://booking.setmore.com/scheduleappointment/d522272c-90d6-4eec-b766-38db0a0a7bb6" target="_blank" rel="noopener">Reservar cita</a>
+        <a class="btn ghost" href="#servicios">Ver precios</a>
+      </div>
+      <div class="dato"><span>Parque San Andrés</span><span>Lun a Dom</span></div>
+    </div>
+    <div class="marco">
+      <img src="img/hero-silla.jpg" alt="Silla de barbero clásica de cuero en Barbería Alemán" width="1000" height="1698">
+      <div class="badge"><b>2018</b><small>La mejor barbería<br>de la zona</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="franja">
+  <ul class="wrap">
+    <li><b>Corte a tijera</b>Técnica clásica</li>
+    <li><b>Fade</b>Degradado limpio</li>
+    <li><b>Ritual de barba</b>Toalla y espuma calientes</li>
+    <li><b>Reserva en línea</b>Elige día y hora</li>
+  </ul>
+</div>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="cabeza rv">
+      <span class="etiqueta">Servicios y precios</span>
+      <h2>Cortes, barba y <em>paquetes</em></h2>
+      <p>Precios claros, sin sorpresas. Combina corte y barba y ahorra.</p>
+    </div>
+
+    <div class="precios">
+      <article class="caja rv">
+        <h3>Cortes</h3>
+        <div class="sub">3 tipos de corte</div>
+        <div class="fila"><div class="l"><span class="n">Corte básico a máquina</span><span class="p"></span><span class="m">$230</span></div><small>Clásico, limpio y rápido.</small></div>
+        <div class="fila"><div class="l"><span class="n">Corte a tijera</span><span class="p"></span><span class="m">$300</span></div><small>Corte completo a tijera, con técnica.</small></div>
+        <div class="fila"><div class="l"><span class="n">Corte fade</span><span class="p"></span><span class="m">$300</span></div><small>Degradado con acabado preciso.</small></div>
+        <div class="fila"><div class="l"><span class="n">Limpieza de contornos</span><span class="p"></span><span class="m">$200</span></div><small>Delineado y acabado fino.</small></div>
+      </article>
+
+      <article class="caja rv">
+        <h3>Barba</h3>
+        <div class="sub">Tipos de barba</div>
+        <div class="fila"><div class="l"><span class="n">Ritual de barba</span><span class="p"></span><span class="m">$300</span></div><small>Arreglo de barba y delineado, o rasurado en su totalidad, con toalla caliente y espuma caliente.</small></div>
+        <div class="fila"><div class="l"><span class="n">Barba express</span><span class="p"></span><span class="m">$200</span></div><small>Arreglo de barba y delineado con gel para rasurar.</small></div>
+      </article>
+
+      <article class="caja rv">
+        <h3>Paquetes</h3>
+        <div class="sub">Corte + barba</div>
+        <div class="fila"><div class="l"><span class="n">Tijera + Ritual de barba</span><span class="p"></span><span class="m">$550</span></div></div>
+        <div class="fila"><div class="l"><span class="n">Fade + Ritual de barba</span><span class="p"></span><span class="m">$550</span></div></div>
+        <div class="fila"><div class="l"><span class="n">Máquina + Ritual de barba</span><span class="p"></span><span class="m">$500</span></div></div>
+        <div class="fila"><div class="l"><span class="n">Tijera + Barba express</span><span class="p"></span><span class="m">$500</span></div></div>
+        <div class="fila"><div class="l"><span class="n">Fade + Barba express</span><span class="p"></span><span class="m">$500</span></div></div>
+        <div class="fila"><div class="l"><span class="n">Básico a máquina + Barba express</span><span class="p"></span><span class="m">$430</span></div></div>
+      </article>
+    </div>
+
+    <div class="reserva rv">
+      <a class="btn" href="https://booking.setmore.com/scheduleappointment/d522272c-90d6-4eec-b766-38db0a0a7bb6" target="_blank" rel="noopener">Reservar mi cita</a>
+    </div>
+    <p class="nota rv">Las reservaciones y horarios se gestionan en línea. El WhatsApp es solo para dudas o información adicional.</p>
+  </div>
+</section>
+
+<section class="alt" id="estilos">
+  <div class="wrap">
+    <div class="cabeza rv">
+      <span class="etiqueta">Estilos más populares</span>
+      <h2>Lo que más <em>nos piden</em></h2>
+      <p>Cortes que salen de nuestra silla. Inspírate para el tuyo.</p>
+    </div>
+    <div class="estilos">
+      <figure class="rv"><img src="img/estilo-1.jpg" alt="Corte clásico peinado hacia atrás en cliente con canas" loading="lazy" width="480" height="640"></figure>
+      <figure class="rv"><img src="img/estilo-2.jpg" alt="Corte con fleco texturizado" loading="lazy" width="480" height="640"></figure>
+      <figure class="rv"><img src="img/estilo-3.jpg" alt="Fade con textura arriba" loading="lazy" width="480" height="640"></figure>
+      <figure class="rv"><img src="img/estilo-4.jpg" alt="Corte tipo hongo con degradado" loading="lazy" width="360" height="640"></figure>
+      <figure class="rv"><img src="img/estilo-5.jpg" alt="Corte clásico peinado de lado" loading="lazy" width="800" height="1066"></figure>
+      <figure class="rv"><img src="img/estilo-6.jpg" alt="Corte y barba completa" loading="lazy" width="800" height="1200"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap nos">
+    <div class="nos-foto rv">
+      <img src="img/nosotros.jpg" alt="Barbero apoyado en una silla clásica dentro de Barbería Alemán" loading="lazy" width="1000" height="1501">
+    </div>
+    <div class="rv">
+      <span class="etiqueta">Nosotros</span>
+      <h2>La mejor barbería <em>desde el 2018</em></h2>
+      <p>En Barbería Alemán se trabaja con técnica, pero con mucho estilo. Cortes a tijera, fade y rituales de barba, en un espacio cómodo en pleno Parque San Andrés, Coyoacán.</p>
+      <blockquote>“Mi mayor recompensa es ver las sonrisas en el rostro de mis clientes cuando se miran en el espejo y se sienten seguros y felices. ¡No hay nada que prefiera hacer más que esto!”<cite>Enrique Alemán</cite></blockquote>
+      <div class="cifras">
+        <div><b>2018</b><span>Año de inicio</span></div>
+        <div><b>3</b><span>Barberos</span></div>
+        <div><b>7</b><span>Días a la semana</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="taller">
+  <div class="wrap">
+    <div class="cabeza rv">
+      <span class="etiqueta">Galería</span>
+      <h2>El <em>taller</em></h2>
+      <p>Herramientas, detalles y el ambiente de la barbería.</p>
+    </div>
+    <div class="taller" id="galeria">
+      <button type="button" class="rv" data-i="0"><img src="img/taller-1.jpg" alt="Barbero peinando el cabello de un cliente con barba" loading="lazy" width="900" height="589"></button>
+      <button type="button" class="rv" data-i="1"><img src="img/taller-5.jpg" alt="Tijeras profesionales en cajón de madera" loading="lazy" width="900" height="1350"></button>
+      <button type="button" class="rv" data-i="2"><img src="img/taller-4.jpg" alt="Reloj y artículos clásicos en el mostrador" loading="lazy" width="900" height="600"></button>
+      <button type="button" class="rv" data-i="3"><img src="img/taller-10.jpg" alt="Barbero sonriendo mientras corta a un cliente con barba" loading="lazy" width="900" height="1350"></button>
+      <button type="button" class="rv" data-i="4"><img src="img/taller-6.jpg" alt="Entrada con letrero de cortes clásicos y afeitados" loading="lazy" width="900" height="600"></button>
+      <button type="button" class="rv" data-i="5"><img src="img/taller-2.jpg" alt="Barbero arreglando su cabello frente al espejo" loading="lazy" width="900" height="596"></button>
+      <button type="button" class="rv" data-i="6"><img src="img/taller-8.jpg" alt="Corte a tijera sobre cabello húmedo" loading="lazy" width="900" height="1350"></button>
+      <button type="button" class="rv" data-i="7"><img src="img/taller-3.jpg" alt="Perfil de un barbero concentrado" loading="lazy" width="900" height="600"></button>
+      <button type="button" class="rv" data-i="8"><img src="img/taller-7.jpg" alt="Rincón de la barbería con espejos y percheros" loading="lazy" width="900" height="1350"></button>
+      <button type="button" class="rv" data-i="9"><img src="img/taller-9.jpg" alt="Capa de barbero con el nombre Alemán" loading="lazy" width="900" height="600"></button>
+    </div>
+  </div>
+</section>
+
+<section id="equipo">
+  <div class="wrap">
+    <div class="cabeza rv">
+      <span class="etiqueta">Nuestro equipo</span>
+      <h2>Las manos detrás de <em>cada corte</em></h2>
+    </div>
+    <div class="equipo">
+      <article class="persona rv"><div class="mono" aria-hidden="true">J</div><h3>Jonathan</h3><div class="rol">Equipo Alemán</div><p>Lo más importante es tu opinión.</p></article>
+      <article class="persona fuerte rv"><div class="mono" aria-hidden="true">E</div><h3>Enrique Alemán</h3><div class="rol">Equipo Alemán</div><p>Lo más importante es tu opinión.</p><p class="cita">“Mi mayor recompensa es ver las sonrisas en el rostro de mis clientes.”</p></article>
+      <article class="persona rv"><div class="mono" aria-hidden="true">E</div><h3>Elihu</h3><div class="rol">Equipo Alemán</div><p>Lo más importante es tu opinión.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="resenas">
+  <div class="wrap">
+    <div class="cabeza rv">
+      <span class="etiqueta">Reseñas</span>
+      <h2>Lo que dicen <em>nuestros clientes</em></h2>
+    </div>
+    <div class="resenas">
+      <article class="resena rv"><p>Excelente barbería. El barbero, Brandon, es un profesional. El lugar es pequeño pero bastante cómodo y fresco. La sala de espera es muy cómoda. La ubicación es ideal para ir a dar el rol en Coyoacán y pasear por sus callecitas.</p><footer>Giorgio B. Wolf</footer></article>
+      <article class="resena rv"><p>Realmente deben acudir a esta barbería, es una de las mejores, el precio es bastante bueno para la zona, sin duda es una de las mejores barberías que conozco.</p><footer>Gabe Zhl</footer></article>
+      <article class="resena rv"><p>Estuve buscando muchos lugares donde pudieran cortarme el cabello completamente a tijera, técnica que ya no es tan común y no todos lo saben hacer. Un gran corte, dedicación y hasta conversación. Quedé completamente satisfecho. Muchas gracias y nos vemos pronto.</p><footer>Ricardo R. Rodríguez</footer></article>
+      <article class="resena rv"><p>Me gustó un buen mi corte, creo es el que más me ha gustado en la vida. A diferencia de otras barberías más caras y más hipster, aquí se trabaja con técnica, pero con mucho estilo. Sin duda vuelvo.</p><footer>José Robledo López</footer></article>
+    </div>
+    <div class="reserva rv">
+      <a class="btn ghost" href="https://g.co/kgs/xqTXbC" target="_blank" rel="noopener">Déjanos tu reseña en Google</a>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="cabeza rv">
+      <span class="etiqueta">Contacto</span>
+      <h2>Ven a <em>visitarnos</em></h2>
+      <p>Estamos en el Parque San Andrés, Coyoacán.</p>
+    </div>
+    <div class="dos">
+      <div class="tarjeta rv">
+        <h3>Horario</h3>
+        <div class="estado" id="estado"><i></i><span>Consultando…</span></div>
+        <ul class="horas" id="horas">
+          <li data-d="1"><span>Lunes</span><span>9:00 – 21:00</span></li>
+          <li data-d="2"><span>Martes</span><span>9:00 – 21:00</span></li>
+          <li data-d="3"><span>Miércoles</span><span>9:00 – 21:00</span></li>
+          <li data-d="4"><span>Jueves</span><span>9:00 – 21:00</span></li>
+          <li data-d="5"><span>Viernes</span><span>9:00 – 21:00</span></li>
+          <li data-d="6"><span>Sábado</span><span>10:00 – 19:00</span></li>
+          <li data-d="0"><span>Domingo</span><span>10:00 – 19:00</span></li>
+        </ul>
+      </div>
+      <div class="tarjeta rv">
+        <h3>Datos</h3>
+        <ul class="datos">
+          <li><span class="k">Dirección</span>Pensylvania esq. Pallares y Portillo, Local 3<br>Parque San Andrés, Coyoacán, 04040 CDMX<br><a href="https://www.google.com/maps/search/?api=1&query=19.3463807,-99.15103" target="_blank" rel="noopener">Cómo llegar</a></li>
+          <li><span class="k">Teléfono</span><a href="tel:+525573348329">55 7334 8329</a></li>
+          <li><span class="k">Correo</span><a href="mailto:citas@barberialeman.com">citas@barberialeman.com</a></li>
+          <li><span class="k">Redes</span><a href="https://www.instagram.com/alemanbarberia/" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/brandon.aleman.5" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mapa rv">
+      <iframe title="Mapa de Barbería Alemán en Coyoacán" src="https://maps.google.com/maps?q=19.3463807,-99.15103&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="wrap rv">
+    <span class="etiqueta">Tu próximo corte</span>
+    <h2>Llega como llegas, <em>sal como nuevo</em></h2>
+    <p>Reserva en línea en menos de un minuto: elige tu servicio, el día y la hora.</p>
+    <a class="btn" href="https://booking.setmore.com/scheduleappointment/d522272c-90d6-4eec-b766-38db0a0a7bb6" target="_blank" rel="noopener">Reservar cita</a>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap pie-in">
+    <a class="marca" href="#inicio" aria-label="Barbería Alemán, volver al inicio">
+      <span class="sello" aria-hidden="true">A</span>
+      <span class="marca-t"><b>ALEMÁN</b><small>BARBERÍA</small></span>
+    </a>
+    <nav aria-label="Pie">
+      <a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#taller">Galería</a><a href="#resenas">Reseñas</a><a href="#contacto">Contacto</a>
+    </nav>
+    <p class="copy">© Barbería Alemán · Versión de muestra diseñada por CyberVision</p>
+  </div>
+</footer>
+
+<a class="wa-f" href="https://wa.me/525573348329?text=%F0%9F%92%88%20%C2%A1Hola!%20Tengo%20una%20duda%20sobre%20Barber%C3%ADa%20Alem%C3%A1n" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp (solo dudas)">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm5.4-7.3c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.4 3.4 14.7 14.7 0 0 0 5.6 4.9c2.1.9 2.9 1 3.9.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<div class="barra-m">
+  <a class="btn" href="https://booking.setmore.com/scheduleappointment/d522272c-90d6-4eec-b766-38db0a0a7bb6" target="_blank" rel="noopener">Reservar cita</a>
+  <a class="btn wa" href="https://wa.me/525573348329?text=%F0%9F%92%88%20%C2%A1Hola!%20Tengo%20una%20duda%20sobre%20Barber%C3%ADa%20Alem%C3%A1n" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp (solo dudas)">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.3zM12 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.5 6.5 2.1 12 2.1c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8zm5.4-7.3c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.4 3.4 14.7 14.7 0 0 0 5.6 4.9c2.1.9 2.9 1 3.9.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.3z"/></svg>
+  </a>
+</div>
+
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <img id="lb-img" alt="">
+  <button class="lb-x" id="lb-x" aria-label="Cerrar">✕</button>
+  <button class="lb-b prev" id="lb-p" aria-label="Anterior">‹</button>
+  <button class="lb-b next" id="lb-n" aria-label="Siguiente">›</button>
+</dialog>
+
+<script>
+document.documentElement.classList.add("js");
+const $ = s => document.querySelector(s);
+
+/* barra superior */
+const nav = $("#nav"), burger = $("#burger");
+const alScroll = () => nav.classList.toggle("solid", window.scrollY > 40);
+alScroll();
+window.addEventListener("scroll", alScroll, {passive:true});
+burger.addEventListener("click", () => {
+  const on = nav.classList.toggle("abierto");
+  burger.setAttribute("aria-expanded", on);
+  burger.setAttribute("aria-label", on ? "Cerrar menú" : "Abrir menú");
+});
+document.querySelectorAll("#links a").forEach(a => a.addEventListener("click", () => {
+  nav.classList.remove("abierto");
+  burger.setAttribute("aria-expanded", "false");
+}));
+
+/* aparición suave */
+const rv = document.querySelectorAll(".rv");
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), {rootMargin:"0px 0px -4% 0px", threshold:0});
+  rv.forEach(el => io.observe(el));
+  /* respaldo: si el navegador no avisó (saltos largos de scroll), revela lo que ya pasó o está a la vista */
+  const revisar = () => rv.forEach(el => {
+    if (!el.classList.contains("in") && el.getBoundingClientRect().top < window.innerHeight * 1.05) el.classList.add("in");
+  });
+  window.addEventListener("scroll", revisar, {passive:true});
+  setTimeout(revisar, 600);
+} else rv.forEach(el => el.classList.add("in"));
+
+/* horario: abierto ahora + día de hoy (hora de Ciudad de México) */
+(function(){
+  const HORARIO = {0:[10,19],1:[9,21],2:[9,21],3:[9,21],4:[9,21],5:[9,21],6:[10,19]};
+  const partes = new Intl.DateTimeFormat("en-US",{timeZone:"America/Mexico_City",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+  const g = t => partes.find(p => p.type === t).value;
+  const dia = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(g("weekday"));
+  const h = (+g("hour") % 24) + (+g("minute")) / 60;
+  const [ab, ci] = HORARIO[dia];
+  const abierto = h >= ab && h < ci;
+  const el = $("#estado");
+  el.classList.add(abierto ? "on" : "off");
+  el.querySelector("span").textContent = abierto ? "Abierto ahora · cierra a las " + ci + ":00" : "Cerrado ahora";
+  const hoy = document.querySelector('#horas li[data-d="' + dia + '"]');
+  if (hoy) hoy.classList.add("hoy");
+})();
+
+/* galería ampliada */
+(function(){
+  const lb = $("#lb"), img = $("#lb-img");
+  const fotos = [...document.querySelectorAll("#galeria button img")];
+  let i = 0;
+  const mostrar = n => { i = (n + fotos.length) % fotos.length; img.src = fotos[i].src; img.alt = fotos[i].alt; };
+  fotos.forEach((f, n) => f.parentElement.addEventListener("click", () => { mostrar(n); lb.showModal(); }));
+  $("#lb-x").addEventListener("click", () => lb.close());
+  $("#lb-p").addEventListener("click", () => mostrar(i - 1));
+  $("#lb-n").addEventListener("click", () => mostrar(i + 1));
+  lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+  lb.addEventListener("keydown", e => {
+    if (e.key === "ArrowLeft") mostrar(i - 1);
+    if (e.key === "ArrowRight") mostrar(i + 1);
+  });
+})();
+</script>
+</body>
+</html>
