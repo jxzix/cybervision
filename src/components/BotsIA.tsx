@@ -39,8 +39,8 @@ export default function BotsIA() {
         "Apoyo en hábitos, dieta, ejercicio o medicina",
         "Ajuste básico a tus necesidades"
       ],
-      setup: "$999 MXN",
-      monthly: "$299 MXN",
+      setup: "$2,997 MXN",
+      monthly: "$897 MXN",
       recommended: false
     },
     {
@@ -53,8 +53,8 @@ export default function BotsIA() {
         "Atención básica a clientes",
         "Adaptación al estilo del negocio"
       ],
-      setup: "$1,999 MXN",
-      monthly: "$599 MXN",
+      setup: "$5,997 MXN",
+      monthly: "$1,797 MXN",
       recommended: true
     },
     {
@@ -67,8 +67,8 @@ export default function BotsIA() {
         "Seguimiento automático a clientes interesados",
         "Configuración estratégica según tu negocio"
       ],
-      setup: "$3,999 MXN",
-      monthly: "$999 MXN",
+      setup: "$11,997 MXN",
+      monthly: "$2,997 MXN",
       recommended: false
     }
   ];
