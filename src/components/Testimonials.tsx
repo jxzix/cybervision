@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Star } from 'lucide-react';
+import { Star, ExternalLink } from 'lucide-react';
 
 export default function Testimonials() {
   return (
@@ -31,7 +31,15 @@ export default function Testimonials() {
               "Estamos increíblemente agradecidos por el trabajo de Cybervision. Gracias a su asistencia, hemos logrado ahorrar tiempo valioso al automatizar nuestras citas y mejorar nuestra presencia en línea. La página web ha atraído la atención de muchos nuevos clientes. Además, su experiencia en posicionamiento digital nos ha ayudado a destacar."
             </p>
             <div className="font-bold text-slate-900 border-t border-slate-100 pt-4">
-              - BARBERÍA ALEMÁN
+              - <a
+                href="https://barberialeman.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-blue-600 transition-colors underline-offset-4 hover:underline"
+              >
+                BARBERÍA ALEMÁN <ExternalLink size={14} aria-hidden="true" />
+                <span className="sr-only">(abre su sitio web)</span>
+              </a>
             </div>
           </motion.div>
 
