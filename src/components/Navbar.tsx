@@ -27,6 +27,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
+          <Link to="/#precios" className="relative text-sm font-medium text-slate-300 hover:text-white transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-blue-400">Precios</Link>
           <Link to="/bots-ia" className="relative text-sm font-medium text-slate-300 hover:text-white transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-blue-400">Bots y Asistentes con IA</Link>
           <motion.a 
             whileHover={{ scale: 1.05 }}
@@ -51,6 +52,7 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 right-0 bg-slate-900 shadow-xl border-t border-slate-800 p-6 flex flex-col gap-4 md:hidden"
           >
+            <Link to="/#precios" onClick={() => setIsMobileMenuOpen(false)} className="text-slate-300 hover:text-white font-medium">Precios</Link>
             <Link to="/bots-ia" onClick={() => setIsMobileMenuOpen(false)} className="text-slate-300 hover:text-white font-medium">Bots y Asistentes con IA</Link>
             <a href="https://wa.me/525572832749?text=Hola%2C%20me%20interesa%20saber%20más%20sobre%20los%20servicios%20de%20CyberVision%20%F0%9F%91%80" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">
               Contactar por WhatsApp

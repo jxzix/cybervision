@@ -4,7 +4,7 @@
  */
 
 import { Suspense, lazy, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 
@@ -12,15 +12,34 @@ const Problem = lazy(() => import('./components/Problem'));
 const Services = lazy(() => import('./components/Services'));
 const Stats = lazy(() => import('./components/Stats'));
 const Integrations = lazy(() => import('./components/Integrations'));
+const Pricing = lazy(() => import('./components/Pricing'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const CTA = lazy(() => import('./components/CTA'));
 const BotsIA = lazy(() => import('./components/BotsIA'));
+const NotFound = lazy(() => import('./components/NotFound'));
 const Footer = lazy(() => import('./components/Footer'));
 
 function Home() {
+  const { hash } = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (!hash) {
+      window.scrollTo(0, 0);
+      return;
+    }
+    // Las secciones se cargan de forma diferida: esperamos a que exista el ancla.
+    let tries = 0;
+    const id = window.setInterval(() => {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.clearInterval(id);
+      } else if (++tries > 40) {
+        window.clearInterval(id);
+      }
+    }, 50);
+    return () => window.clearInterval(id);
+  }, [hash]);
 
   return (
     <main>
@@ -30,6 +49,7 @@ function Home() {
         <Services />
         <Stats />
         <Integrations />
+        <Pricing />
         <Testimonials />
         <CTA />
       </Suspense>
@@ -46,6 +66,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bots-ia" element={<Suspense fallback={null}><BotsIA /></Suspense>} />
+            <Route path="*" element={<Suspense fallback={null}><NotFound /></Suspense>} />
           </Routes>
         </div>
         <Suspense fallback={null}>
