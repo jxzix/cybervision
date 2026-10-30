@@ -90,7 +90,7 @@ const itemVariants = {
 export default function Pricing() {
   return (
     <section id="precios" className="py-24 bg-slate-950 text-white relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[radial-gradient(closest-side,rgba(37,99,235,0.1),transparent)] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div

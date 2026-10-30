@@ -9,8 +9,8 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-950">
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 via-slate-950 to-slate-950"></div>
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[150px]"></div>
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[radial-gradient(closest-side,rgba(37,99,235,0.2),transparent)]"></div>
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(closest-side,rgba(14,165,233,0.1),transparent)]"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -83,7 +83,7 @@ export default function Hero() {
           >
             <div className="relative w-full aspect-square max-w-lg mx-auto">
               {/* Abstract 3D-like representation */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-sky-400/20 rounded-[2rem] transform rotate-3 border border-blue-500/20 backdrop-blur-sm"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-sky-400/20 rounded-[2rem] transform rotate-3 border border-blue-500/20"></div>
               <div className="absolute inset-0 bg-slate-900 rounded-[2rem] transform -rotate-3 border border-slate-800 shadow-2xl overflow-hidden flex flex-col">
                 {/* Browser Mockup Header */}
                 <div className="h-10 bg-slate-950 border-b border-slate-800 flex items-center px-4 gap-2">

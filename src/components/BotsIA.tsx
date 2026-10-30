@@ -97,7 +97,7 @@ export default function BotsIA() {
   return (
     <section id="bots-ia" className="pt-32 pb-24 bg-slate-950 text-white relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[radial-gradient(closest-side,rgba(37,99,235,0.1),transparent)] pointer-events-none"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         
@@ -260,8 +260,8 @@ export default function BotsIA() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-10 md:p-16 relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px] pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[80px] pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(closest-side,rgba(37,99,235,0.1),transparent)] pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[radial-gradient(closest-side,rgba(37,99,235,0.1),transparent)] pointer-events-none"></div>
           
           <div className="relative z-10">
             <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10">

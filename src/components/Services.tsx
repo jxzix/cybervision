@@ -58,8 +58,8 @@ export default function Services() {
   return (
     <section id="servicios" className="py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(closest-side,rgba(37,99,235,0.05),transparent)] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(closest-side,rgba(14,165,233,0.05),transparent)] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 
