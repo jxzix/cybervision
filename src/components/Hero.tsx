@@ -1,6 +1,9 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Globe, Code, Zap } from 'lucide-react';
 
+// Si la página llegó con la portada ya pintada (prerender), no repetimos la animación de entrada.
+const pre = typeof window !== 'undefined' && (window as unknown as { __PRE?: boolean }).__PRE === true;
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-950">
@@ -13,7 +16,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={pre ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-medium text-sm mb-6"
@@ -25,7 +28,7 @@ export default function Hero() {
               Agencia de Diseño y Desarrollo Web
             </motion.div>
             <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
+              initial={pre ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
@@ -35,14 +38,14 @@ export default function Hero() {
               </span>
             </motion.h1>
             <motion.p 
-              initial={{ opacity: 0, y: 30 }}
+              initial={pre ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed">
               Tu negocio ya no puede seguir viéndose improvisado. Hoy tus clientes deciden en segundos si te compran… o se van con alguien que se vea más profesional.
             </motion.p>
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={pre ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4">
@@ -61,7 +64,7 @@ export default function Hero() {
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={pre ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-12 flex flex-wrap items-center gap-6 text-slate-500 text-sm font-medium">
@@ -73,7 +76,7 @@ export default function Hero() {
 
           {/* Hero Visual */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={pre ? false : { opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative hidden lg:block"

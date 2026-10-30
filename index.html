@@ -35,7 +35,16 @@
     </style>
   </head>
   <body>
-    <div id="root"><div id="boot"><img src="/cyb_logo_192.png" alt="" width="44" height="44"><b>CYBERVISION</b><i></i></div></div>
+    <div id="root"><div id="pre"><!--PRERENDER--></div><div id="boot"><img src="/cyb_logo_192.png" alt="" width="44" height="44"><b>CYBERVISION</b><i></i></div></div>
+    <script>
+      (function () {
+        var pre = document.getElementById('pre');
+        var boot = document.getElementById('boot');
+        var home = location.pathname === '/' && pre && pre.children.length > 0;
+        window.__PRE = !!home;
+        (home ? boot : pre).remove();
+      })();
+    </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
