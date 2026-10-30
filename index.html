@@ -1,14 +1,6 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-630147197"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-630147197');
-    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/cyb_logo_192.png" />
     <link rel="apple-touch-icon" href="/cyb_logo_192.png" />
@@ -33,9 +25,31 @@
     <meta name="twitter:title" content="CYBERVISION | Diseño web que impulsa negocios" />
     <meta name="twitter:description" content="Landing pages, páginas con citas, sistemas a la medida y bots con IA." />
     <meta name="twitter:image" content="https://cybervision.com.mx/og-cybervision.jpg" />
+    <style>
+      html,body{background:#020617;margin:0}
+      #boot{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#e2e8f0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+      #boot img{height:44px;width:auto}
+      #boot b{font-size:1.25rem;letter-spacing:.18em}
+      #boot i{display:block;width:120px;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,#3b82f6,transparent);background-size:200% 100%;animation:bootl 1.1s linear infinite}
+      @keyframes bootl{to{background-position:-200% 0}}
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><div id="boot"><img src="/cyb_logo_192.png" alt="" width="44" height="44"><b>CYBERVISION</b><i></i></div></div>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var g = document.createElement('script');
+          g.async = true;
+          g.src = 'https://www.googletagmanager.com/gtag/js?id=AW-630147197';
+          document.head.appendChild(g);
+          gtag('js', new Date());
+          gtag('config', 'AW-630147197');
+        }, 1500);
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
