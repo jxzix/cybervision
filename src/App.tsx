@@ -17,6 +17,7 @@ const Testimonials = lazy(() => import('./components/Testimonials'));
 const CTA = lazy(() => import('./components/CTA'));
 const BotsIA = lazy(() => import('./components/BotsIA'));
 const Privacy = lazy(() => import('./components/Privacy'));
+const CV = lazy(() => import('./components/CV'));
 const NotFound = lazy(() => import('./components/NotFound'));
 const Footer = lazy(() => import('./components/Footer'));
 
@@ -67,6 +68,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/bots-ia" element={<Suspense fallback={null}><BotsIA /></Suspense>} />
+            <Route path="/cv" element={<Suspense fallback={null}><CV /></Suspense>} />
             <Route path="/aviso-de-privacidad" element={<Suspense fallback={null}><Privacy /></Suspense>} />
             <Route path="*" element={<Suspense fallback={null}><NotFound /></Suspense>} />
           </Routes>
