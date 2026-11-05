@@ -1,42 +1,56 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, MessageCircle, Printer } from 'lucide-react';
+import { Linkedin, Mail, MapPin, MessageCircle, Printer } from 'lucide-react';
 
 type Lang = 'es' | 'en';
 
 const WHATSAPP = 'https://wa.me/525572832749';
 const EMAIL = 'josiass318@gmail.com';
+const LINKEDIN = 'https://www.linkedin.com/in/jos%C3%ADas-s%C3%A1nchez-a299b1215/';
 
 const content = {
   es: {
     title: 'Josías Sánchez | Currículum',
-    role: 'Desarrollador Fullstack | Abogado | Legal Tech, Fintech y Comercio Exterior',
+    role: 'Abogado | Desarrollador Fullstack | Legal Tech, Fintech y Comercio Exterior',
     location: 'Ciudad de México',
     back: '← Volver al inicio',
     print: 'Imprimir / PDF',
     sections: {
       profile: 'Perfil profesional',
+      focus: 'Enfoque jurídico',
       experience: 'Experiencia profesional',
-      projects: 'Proyectos propios',
+      legalExp: 'Experiencia jurídica',
+      techExp: 'Experiencia en tecnología',
       education: 'Educación',
+      certs: 'Certificaciones CONOCER',
       skills: 'Habilidades técnicas',
       soft: 'Habilidades blandas',
       languages: 'Idiomas',
     },
     profile:
-      'Desarrollador fullstack y abogado: construyo productos web rápidos y orientados a conversión, y los entiendo desde el lado legal y del negocio. Trabajo con React, TypeScript, PHP y MySQL en SinergiaWeb, donde desarrollo sitios y plataformas para clientes de salud, servicios financieros, turismo y fitness, y lanzo proyectos propios como FiniquitoMX. Mi experiencia previa como abogado litigante (civil, penal, pensiones e inmobiliario) y mi servicio social en Auditoría de Comercio Exterior del SAT me dan criterio analítico, atención al detalle y facilidad para trabajar bajo normativa estricta, un perfil poco común y muy útil en legal tech, fintech y proyectos regulados. Inglés avanzado (B2, TOEFL iBT).',
-    experience: [
+      'Egresado de la Licenciatura en Derecho (en proceso de titulación) con experiencia en litigio civil y penal, asesoría inmobiliaria, gestión de pensiones IMSS (Ley 73 y Ley 97, Modalidad 40) y cumplimiento normativo en comercio exterior, tras mi servicio social en Auditoría de Comercio Exterior del SAT. Complemento mi práctica jurídica con desarrollo fullstack (React, TypeScript, PHP, MySQL), por lo que entiendo contratos, regulación y producto digital en una misma conversación: un perfil muy útil en legal tech, fintech, compliance y despachos que digitalizan su operación. Cuento con certificaciones CONOCER e inglés B2 para atender clientes y documentos en dos idiomas.',
+    focus: [
+      'Derecho civil',
+      'Derecho penal',
+      'Derecho inmobiliario',
+      'Pensiones IMSS (Ley 73 y 97)',
+      'Modalidad 40',
+      'Comercio exterior y aduanas',
+      'Litigio',
+      'Revisión de contratos',
+      'Cumplimiento normativo',
+      'Redacción jurídica',
+      'Atención y captación de clientes',
+    ],
+    legalExperience: [
       {
-        role: 'Desarrollador Web Fullstack',
-        org: 'SinergiaWeb · Ciudad de México',
-        date: '2025 — Presente',
+        role: 'Gestión de Clientes — Pensiones IMSS y Modalidad 40',
+        org: 'Servicio de asesoría en pensiones, en coordinación con abogado especialista · Ciudad de México',
+        date: 'Actualmente',
         points: [
-          'Desarrollo de sitios y plataformas web para clientes de salud, servicios financieros, turismo y fitness.',
-          'Frontend moderno con React, TypeScript, Tailwind CSS y Vite; backend en PHP (Flight) con MySQL.',
-          'Proyectos: LuggageKeeper (migración de versión PHP legacy a React + PHP), Health Forward by C-LART, Fincerta, Distrito Dental, Hipertrofit y portal de clientes SWPES.',
-          'Interfaces funcionales orientadas a conversión y trabajo directo con clientes y equipo.',
+          'Captación, primera consulta y seguimiento de clientes por WhatsApp y Zoom.',
+          'Gestión de casos de pensión IMSS (Ley 73 y Ley 97) y Modalidad 40, en coordinación con el abogado especialista que elabora el estudio con fundamento legal.',
         ],
-        stack: 'React · TypeScript · JavaScript · PHP (Flight) · MySQL · Tailwind CSS · Vite',
       },
       {
         role: 'Servicio Social — Subadministración de Auditoría de Comercio Exterior',
@@ -61,24 +75,26 @@ const content = {
           'Logros: cierre exitoso de casos de litigio y de transacciones inmobiliarias.',
         ],
       },
+    ],
+    techExperience: [
+      {
+        role: 'Desarrollador Web Fullstack',
+        org: 'SinergiaWeb · Ciudad de México',
+        date: '2025 — Presente',
+        points: [
+          'Desarrollo de sitios y plataformas web para clientes de salud, servicios financieros, turismo y fitness, con frontend en React, TypeScript, Tailwind CSS y Vite, y backend en PHP (Flight) con MySQL.',
+          'Proyectos: LuggageKeeper (migración de PHP legacy a React + PHP), Health Forward by C-LART, Fincerta, Distrito Dental, Hipertrofit y portal de clientes SWPES.',
+        ],
+      },
       {
         role: 'Programador Web y Desarrollador',
-        org: 'CyberVision · Ciudad de México',
+        org: 'CyberVision · cybervision.com.mx · Ciudad de México',
         date: '2018 — 2022',
         points: [
-          'Desarrollo de software y aplicaciones web.',
-          'Implementación de medidas básicas de ciberseguridad.',
+          'Desarrollo de software y aplicaciones web, con medidas básicas de ciberseguridad.',
           'Diseño de interfaces de usuario funcionales orientadas a conversión.',
         ],
       },
-    ],
-    projects: [
-      {
-        name: 'FiniquitoMX',
-        url: 'https://calculafiniquito.mx',
-        text: 'Calculadora de finiquitos y liquidaciones para México, basada en la Ley Federal del Trabajo. Une mi formación legal con desarrollo web.',
-      },
-      { name: 'PDFSmash', text: 'Aplicación web para trabajar con archivos PDF.' },
     ],
     education: [
       {
@@ -88,46 +104,65 @@ const content = {
       },
       { title: 'Técnico en Informática', org: 'Instituto Politécnico Nacional (IPN) · Jul 2018 — Jul 2021' },
     ],
-    skills: [
-      ['Desarrollo', 'React, TypeScript, JavaScript, PHP (Flight), MySQL, Tailwind CSS, Vite, Git, ciberseguridad básica.'],
-      ['Legal', 'Derecho civil, penal e inmobiliario, litigio, redacción jurídica, trámites de pensiones, comercio exterior y auditoría.'],
-      ['Negocio', 'Manejo de CRM y marketing digital.'],
+    certs: [
+      ['EC0626', 'Preservación del lugar de los hechos en la investigación de un posible delito'],
+      ['EC0204', 'Ejecución de sesiones de Coaching'],
+      ['EC0381', 'Liderar generacionalmente a una organización'],
     ],
-    soft: ['Negociación y oratoria', 'Creatividad e iniciativa', 'Aprendizaje ágil', 'Liderazgo y trabajo en comité'],
+    certsNote: 'Registro Nacional de Personas con Competencias Certificadas (RENAC), CONOCER. Verificables en conocer.gob.mx.',
+    skills: [
+      ['Legal', 'Derecho civil, penal e inmobiliario, litigio, pensiones IMSS, contratos, redacción jurídica, comercio exterior y auditoría.'],
+      ['Desarrollo', 'React, TypeScript, JavaScript, PHP (Flight), MySQL, Tailwind CSS, Vite, Git, ciberseguridad básica.'],
+      ['Negocio', 'Manejo de CRM, marketing digital y captación de clientes.'],
+    ],
+    soft: ['Negociación y oratoria', 'Atención a clientes', 'Creatividad e iniciativa', 'Aprendizaje ágil', 'Liderazgo y trabajo en comité'],
     languages: [
-      ['Inglés', 'Avanzado (B2) — TOEFL iBT'],
+      ['Inglés', 'B2 — TOEFL ITP, 543 pts (2022)'],
       ['Español', 'Nativo'],
     ],
   },
   en: {
     title: 'Josías Sánchez | Résumé',
-    role: 'Fullstack Developer | Lawyer | Legal Tech, Fintech & Foreign Trade',
+    role: 'Lawyer | Fullstack Developer | Legal Tech, Fintech & Foreign Trade',
     location: 'Mexico City, Mexico',
     back: '← Back to home',
     print: 'Print / PDF',
     sections: {
       profile: 'Professional summary',
+      focus: 'Legal focus',
       experience: 'Professional experience',
-      projects: 'Personal projects',
+      legalExp: 'Legal experience',
+      techExp: 'Technology experience',
       education: 'Education',
+      certs: 'CONOCER certifications',
       skills: 'Technical skills',
       soft: 'Soft skills',
       languages: 'Languages',
     },
     profile:
-      "Fullstack developer and lawyer: I build fast, conversion-focused web products and understand them from the legal and business side. I work with React, TypeScript, PHP and MySQL at SinergiaWeb, where I develop websites and platforms for clients in healthcare, financial services, travel and fitness, and I launch my own projects such as FiniquitoMX. My background as a litigation lawyer (civil, criminal, pensions and real estate) and my social service term in Foreign Trade Audit at Mexico's tax authority (SAT) give me analytical judgment, attention to detail and the ability to work under strict regulation, an uncommon profile that adds value in legal tech, fintech and regulated products. Advanced English (B2, TOEFL iBT).",
-    experience: [
+      "Law graduate (degree pending) with experience in civil and criminal litigation, real estate advisory, IMSS pension management (Law 73 and Law 97, Modalidad 40) and foreign trade regulatory compliance, after my social service term in Foreign Trade Audit at Mexico's tax authority (SAT). I complement my legal practice with fullstack development (React, TypeScript, PHP, MySQL), so I can talk about contracts, regulation and digital product in a single conversation: a profile that adds value in legal tech, fintech, compliance and law firms digitizing their operations. I hold CONOCER certifications and B2 English to serve clients and documents in two languages.",
+    focus: [
+      'Civil law',
+      'Criminal law',
+      'Real estate law',
+      'IMSS pensions (Law 73 and 97)',
+      'Modalidad 40',
+      'Foreign trade and customs',
+      'Litigation',
+      'Contract review',
+      'Regulatory compliance',
+      'Legal writing',
+      'Client service and acquisition',
+    ],
+    legalExperience: [
       {
-        role: 'Fullstack Web Developer',
-        org: 'SinergiaWeb · Mexico City',
-        date: '2025 — Present',
+        role: 'Client Management — IMSS Pensions and Modalidad 40',
+        org: 'Pension advisory service, in coordination with a specialist lawyer · Mexico City',
+        date: 'Current',
         points: [
-          'Development of websites and web platforms for clients in healthcare, financial services, travel and fitness.',
-          'Modern frontend with React, TypeScript, Tailwind CSS and Vite; backend in PHP (Flight) with MySQL.',
-          'Projects: LuggageKeeper (migration from legacy PHP to React + PHP), Health Forward by C-LART, Fincerta, Distrito Dental, Hipertrofit and the SWPES client portal.',
-          'Functional, conversion-oriented interfaces and direct collaboration with clients and team.',
+          'Client acquisition, first consultation and follow-up via WhatsApp and Zoom.',
+          'Management of IMSS pension cases (Law 73 and Law 97) and Modalidad 40, in coordination with the specialist lawyer who prepares the study with its legal basis.',
         ],
-        stack: 'React · TypeScript · JavaScript · PHP (Flight) · MySQL · Tailwind CSS · Vite',
       },
       {
         role: 'Social Service Intern — Foreign Trade Audit Sub-Administration',
@@ -152,24 +187,26 @@ const content = {
           'Achievements: successful closing of litigation cases and real estate transactions.',
         ],
       },
+    ],
+    techExperience: [
+      {
+        role: 'Fullstack Web Developer',
+        org: 'SinergiaWeb · Mexico City',
+        date: '2025 — Present',
+        points: [
+          'Development of websites and web platforms for clients in healthcare, financial services, travel and fitness, with a frontend in React, TypeScript, Tailwind CSS and Vite, and a backend in PHP (Flight) with MySQL.',
+          'Projects: LuggageKeeper (migration from legacy PHP to React + PHP), Health Forward by C-LART, Fincerta, Distrito Dental, Hipertrofit and the SWPES client portal.',
+        ],
+      },
       {
         role: 'Web Programmer & Developer',
-        org: 'CyberVision · Mexico City',
+        org: 'CyberVision · cybervision.com.mx · Mexico City',
         date: '2018 — 2022',
         points: [
-          'Software and web application development.',
-          'Implementation of basic cybersecurity measures.',
+          'Software and web application development, with basic cybersecurity measures.',
           'Design of functional, conversion-oriented user interfaces.',
         ],
       },
-    ],
-    projects: [
-      {
-        name: 'FiniquitoMX',
-        url: 'https://calculafiniquito.mx',
-        text: 'Severance and settlement calculator for Mexico, based on the Federal Labor Law. Combines my legal background with web development.',
-      },
-      { name: 'PDFSmash', text: 'Web application for working with PDF files.' },
     ],
     education: [
       {
@@ -182,14 +219,20 @@ const content = {
         org: 'Instituto Politécnico Nacional (IPN) · Jul 2018 — Jul 2021',
       },
     ],
-    skills: [
-      ['Development', 'React, TypeScript, JavaScript, PHP (Flight), MySQL, Tailwind CSS, Vite, Git, basic cybersecurity.'],
-      ['Legal', 'Civil, criminal and real estate law, litigation, legal writing, pension procedures, foreign trade and auditing.'],
-      ['Business', 'CRM management and digital marketing.'],
+    certs: [
+      ['EC0626', 'Preservation of the crime scene in the investigation of a possible offense'],
+      ['EC0204', 'Delivery of coaching sessions'],
+      ['EC0381', 'Leading an organization across generations'],
     ],
-    soft: ['Negotiation and public speaking', 'Creativity and initiative', 'Fast learner', 'Leadership and committee work'],
+    certsNote: "National Registry of Persons with Certified Competencies (RENAC), CONOCER. Verifiable at conocer.gob.mx.",
+    skills: [
+      ['Legal', 'Civil, criminal and real estate law, litigation, IMSS pensions, contracts, legal writing, foreign trade and auditing.'],
+      ['Development', 'React, TypeScript, JavaScript, PHP (Flight), MySQL, Tailwind CSS, Vite, Git, basic cybersecurity.'],
+      ['Business', 'CRM management, digital marketing and client acquisition.'],
+    ],
+    soft: ['Negotiation and public speaking', 'Client service', 'Creativity and initiative', 'Fast learner', 'Leadership and committee work'],
     languages: [
-      ['English', 'Advanced (B2) — TOEFL iBT'],
+      ['English', 'B2 — TOEFL ITP, 543 pts (2022)'],
       ['Spanish', 'Native'],
     ],
   },
@@ -213,6 +256,32 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
       <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400 mb-5">{title}</h2>
       {children}
     </section>
+  );
+}
+
+type Job = {
+  role: string;
+  org: string;
+  date: string;
+  points: readonly string[];
+};
+
+function Jobs({ jobs }: { jobs: readonly Job[] }) {
+  return (
+    <div className="space-y-8">
+      {jobs.map((job) => (
+        <div key={job.role + job.date}>
+          <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+            <h3 className="text-lg font-bold text-white">{job.role}</h3>
+            <span className="text-sm text-slate-500 font-medium">{job.date}</span>
+          </div>
+          <p className="text-sm text-blue-300 mb-3">{job.org}</p>
+          <ul className="list-disc pl-5 space-y-1.5 text-sm leading-relaxed marker:text-slate-600">
+            {job.points.map((p) => <li key={p}>{p}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -281,6 +350,7 @@ export default function CV() {
             <span className="inline-flex items-center gap-2"><MapPin size={14} className="text-blue-500" /> {t.location}</span>
             <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-2 hover:text-white"><Mail size={14} className="text-blue-500" /> {EMAIL}</a>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white"><MessageCircle size={14} className="text-blue-500" /> +52 55 7283 2749 (WhatsApp)</a>
+            <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-white"><Linkedin size={14} className="text-blue-500" /> LinkedIn</a>
           </div>
         </header>
 
@@ -289,54 +359,46 @@ export default function CV() {
             <p className="leading-relaxed">{t.profile}</p>
           </Section>
 
+          <Section title={t.sections.focus}>
+            <div className="flex flex-wrap gap-2">
+              {t.focus.map((f) => (
+                <span key={f} className="text-sm border border-slate-700 rounded-full px-3 py-1">{f}</span>
+              ))}
+            </div>
+          </Section>
+
           <Section title={t.sections.experience}>
-            <div className="space-y-8">
-              {t.experience.map((job) => (
-                <div key={job.role + job.date}>
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                    <h3 className="text-lg font-bold text-white">{job.role}</h3>
-                    <span className="text-sm text-slate-500 font-medium">{job.date}</span>
-                  </div>
-                  <p className="text-sm text-blue-300 mb-3">{job.org}</p>
-                  <ul className="list-disc pl-5 space-y-1.5 text-sm leading-relaxed marker:text-slate-600">
-                    {job.points.map((p) => <li key={p}>{p}</li>)}
-                  </ul>
-                  {'stack' in job && job.stack && <p className="mt-3 text-xs text-slate-500">Stack: {job.stack}</p>}
-                </div>
-              ))}
-            </div>
+            <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-sky-300 mb-4">{t.sections.legalExp}</h3>
+            <Jobs jobs={t.legalExperience} />
+            <h3 className="text-xs font-bold uppercase tracking-[0.15em] text-sky-300 mt-10 mb-4">{t.sections.techExp}</h3>
+            <Jobs jobs={t.techExperience} />
           </Section>
 
-          <Section title={t.sections.projects}>
-            <div className="space-y-4">
-              {t.projects.map((p) => (
-                <div key={p.name}>
-                  <h3 className="font-bold text-white">
-                    {'url' in p && p.url ? (
-                      <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">{p.name} ↗</a>
-                    ) : p.name}
-                  </h3>
-                  <p className="text-sm leading-relaxed">{p.text}</p>
-                </div>
-              ))}
-            </div>
-          </Section>
-
-          <Section title={t.sections.education}>
-            <div className="space-y-5">
-              {t.education.map((e) => (
-                <div key={e.title}>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h3 className="font-bold text-white">{e.title}</h3>
-                    {'badge' in e && e.badge && (
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-sky-300 border border-sky-400/30 rounded-full px-2.5 py-0.5">{e.badge}</span>
-                    )}
+          <div className="grid md:grid-cols-2 gap-6">
+            <Section title={t.sections.education}>
+              <div className="space-y-5">
+                {t.education.map((e) => (
+                  <div key={e.title}>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h3 className="font-bold text-white">{e.title}</h3>
+                      {'badge' in e && e.badge && (
+                        <span className="text-[11px] font-semibold uppercase tracking-wider text-sky-300 border border-sky-400/30 rounded-full px-2.5 py-0.5">{e.badge}</span>
+                      )}
+                    </div>
+                    <p className="text-sm text-slate-400">{e.org}</p>
                   </div>
-                  <p className="text-sm text-slate-400">{e.org}</p>
-                </div>
-              ))}
-            </div>
-          </Section>
+                ))}
+              </div>
+            </Section>
+            <Section title={t.sections.certs}>
+              <ul className="space-y-3 text-sm leading-relaxed">
+                {t.certs.map(([code, name]) => (
+                  <li key={code}><span className="font-bold text-white">{code}</span> · {name}</li>
+                ))}
+              </ul>
+              <p className="mt-4 text-xs text-slate-500">{t.certsNote}</p>
+            </Section>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             <Section title={t.sections.skills}>
