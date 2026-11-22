@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useLang } from '../i18n';
+
+const text = {
+  es: { rights: 'Todos los derechos reservados.', privacy: 'Aviso de privacidad' },
+  en: { rights: 'All rights reserved.', privacy: 'Privacy notice (Spanish)' },
+} as const;
 
 export default function Footer() {
+  const { lang } = useLang();
+  const t = text[lang];
   return (
     <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
       <div className="container mx-auto px-6">
@@ -13,12 +21,12 @@ export default function Footer() {
           </div>
 
           <div className="text-sm text-center">
-            © {new Date().getFullYear()} CyberVision. Todos los derechos reservados.
+            © {new Date().getFullYear()} CyberVision. {t.rights}
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <a href="mailto:cybvisinfo@gmail.com" className="hover:text-white transition-colors">cybvisinfo@gmail.com</a>
-            <Link to="/aviso-de-privacidad" className="hover:text-white transition-colors">Aviso de privacidad</Link>
+            <Link to="/aviso-de-privacidad" className="hover:text-white transition-colors">{t.privacy}</Link>
           </div>
         </div>
       </div>

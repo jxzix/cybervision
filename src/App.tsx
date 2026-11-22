@@ -7,6 +7,18 @@ import { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import { useLang } from './i18n';
+
+const homeMeta = {
+  es: {
+    title: 'CYBERVISION | Diseño web que impulsa negocios',
+    description: 'Diseño web para negocios en México: landing pages, páginas con citas, sistemas a la medida y bots con IA. Cotiza tu proyecto con CyberVision.',
+  },
+  en: {
+    title: 'CYBERVISION | Web design that grows businesses',
+    description: 'Web design for businesses in Mexico: landing pages, booking websites, custom systems and AI bots. Get a quote from CyberVision.',
+  },
+} as const;
 
 const Problem = lazy(() => import('./components/Problem'));
 const Services = lazy(() => import('./components/Services'));
@@ -23,6 +35,12 @@ const Footer = lazy(() => import('./components/Footer'));
 
 function Home() {
   const { hash } = useLocation();
+  const { lang } = useLang();
+
+  useEffect(() => {
+    document.title = homeMeta[lang].title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', homeMeta[lang].description);
+  }, [lang]);
 
   useEffect(() => {
     if (!hash) {

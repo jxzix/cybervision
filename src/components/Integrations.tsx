@@ -1,12 +1,20 @@
 import { motion } from 'motion/react';
+import { useLang } from '../i18n';
+
+const text = {
+  es: { h1: 'Integramos tu negocio con ', h2: 'las principales aplicaciones', more: 'Y Más...' },
+  en: { h1: 'We connect your business with ', h2: 'the leading apps', more: 'And more...' },
+} as const;
 
 export default function Integrations() {
+  const { lang } = useLang();
+  const t = text[lang];
   return (
     <section className="py-24 bg-slate-900 overflow-hidden">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-16">
-          Integramos tu negocio con <br/>
-          <span className="text-blue-400">las principales aplicaciones</span>
+          {t.h1}<br/>
+          <span className="text-blue-400">{t.h2}</span>
         </h2>
         
         {/* Simple integration icons representation */}
@@ -34,7 +42,7 @@ export default function Integrations() {
         </div>
         
         <div className="mt-16 text-2xl font-bold text-slate-400">
-          Y Más...
+          {t.more}
         </div>
       </div>
     </section>

@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useLang } from '../i18n';
 
 const EMAIL = 'cybvisinfo@gmail.com';
 
 export default function Privacy() {
+  const { lang } = useLang();
   useEffect(() => {
     const previous = document.title;
     document.title = 'Aviso de privacidad | CYBERVISION';
@@ -19,6 +21,11 @@ export default function Privacy() {
         <Link to="/" className="text-sm text-blue-400 hover:text-blue-300">← Volver al inicio</Link>
         <h1 className="text-3xl md:text-5xl font-bold text-white mt-6 mb-2">Aviso de privacidad</h1>
         <p className="text-slate-500 mb-10">Última actualización: 28 de octubre de 2026</p>
+        {lang === 'en' && (
+          <p className="mb-10 rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-sm text-slate-400">
+            This privacy notice is published in Spanish, as required for Mexican data protection law. For an English summary or to exercise your rights, write to <a href={`mailto:${EMAIL}`} className="text-blue-400 hover:text-blue-300">{EMAIL}</a>.
+          </p>
+        )}
 
         <div className="space-y-8 leading-relaxed">
           <div>

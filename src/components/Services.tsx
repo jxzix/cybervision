@@ -1,43 +1,53 @@
 import { motion } from 'motion/react';
 import { Layout, Database, Users, Settings, Bot, Cpu, Smartphone } from 'lucide-react';
+import { useLang } from '../i18n';
 
-const services = [
-  {
-    icon: <Layout size={24} />,
-    title: "Landing pages que convierten",
-    description: "Diseños enfocados en guiar al usuario hacia la acción, maximizando tus ventas y leads."
-  },
-  {
-    icon: <Cpu size={24} />,
-    title: "Sistemas web",
-    description: "Desarrollo de plataformas a medida dentro de tu sitio para gestionar tu negocio."
-  },
-  {
-    icon: <Users size={24} />,
-    title: "Login y registro",
-    description: "Áreas privadas para tus clientes, membresías y gestión de usuarios segura."
-  },
-  {
-    icon: <Database size={24} />,
-    title: "Bases de datos",
-    description: "Almacenamiento y gestión estructurada de la información vital de tu empresa."
-  },
-  {
-    icon: <Settings size={24} />,
-    title: "Funciones personalizadas",
-    description: "Desarrollamos exactamente lo que tu modelo de negocio necesita para operar online."
-  },
-  {
-    icon: <Smartphone size={24} />,
-    title: "Automatizaciones",
-    description: "Conectamos tus herramientas para que trabajen solas, ahorrándote horas de trabajo."
-  },
-  {
-    icon: <Bot size={24} />,
-    title: "Integración de IA",
-    description: "Chatbots de atención, asistentes de ventas y optimización de procesos con Inteligencia Artificial."
-  }
+const icons = [
+  <Layout size={24} />,
+  <Cpu size={24} />,
+  <Users size={24} />,
+  <Database size={24} />,
+  <Settings size={24} />,
+  <Smartphone size={24} />,
+  <Bot size={24} />,
 ];
+
+const text = {
+  es: {
+    h1: 'Soluciones digitales para ',
+    h2: 'escalar tu negocio',
+    p: 'En CyberVision creamos páginas web modernas, atractivas y funcionales, pensadas para ayudarte a vender más, dar confianza y llevar tu negocio a otro nivel.',
+    items: [
+      ['Landing pages que convierten', 'Diseños enfocados en guiar al usuario hacia la acción, maximizando tus ventas y leads.'],
+      ['Sistemas web', 'Desarrollo de plataformas a medida dentro de tu sitio para gestionar tu negocio.'],
+      ['Login y registro', 'Áreas privadas para tus clientes, membresías y gestión de usuarios segura.'],
+      ['Bases de datos', 'Almacenamiento y gestión estructurada de la información vital de tu empresa.'],
+      ['Funciones personalizadas', 'Desarrollamos exactamente lo que tu modelo de negocio necesita para operar online.'],
+      ['Automatizaciones', 'Conectamos tus herramientas para que trabajen solas, ahorrándote horas de trabajo.'],
+      ['Integración de IA', 'Chatbots de atención, asistentes de ventas y optimización de procesos con Inteligencia Artificial.'],
+    ],
+    ctaTitle: '¿Necesitas algo específico?',
+    ctaText: 'Cuéntanos tu idea y nosotros la desarrollamos. Creamos tecnología a la medida de tus objetivos.',
+    ctaBtn: 'Hablar con un experto',
+  },
+  en: {
+    h1: 'Digital solutions to ',
+    h2: 'scale your business',
+    p: 'At CyberVision we build modern, attractive and functional websites designed to help you sell more, build trust and take your business to the next level.',
+    items: [
+      ['Landing pages that convert', 'Designs focused on guiding users to take action, maximizing your sales and leads.'],
+      ['Web systems', 'Custom platforms built into your site to manage your business.'],
+      ['Login and sign-up', 'Private areas for your customers, memberships and secure user management.'],
+      ['Databases', "Structured storage and management of your company's vital information."],
+      ['Custom features', 'We build exactly what your business model needs to operate online.'],
+      ['Automations', 'We connect your tools so they work on their own, saving you hours of work.'],
+      ['AI integration', 'Support chatbots, sales assistants and process optimization with Artificial Intelligence.'],
+    ],
+    ctaTitle: 'Need something specific?',
+    ctaText: 'Tell us your idea and we will build it. We create technology tailored to your goals.',
+    ctaBtn: 'Talk to an expert',
+  },
+} as const;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -55,6 +65,8 @@ const itemVariants = {
 };
 
 export default function Services() {
+  const { lang, wa, waHello } = useLang();
+  const t = text[lang];
   return (
     <section id="servicios" className="py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Background elements */}
@@ -70,10 +82,10 @@ export default function Services() {
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Soluciones digitales para <span className="text-blue-400">escalar tu negocio</span>
+            {t.h1}<span className="text-blue-400">{t.h2}</span>
           </h2>
           <p className="text-slate-400 text-lg">
-            En CyberVision creamos páginas web modernas, atractivas y funcionales, pensadas para ayudarte a vender más, dar confianza y llevar tu negocio a otro nivel.
+            {t.p}
           </p>
         </motion.div>
 
@@ -84,7 +96,7 @@ export default function Services() {
           variants={containerVariants}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {services.map((service, index) => (
+          {t.items.map(([title, description], index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -92,11 +104,11 @@ export default function Services() {
               className="bg-slate-800/50 border border-slate-700/50 p-8 rounded-2xl hover:bg-slate-800 transition-all group"
             >
               <div className="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
-                {service.icon}
+                {icons[index]}
               </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <h3 className="text-xl font-bold mb-3">{title}</h3>
               <p className="text-slate-400 leading-relaxed">
-                {service.description}
+                {description}
               </p>
             </motion.div>
           ))}
@@ -110,15 +122,15 @@ export default function Services() {
             <div className="absolute right-0 bottom-0 opacity-10 transform translate-x-1/4 translate-y-1/4">
               <Bot size={200} />
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 relative z-10">¿Necesitas algo específico?</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 relative z-10">{t.ctaTitle}</h3>
             <p className="text-blue-100 mb-8 max-w-md relative z-10">
-              Cuéntanos tu idea y nosotros la desarrollamos. Creamos tecnología a la medida de tus objetivos.
+              {t.ctaText}
             </p>
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="https://wa.me/525572832749?text=Hola%2C%20me%20interesa%20saber%20más%20sobre%20los%20servicios%20de%20CyberVision%20%F0%9F%91%80" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-slate-50 transition-colors relative z-10">
-              Hablar con un experto
+              href={wa(waHello)} target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-slate-50 transition-colors relative z-10">
+              {t.ctaBtn}
             </motion.a>
           </motion.div>
         </motion.div>

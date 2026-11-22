@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useLang } from '../i18n';
+
+const text = {
+  es: { title: 'Página no encontrada | CYBERVISION', back: 'Volver al inicio', h1: 'Uy, esa dirección ', h2: 'no existe', p: 'Pero relájate un rato. Cuando quieras volver, oprime el logo.', corner: '¡Esquina perfecta!' },
+  en: { title: 'Page not found | CYBERVISION', back: 'Back to home', h1: "Oops, that address ", h2: "doesn't exist", p: 'But relax for a bit. When you want to go back, press the logo.', corner: 'Perfect corner!' },
+} as const;
 
 const LOGO_W = 96;
 const LOGO_H = 96;
@@ -8,6 +14,8 @@ const HUES = [210, 150, 40, 330, 270, 180, 20];
 const TOP = 80; // deja libre la barra de navegación
 
 export default function NotFound() {
+  const { lang } = useLang();
+  const t = text[lang];
   const navigate = useNavigate();
   const areaRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLButtonElement>(null);
@@ -15,7 +23,7 @@ export default function NotFound() {
   const [corners, setCorners] = useState(0);
 
   useEffect(() => {
-    document.title = 'Página no encontrada | CYBERVISION';
+    document.title = t.title;
     const meta = document.createElement('meta');
     meta.name = 'robots';
     meta.content = 'noindex';
@@ -23,7 +31,7 @@ export default function NotFound() {
     return () => {
       document.head.removeChild(meta);
     };
-  }, []);
+  }, [t.title]);
 
   useEffect(() => {
     const area = areaRef.current;
@@ -98,8 +106,8 @@ export default function NotFound() {
         ref={logoRef}
         type="button"
         onClick={() => navigate('/')}
-        aria-label="Volver al inicio"
-        title="Volver al inicio"
+        aria-label={t.back}
+        title={t.back}
         className="absolute top-0 left-0 z-20 cursor-pointer will-change-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-2xl p-2 transition-colors duration-200"
         style={{
           width: LOGO_W,
@@ -121,14 +129,14 @@ export default function NotFound() {
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6 pointer-events-none">
         <div className="text-7xl md:text-9xl font-black tracking-tighter text-white/10 select-none">404</div>
         <h1 className="text-3xl md:text-5xl font-bold mt-2">
-          Uy, esa dirección <span className="text-blue-400">no existe</span>
+          {t.h1}<span className="text-blue-400">{t.h2}</span>
         </h1>
         <p className="text-slate-400 text-lg mt-4 max-w-md">
-          Pero relájate un rato. Cuando quieras volver, oprime el logo.
+          {t.p}
         </p>
         {corners > 0 && (
           <p className="text-blue-300 text-sm font-semibold mt-4">
-            ¡Esquina perfecta! x{corners} 🎯
+            {t.corner} x{corners} 🎯
           </p>
         )}
       </div>
@@ -137,7 +145,7 @@ export default function NotFound() {
         to="/"
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-sm text-slate-400 hover:text-white underline underline-offset-4"
       >
-        Volver al inicio
+        {t.back}
       </Link>
     </div>
   );

@@ -1,10 +1,38 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Globe, Code, Zap } from 'lucide-react';
+import { useLang } from '../i18n';
+
+const text = {
+  es: {
+    badge: 'Agencia de Diseño y Desarrollo Web',
+    l1: 'Diseño web que ',
+    l2: 'sí impulsa negocios',
+    p: 'Tu negocio ya no puede seguir viéndose improvisado. Hoy tus clientes deciden en segundos si te compran… o se van con alguien que se vea más profesional.',
+    cta1: 'Cotiza tu proyecto',
+    cta2: 'Ver soluciones',
+    c1: 'Presencia 24/7',
+    c2: 'Alta Conversión',
+    c3: 'Tecnología Moderna',
+  },
+  en: {
+    badge: 'Web Design & Development Agency',
+    l1: 'Web design that ',
+    l2: 'truly grows businesses',
+    p: 'Your business can no longer afford to look improvised. Today your customers decide in seconds whether to buy from you… or go with someone who looks more professional.',
+    cta1: 'Get a quote',
+    cta2: 'See solutions',
+    c1: 'Online 24/7',
+    c2: 'High Conversion',
+    c3: 'Modern Technology',
+  },
+} as const;
 
 // Si la página llegó con la portada ya pintada (prerender), no repetimos la animación de entrada.
 const pre = typeof window !== 'undefined' && (window as unknown as { __PRE?: boolean }).__PRE === true;
 
 export default function Hero() {
+  const { lang, wa, waHello } = useLang();
+  const t = text[lang];
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-950">
       {/* Background Gradients */}
@@ -25,16 +53,16 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              Agencia de Diseño y Desarrollo Web
+              {t.badge}
             </motion.div>
             <motion.h1 
               initial={pre ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
-              Diseño web que <br/>
+              {t.l1}<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-300">
-                sí impulsa negocios
+                {t.l2}
               </span>
             </motion.h1>
             <motion.p 
@@ -42,7 +70,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed">
-              Tu negocio ya no puede seguir viéndose improvisado. Hoy tus clientes deciden en segundos si te compran… o se van con alguien que se vea más profesional.
+              {t.p}
             </motion.p>
             <motion.div 
               initial={pre ? false : { opacity: 0, y: 30 }}
@@ -52,14 +80,14 @@ export default function Hero() {
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://wa.me/525572832749?text=Hola%2C%20me%20interesa%20saber%20más%20sobre%20los%20servicios%20de%20CyberVision%20%F0%9F%91%80" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
-                Cotiza tu proyecto <ArrowRight size={20} />
+                href={wa(waHello)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)]">
+                {t.cta1} <ArrowRight size={20} />
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="#servicios" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all border border-slate-700">
-                Ver soluciones
+                {t.cta2}
               </motion.a>
             </motion.div>
             
@@ -68,9 +96,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="mt-12 flex flex-wrap items-center gap-6 text-slate-500 text-sm font-medium">
-              <div className="flex items-center gap-2"><Globe size={16} className="text-blue-500"/> Presencia 24/7</div>
-              <div className="flex items-center gap-2"><Zap size={16} className="text-blue-500"/> Alta Conversión</div>
-              <div className="flex items-center gap-2"><Code size={16} className="text-blue-500"/> Tecnología Moderna</div>
+              <div className="flex items-center gap-2"><Globe size={16} className="text-blue-500"/> {t.c1}</div>
+              <div className="flex items-center gap-2"><Zap size={16} className="text-blue-500"/> {t.c2}</div>
+              <div className="flex items-center gap-2"><Code size={16} className="text-blue-500"/> {t.c3}</div>
             </motion.div>
           </div>
 

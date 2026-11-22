@@ -2,8 +2,35 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { useLang } from '../i18n';
+
+const text = {
+  es: { prices: 'Precios', bots: 'Bots y Asistentes con IA', contact: 'Contactar', contactWa: 'Contactar por WhatsApp', open: 'Abrir menú', close: 'Cerrar menú' },
+  en: { prices: 'Pricing', bots: 'AI Bots & Assistants', contact: 'Contact', contactWa: 'Contact us on WhatsApp', open: 'Open menu', close: 'Close menu' },
+} as const;
+
+function LangToggle() {
+  const { lang, setLang } = useLang();
+  return (
+    <div role="group" aria-label="Idioma / Language" className="inline-flex rounded-full border border-slate-700 p-0.5 text-xs font-bold">
+      {(['es', 'en'] as const).map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => setLang(l)}
+          aria-pressed={lang === l}
+          className={`px-3 py-1 rounded-full transition-colors ${lang === l ? 'bg-blue-600 text-white' : 'text-slate-400 hover:text-white'}`}
+        >
+          {l.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  );
+}
 
 export default function Navbar() {
+  const { lang, waHello, wa } = useLang();
+  const t = text[lang];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -27,20 +54,24 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link to="/#precios" className="relative text-sm font-medium text-slate-300 hover:text-white transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-blue-400">Precios</Link>
-          <Link to="/bots-ia" className="relative text-sm font-medium text-slate-300 hover:text-white transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-blue-400">Bots y Asistentes con IA</Link>
+          <Link to="/#precios" className="relative text-sm font-medium text-slate-300 hover:text-white transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-blue-400">{t.prices}</Link>
+          <Link to="/bots-ia" className="relative text-sm font-medium text-slate-300 hover:text-white transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300 after:bg-blue-400">{t.bots}</Link>
+          <LangToggle />
           <motion.a 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="https://wa.me/525572832749?text=Hola%2C%20me%20interesa%20saber%20más%20sobre%20los%20servicios%20de%20CyberVision%20%F0%9F%91%80" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)]">
-            Contactar
+            href={wa(waHello)} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)]">
+            {t.contact}
           </motion.a>
         </nav>
 
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-blue-500" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* Mobile: idioma + menú */}
+        <div className="md:hidden flex items-center gap-3">
+          <LangToggle />
+          <button className="text-blue-500" aria-label={isMobileMenuOpen ? t.close : t.open} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -52,10 +83,10 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 right-0 bg-slate-900 shadow-xl border-t border-slate-800 p-6 flex flex-col gap-4 md:hidden"
           >
-            <Link to="/#precios" onClick={() => setIsMobileMenuOpen(false)} className="text-slate-300 hover:text-white font-medium">Precios</Link>
-            <Link to="/bots-ia" onClick={() => setIsMobileMenuOpen(false)} className="text-slate-300 hover:text-white font-medium">Bots y Asistentes con IA</Link>
-            <a href="https://wa.me/525572832749?text=Hola%2C%20me%20interesa%20saber%20más%20sobre%20los%20servicios%20de%20CyberVision%20%F0%9F%91%80" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">
-              Contactar por WhatsApp
+            <Link to="/#precios" onClick={() => setIsMobileMenuOpen(false)} className="text-slate-300 hover:text-white font-medium">{t.prices}</Link>
+            <Link to="/bots-ia" onClick={() => setIsMobileMenuOpen(false)} className="text-slate-300 hover:text-white font-medium">{t.bots}</Link>
+            <a href={wa(waHello)} target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">
+              {t.contactWa}
             </a>
           </motion.div>
         )}

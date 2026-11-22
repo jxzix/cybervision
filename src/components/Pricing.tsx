@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { motion } from 'motion/react';
 import { Check, Coffee, CalendarCheck, LayoutDashboard, Sparkles } from 'lucide-react';
+import { useLang } from '../i18n';
 
 const wa = (msg: string) =>
   `https://wa.me/525572832749?text=${encodeURIComponent(msg)}`;
@@ -19,7 +20,7 @@ type Plan = {
   popular?: boolean;
 };
 
-const plans: Plan[] = [
+const plansEs: Plan[] = [
   {
     icon: <Coffee size={24} />,
     name: 'Landing Page',
@@ -77,6 +78,95 @@ const plans: Plan[] = [
   },
 ];
 
+const plansEn: Plan[] = [
+  {
+    icon: <Coffee size={24} />,
+    name: 'Landing Page',
+    tagline: 'Your business on Google, with your menu and your photos.',
+    examples: 'Cafés, restaurants, shops, services and more.',
+    price: '$7,500',
+    priceNote: 'From · one-time payment',
+    features: [
+      'Custom design with your colors and brand',
+      'Digital menu or catalog with search',
+      'QR code ready to print for your tables',
+      'Direct buttons to WhatsApp, map and social media',
+      'Optimized for mobile and to show up on Google',
+    ],
+    cta: 'I want my landing page',
+    message: "Hello, I'm interested in CyberVision's Landing Page plan (from $7,500 MXN) 👀",
+  },
+  {
+    icon: <CalendarCheck size={24} />,
+    name: 'Booking Website',
+    tagline: 'Your clients book on their own, you just serve them.',
+    examples: 'Barbershops, clinics, dentists, lashes, salons and more.',
+    price: '$13,500',
+    priceNote: 'One-time payment',
+    features: [
+      'Everything in the Landing Page plan',
+      'Scheduling connected to Setmore: appointments in the palm of your hand',
+      'Your clients book 24/7 from their phone',
+      'Manage your calendar from Setmore',
+      'Ideal to stop scheduling through messages',
+    ],
+    extra: 'Prefer your own booking system, without depending on Setmore? It can be added as an extra one-time payment (quoted separately).',
+    cta: 'I want online booking',
+    message: "Hello, I'm interested in CyberVision's Booking Website plan ($13,500 MXN) 👀",
+    popular: true,
+  },
+  {
+    icon: <LayoutDashboard size={24} />,
+    name: 'Custom System',
+    tagline: 'Run your whole business from one place.',
+    examples: 'Businesses with a team, inventory or their own processes.',
+    price: 'Custom quote',
+    priceNote: 'One-time payment depending on scope',
+    features: [
+      'Full admin panel',
+      'Employee records and management',
+      'Merchandise and inventory',
+      'Users with login, sign-up and permissions',
+      'Database, reports and automations',
+      'Book a call to get a quote, integrations and AI depending on your case',
+    ],
+    extra: 'You can also add your own booking system, without depending on Setmore, as an extra one-time payment.',
+    cta: 'Book a call for a quote',
+    message: "Hello, I'd like to book a call to get a quote for a Custom System with CyberVision 👀",
+  },
+];
+
+const text = {
+  es: {
+    tag: 'Precios',
+    h1: 'Planes claros, ',
+    h2: 'sin letras chiquitas',
+    p: 'Pagas el desarrollo una sola vez y eliges cómo quieres mantener tu sitio en línea. Precios en pesos mexicanos (MXN).',
+    popular: 'Más elegido',
+    monthlyTitle: 'Después, elige cómo mantener tu sitio',
+    monthlyIntro: 'Aplica a los tres planes. Eliges una de las dos opciones mensuales.',
+    opt1: 'Opción 1', opt1Title: 'Hosting y seguridad', month: ' / mes',
+    opt1Text: 'Tu sitio siempre en línea, rápido y protegido. Ideal si tu página ya quedó como la quieres.',
+    opt2: 'Opción 2', opt2Title: 'Hosting + desarrollo continuo',
+    opt2Text: 'Incluye el hosting y la seguridad, y además agregamos las mejoras que vayas pidiendo con el tiempo, sin cargos extra.',
+    note: 'El desarrollo continuo cubre mejoras y ajustes sobre tu sitio. Los cambios grandes que reconstruyan todo el sistema se cotizan por separado.',
+  },
+  en: {
+    tag: 'Pricing',
+    h1: 'Clear plans, ',
+    h2: 'no fine print',
+    p: 'You pay for development once and choose how to keep your site online. Prices in Mexican pesos (MXN).',
+    popular: 'Most popular',
+    monthlyTitle: 'Then, choose how to maintain your site',
+    monthlyIntro: 'Applies to all three plans. You choose one of the two monthly options.',
+    opt1: 'Option 1', opt1Title: 'Hosting and security', month: ' / month',
+    opt1Text: 'Your site always online, fast and protected. Ideal if your website already looks the way you want.',
+    opt2: 'Option 2', opt2Title: 'Hosting + ongoing development',
+    opt2Text: 'Includes hosting and security, and we also add the improvements you request over time, at no extra charge.',
+    note: 'Ongoing development covers improvements and adjustments to your site. Major changes that rebuild the whole system are quoted separately.',
+  },
+} as const;
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
@@ -88,6 +178,9 @@ const itemVariants = {
 };
 
 export default function Pricing() {
+  const { lang } = useLang();
+  const t = text[lang];
+  const plans = lang === 'es' ? plansEs : plansEn;
   return (
     <section id="precios" className="py-24 bg-slate-950 text-white relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-[radial-gradient(closest-side,rgba(37,99,235,0.1),transparent)] pointer-events-none"></div>
@@ -100,12 +193,12 @@ export default function Pricing() {
           variants={itemVariants}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-blue-400 font-bold tracking-wider uppercase text-sm">Precios</span>
+          <span className="text-blue-400 font-bold tracking-wider uppercase text-sm">{t.tag}</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-2 mb-6">
-            Planes claros, <span className="text-blue-400">sin letras chiquitas</span>
+            {t.h1}<span className="text-blue-400">{t.h2}</span>
           </h2>
           <p className="text-slate-400 text-lg">
-            Pagas el desarrollo una sola vez y eliges cómo quieres mantener tu sitio en línea. Precios en pesos mexicanos (MXN).
+            {t.p}
           </p>
         </motion.div>
 
@@ -128,7 +221,7 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full">
-                  <Sparkles size={12} /> Más elegido
+                  <Sparkles size={12} /> {t.popular}
                 </span>
               )}
 
@@ -182,40 +275,40 @@ export default function Pricing() {
           className="mt-16 max-w-5xl mx-auto"
         >
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-2">
-            Después, elige cómo mantener tu sitio
+            {t.monthlyTitle}
           </h3>
           <p className="text-slate-400 text-center mb-8">
-            Aplica a los tres planes. Eliges una de las dos opciones mensuales.
+            {t.monthlyIntro}
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-slate-900/60 border border-slate-800 rounded-3xl p-8">
-              <div className="text-sm font-bold text-blue-400 uppercase tracking-wider mb-2">Opción 1</div>
-              <h4 className="text-xl font-bold">Hosting y seguridad</h4>
+              <div className="text-sm font-bold text-blue-400 uppercase tracking-wider mb-2">{t.opt1}</div>
+              <h4 className="text-xl font-bold">{t.opt1Title}</h4>
               <div className="mt-3 mb-4">
                 <span className="text-4xl font-black">$750</span>
-                <span className="text-slate-400"> / mes</span>
+                <span className="text-slate-400">{t.month}</span>
               </div>
               <p className="text-slate-400">
-                Tu sitio siempre en línea, rápido y protegido. Ideal si tu página ya quedó como la quieres.
+                {t.opt1Text}
               </p>
             </div>
 
             <div className="bg-gradient-to-br from-blue-600/20 to-sky-500/10 border border-blue-500/40 rounded-3xl p-8">
-              <div className="text-sm font-bold text-blue-300 uppercase tracking-wider mb-2">Opción 2</div>
-              <h4 className="text-xl font-bold">Hosting + desarrollo continuo</h4>
+              <div className="text-sm font-bold text-blue-300 uppercase tracking-wider mb-2">{t.opt2}</div>
+              <h4 className="text-xl font-bold">{t.opt2Title}</h4>
               <div className="mt-3 mb-4">
                 <span className="text-4xl font-black">$1,500</span>
-                <span className="text-slate-300"> / mes</span>
+                <span className="text-slate-300">{t.month}</span>
               </div>
               <p className="text-slate-300">
-                Incluye el hosting y la seguridad, y además agregamos las mejoras que vayas pidiendo con el tiempo, sin cargos extra.
+                {t.opt2Text}
               </p>
             </div>
           </div>
 
           <p className="text-sm text-slate-500 text-center mt-6 max-w-3xl mx-auto">
-            El desarrollo continuo cubre mejoras y ajustes sobre tu sitio. Los cambios grandes que reconstruyan todo el sistema se cotizan por separado.
+            {t.note}
           </p>
         </motion.div>
       </div>
