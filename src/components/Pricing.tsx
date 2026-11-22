@@ -87,7 +87,7 @@ const plansEn: Plan[] = [
     name: 'Landing Page',
     tagline: 'Your business on Google, with your menu and your photos.',
     examples: 'Cafés, restaurants, shops, services and more.',
-    price: '$385',
+    price: '$390',
     currency: 'USD',
     priceNote: 'From · one-time payment',
     features: [
@@ -98,14 +98,14 @@ const plansEn: Plan[] = [
       'Optimized for mobile and to show up on Google',
     ],
     cta: 'I want my landing page',
-    message: "Hello, I'm interested in CyberVision's Landing Page plan (from $385 USD) 👀",
+    message: "Hello, I'm interested in CyberVision's Landing Page plan (from $390 USD) 👀",
   },
   {
     icon: <CalendarCheck size={24} />,
     name: 'Booking Website',
     tagline: 'Your clients book on their own, you just serve them.',
     examples: 'Barbershops, clinics, dentists, lashes, salons and more.',
-    price: '$692',
+    price: '$700',
     currency: 'USD',
     priceNote: 'One-time payment',
     features: [
@@ -117,7 +117,7 @@ const plansEn: Plan[] = [
     ],
     extra: 'Prefer your own booking system, without depending on Setmore? It can be added as an extra one-time payment (quoted separately).',
     cta: 'I want online booking',
-    message: "Hello, I'm interested in CyberVision's Booking Website plan ($692 USD) 👀",
+    message: "Hello, I'm interested in CyberVision's Booking Website plan ($700 USD) 👀",
     popular: true,
   },
   {
@@ -162,7 +162,7 @@ const text = {
     h1: 'Clear plans, ',
     h2: 'no fine print',
     p: 'You pay for development once and choose how to keep your site online. All prices are in US dollars (USD).',
-    cur: 'USD', p1: '$38', p2: '$77',
+    cur: 'USD', p1: '$40', p2: '$80',
     popular: 'Most popular',
     monthlyTitle: 'Then, choose how to maintain your site',
     monthlyIntro: 'Applies to all three plans. You choose one of the two monthly options.',
@@ -216,9 +216,9 @@ export default function Pricing() {
           variants={containerVariants}
           className="grid lg:grid-cols-3 gap-6 items-stretch"
         >
-          {plans.map((plan) => (
+          {plans.map((plan, index) => (
             <motion.div
-              key={plan.name}
+              key={index}
               variants={itemVariants}
               className={`relative flex flex-col rounded-3xl p-8 border ${
                 plan.popular
