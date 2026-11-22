@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floral Events | Houston Wedding & Event Florist</title>
+<meta name="description" content="Custom wedding and event florals in Houston since 1995. Full-service design, guided by an experienced floral consultant.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f6f2ec">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#f6f2ec; --paper:#fbf9f5; --ink:#1c1a18; --muted:#6f6a63; --line:#ddd5c9;
+  --bronze:#8a7556; --night:#171513; --night-2:#211e1b;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1240px; --bar:34px; --hdr:78px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:300;font-size:1.0625rem;line-height:1.7;color:var(--ink);background:var(--ivory);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+.wrap{width:min(var(--wrap),100% - 3rem);margin-inline:auto}
+section[id]{scroll-margin-top:calc(var(--hdr) + 8px)}
+
+/* tipografía */
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:400;color:var(--bronze)}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.08;letter-spacing:-.005em}
+h2{font-size:clamp(2.2rem,4.6vw,3.7rem)}
+h3{font-size:1.65rem;font-weight:400}
+em{font-style:italic;font-weight:300}
+.lead{font-size:1.15rem;color:var(--muted);max-width:56ch}
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1.05rem 2rem;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400;border:1px solid currentColor;transition:background .35s,color .35s,border-color .35s}
+.btn.solid{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--bronze);border-color:var(--bronze)}
+.btn.line:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.light{color:#fff}
+.btn.light:hover{background:#fff;color:var(--ink);border-color:#fff}
+.btn.paper{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.btn.paper:hover{background:transparent;color:var(--paper)}
+.arrow{display:inline-block;width:1.6rem;height:1px;background:currentColor;position:relative}
+.arrow::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+/* barra superior + header */
+.bar{background:var(--night);color:#d9d1c4;text-align:center;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;height:var(--bar);line-height:var(--bar);position:relative;z-index:60}
+header{position:fixed;left:0;right:0;top:var(--bar);z-index:50;height:var(--hdr);color:#fff;transition:background .4s,color .4s,top .3s,box-shadow .4s}
+header .in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.logo{font-family:var(--serif);font-size:1.6rem;letter-spacing:.34em;text-transform:uppercase;font-weight:400;line-height:1;display:flex;flex-direction:column}
+.logo small{font-family:var(--sans);font-size:.54rem;letter-spacing:.42em;margin-top:.55rem;opacity:.75;font-weight:300}
+nav.main{display:flex;gap:2.4rem;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400}
+nav.main a{position:relative;padding:.4rem 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s}
+nav.main a:hover::after{transform:scaleX(1)}
+.h-cta{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;padding:.8rem 1.4rem;border:1px solid currentColor;font-weight:400;transition:background .3s,color .3s}
+.h-cta:hover{background:#fff;color:var(--ink)}
+.burger{display:none;width:44px;height:44px;position:relative}
+.burger i{position:absolute;left:10px;right:10px;height:1px;background:currentColor;transition:transform .3s,top .3s,opacity .3s}
+.burger i:nth-child(1){top:16px}.burger i:nth-child(2){top:22px}.burger i:nth-child(3){top:28px}
+body.menu .burger i:nth-child(1){top:22px;transform:rotate(45deg)}
+body.menu .burger i:nth-child(2){opacity:0}
+body.menu .burger i:nth-child(3){top:22px;transform:rotate(-45deg)}
+body.scrolled header,body.menu header{background:var(--ivory);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+body.scrolled header{top:0}
+body.scrolled .h-cta:hover{background:var(--ink);color:var(--paper)}
+
+.drawer{position:fixed;inset:0;z-index:40;background:var(--ivory);padding:calc(var(--bar) + var(--hdr) + 2rem) 1.5rem 2rem;display:flex;flex-direction:column;gap:.4rem;transform:translateY(-100%);visibility:hidden;transition:transform .5s cubic-bezier(.7,0,.2,1),visibility 0s .5s}
+body.menu .drawer{transform:none;visibility:visible;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.drawer a{font-family:var(--serif);font-size:2.3rem;font-weight:300;padding:.35rem 0;border-bottom:1px solid var(--line)}
+.drawer .btn{margin-top:1.6rem;justify-content:center;font-family:var(--sans);font-size:.74rem;border-bottom:1px solid var(--ink)}
+
+/* hero */
+.hero{position:relative;min-height:max(100svh,640px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--night)}
+.hero picture,.hero .bg{position:absolute;inset:0}
+.hero .bg{background:url(img/hero.jpg) center/cover;animation:slow 22s ease-out both;transform-origin:60% 50%}
+@keyframes slow{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,14,10,.5) 0%,rgba(18,14,10,.1) 38%,rgba(18,14,10,.72) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-bottom:clamp(3rem,8vh,6rem);padding-top:10rem}
+.hero .eyebrow{color:#e8dcc7}
+.hero h1{font-size:clamp(3rem,8.2vw,7.2rem);max-width:13ch;margin:1.4rem 0 1.6rem;font-weight:300}
+.hero p{max-width:50ch;font-size:1.12rem;color:#efe7da;margin-bottom:2.4rem}
+.hero .acts{display:flex;flex-wrap:wrap;gap:1rem}
+.scroll{position:absolute;right:max(1.5rem,calc((100vw - var(--wrap))/2));bottom:3.2rem;z-index:2;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;writing-mode:vertical-rl;display:flex;align-items:center;gap:1rem}
+.scroll::after{content:"";width:1px;height:70px;background:linear-gradient(#fff,transparent)}
+
+/* franja de venues */
+.venues{background:var(--paper);border-bottom:1px solid var(--line);padding:1.5rem 0}
+.venues .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2.6rem;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.25rem;color:var(--muted)}
+.venues span.lbl{font-family:var(--sans);font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--bronze)}
+
+/* secciones */
+.sec{padding:clamp(5rem,11vw,9.5rem) 0}
+.intro .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.intro h2{margin-top:1.2rem}
+.intro .txt p+p{margin-top:1.2rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:clamp(3.5rem,7vw,6rem);border-top:1px solid var(--line);padding-top:2.4rem}
+.stat b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1}
+.stat span{display:block;margin-top:.7rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);max-width:20ch}
+
+/* ocasiones */
+.occ{background:var(--paper)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:3.2rem}
+.head h2{margin-top:1rem}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:1.1rem}
+.card{position:relative;aspect-ratio:3/4.3;overflow:hidden;color:#fff;display:flex;align-items:flex-end;background:var(--night)}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(14,11,8,.78))}
+.card:hover img{transform:scale(1.06)}
+.card div{position:relative;z-index:2;padding:1.5rem;width:100%}
+.card h3{font-size:1.9rem}
+.card span{display:flex;align-items:center;gap:.7rem;margin-top:.7rem;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:.4s}
+.card:hover span,.card:focus-visible span{opacity:1;transform:none}
+
+/* bodas */
+.feature .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,7vw,7rem);align-items:center}
+.feature .pics{position:relative;padding-bottom:18%}
+.feature .pics .a{aspect-ratio:4/5;object-fit:cover;width:82%}
+.feature .pics .b{position:absolute;right:0;bottom:0;width:48%;aspect-ratio:1;object-fit:cover;border:10px solid var(--ivory)}
+.feature h2{margin:1.2rem 0 1.6rem}
+.feature ul{list-style:none;margin:2rem 0 2.6rem;display:grid;gap:.9rem}
+.feature li{display:flex;gap:1rem;align-items:baseline;padding-bottom:.9rem;border-bottom:1px solid var(--line);font-size:1rem}
+.feature li i{font-style:normal;font-family:var(--serif);color:var(--bronze);font-size:1.1rem;min-width:1.8rem}
+
+/* por qué */
+.why{background:var(--night);color:#e9e1d4}
+.why .eyebrow{color:#c3ad85}
+.why h2{color:#fff;margin:1rem 0 3.5rem;max-width:18ch}
+.why .grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #3a352f;border-left:1px solid #3a352f}
+.why .it{padding:2.4rem 2rem 2.6rem;border-right:1px solid #3a352f;border-bottom:1px solid #3a352f}
+.why .it i{font-style:normal;font-family:var(--serif);font-size:1.1rem;color:#c3ad85}
+.why .it h3{font-size:1.6rem;margin:1rem 0 .8rem;color:#fff}
+.why .it p{font-size:.98rem;color:#b9b0a2}
+
+/* galería */
+.gal .cols{columns:3;column-gap:1.1rem}
+.gal figure{break-inside:avoid;margin-bottom:1.1rem;position:relative;overflow:hidden;cursor:zoom-in;background:var(--line)}
+.gal figure img{width:100%;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figure button{position:absolute;inset:0;width:100%;height:100%}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;color:#fff;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(transparent,rgba(14,11,8,.7));opacity:0;transition:.4s;pointer-events:none}
+.gal figure:hover figcaption{opacity:1}
+dialog.lb{border:0;background:transparent;max-width:100vw;max-height:100vh;width:100%;height:100%;padding:0;color:#fff}
+dialog.lb::backdrop{background:rgba(12,10,8,.94)}
+dialog.lb .stage{height:100%;display:grid;place-items:center;padding:4rem 1rem 5rem}
+dialog.lb img{max-height:100%;max-width:min(1200px,100%);object-fit:contain}
+dialog.lb .cap{position:absolute;left:0;right:0;bottom:1.6rem;text-align:center;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#cfc5b4}
+dialog.lb button{position:absolute;width:52px;height:52px;display:grid;place-items:center;font-size:1.6rem;font-family:var(--serif);color:#fff;border:1px solid #ffffff44;border-radius:50%;transition:background .3s}
+dialog.lb button:hover{background:#ffffff22}
+.lb .x{top:1.2rem;right:1.2rem}.lb .pv{left:1.2rem;top:50%}.lb .nx{right:1.2rem;top:50%}
+
+/* proceso */
+.proc{background:var(--paper)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3.2rem 2.4rem;counter-reset:s;margin-top:3.4rem}
+.step{border-top:1px solid var(--ink);padding-top:1.4rem}
+.step i{font-style:normal;font-family:var(--serif);font-size:1.15rem;color:var(--bronze)}
+.step h3{margin:.7rem 0 .6rem}
+.step p{font-size:.98rem;color:var(--muted)}
+
+/* comunidad */
+.comm .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,7vw,7rem);align-items:center}
+.comm img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.comm h2{margin:1.2rem 0 1.6rem}
+.comm .pt{margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.comm .pt h3{font-size:1.5rem;margin-bottom:.4rem}
+.comm .pt p{color:var(--muted);font-size:1rem}
+
+/* testimonio */
+.quote{text-align:center;background:var(--paper)}
+.quote blockquote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(1.8rem,3.8vw,3.1rem);line-height:1.25;max-width:26ch;margin:1.8rem auto 2rem}
+.quote cite{font-style:normal;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.mark{font-family:var(--serif);font-size:5rem;line-height:.4;color:var(--bronze);display:block}
+
+/* faq */
+.faq .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,6rem)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.5rem 0;font-family:var(--serif);font-size:1.55rem;font-weight:400;line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--sans);font-weight:200;font-size:1.8rem;transition:transform .3s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 3rem 1.6rem 0;color:var(--muted)}
+
+/* cta final */
+.cta{position:relative;color:#fff;text-align:center;overflow:hidden;background:var(--night)}
+.cta .bg{position:absolute;inset:0;background:url(img/chandeliers.jpg) center/cover;opacity:.32}
+.cta .wrap{position:relative;padding:clamp(5rem,12vw,10rem) 0}
+.cta h2{font-size:clamp(2.6rem,6.4vw,5.4rem);margin:1.2rem auto 1.6rem;max-width:14ch}
+.cta p{max-width:48ch;margin:0 auto 2.4rem;color:#e6ddcf}
+
+/* footer */
+footer{background:var(--night);color:#b9b0a2;padding:5rem 0 2.2rem;font-size:.98rem}
+footer .top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:3rem;padding-bottom:3.4rem;border-bottom:1px solid #3a352f}
+footer .logo{color:#fff;margin-bottom:1.4rem}
+footer h4{font-weight:400;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:#c3ad85;margin-bottom:1.3rem}
+footer ul{list-style:none;display:grid;gap:.6rem}
+footer a:hover{color:#fff}
+.news{display:flex;margin-top:.4rem;border-bottom:1px solid #5a534a}
+.news input{flex:1;min-width:0;background:none;border:0;padding:.8rem 0;color:#fff;font:inherit;font-size:.95rem}
+.news input::placeholder{color:#8d8579}
+.news button{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#fff;padding:0 .2rem 0 1rem}
+footer .bot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.8rem;font-size:.84rem}
+footer .bot a{color:#d9d1c4;text-decoration:underline;text-underline-offset:3px}
+
+/* barra móvil */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.hero .bg{animation:none}}
+
+@media (max-width:1080px){
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .why .grid{grid-template-columns:repeat(2,1fr)}
+  footer .top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  :root{--hdr:68px}
+  nav.main,.h-cta{display:none}
+  .burger{display:block}
+  .intro .grid,.feature .grid,.comm .grid,.faq .grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .gal .cols{columns:2}
+  .scroll{display:none}
+  .feature .pics{max-width:520px}
+  .comm img{aspect-ratio:4/4.4}
+}
+@media (max-width:600px){
+  body{font-size:1rem;padding-bottom:64px}
+  .wrap{width:calc(100% - 2.4rem)}
+  .logo{font-size:1.3rem;letter-spacing:.28em}
+  .hero h1{max-width:11ch}
+  .btn{padding:1rem 1.5rem}
+  .cards{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .card h3{font-size:1.5rem}.card div{padding:1rem}
+  .card span{opacity:1;transform:none}
+  .why .grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .gal .cols{column-gap:.6rem}.gal figure{margin-bottom:.6rem}
+  footer .top{grid-template-columns:1fr;gap:2.2rem}
+  .faq summary{font-size:1.3rem}
+  .faq details p{padding-right:0}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--paper);border-top:1px solid var(--line);padding:.6rem 1.2rem calc(.6rem + env(safe-area-inset-bottom))}
+  .mbar a{flex:1;text-align:center;padding:.9rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--paper)}
+  body.menu .mbar{display:none}
+  dialog.lb .pv,dialog.lb .nx{top:auto;bottom:1rem}
+  dialog.lb .pv{left:1rem}dialog.lb .nx{right:1rem}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">New customers get 15% off their first order</div>
+
+<header>
+  <div class="wrap in">
+    <a href="#top" class="logo" aria-label="Floral Events, home">Floral Events<small>Houston · Since 1995</small></a>
+    <nav class="main" aria-label="Main">
+      <a href="#occasions">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="h-cta" href="https://order.floralevents.com/" target="_blank" rel="noopener">Order flowers</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a href="#occasions">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#about">About</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn solid" href="https://calendly.com/floraleventsinc" target="_blank" rel="noopener">Book a free consult</a>
+</div>
+
+<main id="top">
+
+<section class="hero" aria-label="Introduction">
+  <div class="bg" role="img" aria-label="Candlelit reception table with white and blush florals"></div>
+  <div class="wrap">
+    <p class="eyebrow">Houston · Wedding &amp; Event Florist</p>
+    <h1>Custom florals, <em>every step</em> of the way.</h1>
+    <p>No generic packages. Just expert guidance, custom design and seamless execution, for weddings, events and everyday florals.</p>
+    <div class="acts">
+      <a class="btn paper" href="https://calendly.com/floraleventsinc" target="_blank" rel="noopener">Book a free consultation <span class="arrow"></span></a>
+      <a class="btn light" href="#gallery">View the gallery</a>
+    </div>
+  </div>
+  <div class="scroll">Scroll</div>
+</section>
+
+<div class="venues">
+  <div class="wrap">
+    <span class="lbl">Preferred vendor at</span>
+    <span>The Bell Tower on 34th</span><span>NRG</span><span>George R. Brown Convention Center</span><span>+ 9 more Houston venues</span>
+  </div>
+</div>
+
+<section class="sec intro" id="about">
+  <div class="wrap">
+    <div class="grid">
+      <div class="rv">
+        <p class="eyebrow">Houston's trusted name in custom floral design</p>
+        <h2>Everything is made to order, <em>crafted in our studio.</em></h2>
+      </div>
+      <div class="txt rv d1">
+        <p class="lead">Since 1995, Floral Events has delivered unforgettable floral experiences across Houston. We are a full-service design studio offering custom arrangements for weddings, events and individual floral needs.</p>
+        <p>Guided by your vision and handled with care by a team that has been doing this for nearly three decades. Our process was built through experience: we learned what matters most to clients and shaped every step around it. We listen, we guide, and we make sure every petal feels personal.</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat rv"><b>30+</b><span>Years of floral experience</span></div>
+      <div class="stat rv d1"><b>1000s</b><span>Weddings &amp; events served across Houston</span></div>
+      <div class="stat rv d2"><b>12+</b><span>Venues where we are a preferred vendor</span></div>
+      <div class="stat rv d3"><b>&lt; 2 hr</b><span>Average setup time for full installs</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec occ" id="occasions">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">Services</p><h2>Florals for <em>every occasion</em></h2></div>
+      <a class="btn line" href="#contact">Start a conversation</a>
+    </div>
+    <div class="cards">
+      <a class="card rv" href="#weddings"><img src="img/bride.jpg" alt="Bride on a grand staircase framed by greenery" loading="lazy"><div><h3>Weddings</h3><span>Explore <i class="arrow"></i></span></div></a>
+      <a class="card rv d1" href="#gallery"><img src="img/chandeliers.jpg" alt="Event hall with chandeliers and dressed tables" loading="lazy"><div><h3>Events</h3><span>Explore <i class="arrow"></i></span></div></a>
+      <a class="card rv d2" href="https://order.floralevents.com/" target="_blank" rel="noopener"><img src="img/column.jpg" alt="Cascading blush and cream floral installation" loading="lazy"><div><h3>Shop</h3><span>Order online <i class="arrow"></i></span></div></a>
+      <a class="card rv d3" href="#contact"><img src="img/centerpieces.jpg" alt="Tall white and blush centerpieces on a long table" loading="lazy"><div><h3>Subscription</h3><span>Weekly florals <i class="arrow"></i></span></div></a>
+      <a class="card rv d4" href="#contact"><img src="img/sweetheart.jpg" alt="Sweetheart table with rose candelabras" loading="lazy"><div><h3>Anniversary</h3><span>Celebrate <i class="arrow"></i></span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec feature" id="weddings">
+  <div class="wrap grid">
+    <div class="pics rv">
+      <img class="a" src="img/arch-window.jpg" alt="Floral ceremony arch in front of a tall arched window" loading="lazy">
+      <img class="b" src="img/arch-rooftop.jpg" alt="Colorful floral arch in a rooftop ballroom" loading="lazy">
+    </div>
+    <div class="rv d1">
+      <p class="eyebrow">Weddings</p>
+      <h2>Florals that feel like <em>you.</em></h2>
+      <p class="lead">We don't offer preset packages or recycled designs. We work closely with you to craft florals that reflect your story, your taste and the experience you want to create for your guests.</p>
+      <ul>
+        <li><i>01</i>Bouquets, boutonnieres and personal flowers</li>
+        <li><i>02</i>Ceremony arches and installations</li>
+        <li><i>03</i>Reception tables, centerpieces and details</li>
+        <li><i>04</i>A full reveal appointment, and a second one free if needed</li>
+      </ul>
+      <a class="btn solid" href="#gallery">View wedding inspiration <span class="arrow"></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec why" id="why">
+  <div class="wrap">
+    <p class="eyebrow rv">Why people trust us</p>
+    <h2 class="rv d1">A hands-off luxury experience, <em>from first consult to cleanup.</em></h2>
+    <div class="grid">
+      <div class="it rv"><i>01</i><h3>Full-service, hands-off</h3><p>You get the flowers of your dreams without managing a single detail. We handle setup, cleanup, delivery and prep, while keeping you involved in the creative parts.</p></div>
+      <div class="it rv d1"><i>02</i><h3>Fully custom design</h3><p>Every design starts with your preferences, not a preset package. We source your favorite flowers and build around your colors and theme from the ground up.</p></div>
+      <div class="it rv d2"><i>03</i><h3>Guided by an expert</h3><p>From your first consult to the reveal appointment, you're guided by Erin, our floral coordinator, so nothing gets missed.</p></div>
+      <div class="it rv"><i>04</i><h3>Competitive pricing</h3><p>Expert design at a fair price. Years of vendor relationships and an efficient prep process mean more value, with no surprise markups.</p></div>
+      <div class="it rv d1"><i>05</i><h3>30+ years of experience</h3><p>From weddings and galas to the Super Bowl and Rodeo. We know how to deliver beauty, no matter the size or the pressure.</p></div>
+      <div class="it rv d2"><i>06</i><h3>Efficient setup</h3><p>All florals are prepared in-studio, so install is fast and clean. We can set up a full wedding in under two hours.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec gal" id="gallery">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">Gallery</p><h2>Real events. <em>Real venues.</em></h2></div>
+      <p class="lead" style="max-width:38ch">Weddings, galas and installations across Houston. Every photo is real client work.</p>
+    </div>
+    <div class="cols" id="grid">
+      <figure class="rv"><img src="img/arch-window.jpg" alt="Floral ceremony arch in front of a tall arched window" loading="lazy" width="766" height="468"><figcaption>Ceremony arch</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d1"><img src="img/longtable.jpg" alt="Long reception table with blush linens and rose centerpieces" loading="lazy" width="408" height="514"><figcaption>Reception table</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d2"><img src="img/ballroom.jpg" alt="Brick ballroom with chandeliers and tall floral centerpieces" loading="lazy" width="769" height="409"><figcaption>Ballroom reception</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv"><img src="img/bride.jpg" alt="Bride on a grand staircase framed by greenery" loading="lazy" width="746" height="670"><figcaption>Grand staircase</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d1"><img src="img/column.jpg" alt="Cascading blush and cream floral installation" loading="lazy" width="408" height="514"><figcaption>Installation</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d2"><img src="img/sweetheart.jpg" alt="Sweetheart table with rose candelabras" loading="lazy" width="780" height="514"><figcaption>Sweetheart table</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv"><img src="img/arch-rooftop.jpg" alt="Colorful floral arch in a rooftop ballroom" loading="lazy" width="1536" height="1024"><figcaption>Rooftop ceremony</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d1"><img src="img/chandeliers.jpg" alt="Event hall with chandeliers and dressed tables" loading="lazy" width="1536" height="1025"><figcaption>Gala setup</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d2"><img src="img/centerpieces.jpg" alt="Tall white and blush centerpieces on a long table" loading="lazy" width="334" height="481"><figcaption>Centerpieces</figcaption><button aria-label="Open photo"></button></figure>
+    </div>
+  </div>
+</section>
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <button class="x" aria-label="Close">×</button>
+  <button class="pv" aria-label="Previous">‹</button>
+  <button class="nx" aria-label="Next">›</button>
+  <div class="stage"><img alt=""></div>
+  <p class="cap"></p>
+</dialog>
+
+<section class="sec proc" id="process">
+  <div class="wrap">
+    <p class="eyebrow rv">How it works</p>
+    <h2 class="rv d1">A process built through <em>experience.</em></h2>
+    <div class="steps">
+      <div class="step rv"><i>01</i><h3>Consultation</h3><p>Meet with us to talk through your vision, style and priorities. We share ideas, photos and seasonal recommendations.</p></div>
+      <div class="step rv d1"><i>02</i><h3>Showroom visit</h3><p>See flowers in person, test arrangements and start building your custom plan in our private studio.</p></div>
+      <div class="step rv d2"><i>03</i><h3>Reveal appointment</h3><p>Preview your florals exactly as they'll look on the big day. Need changes? We make it easy.</p></div>
+      <div class="step rv"><i>04</i><h3>A second reveal, free</h3><p>If anything feels off, we offer a second reveal at no additional cost. Your peace of mind matters.</p></div>
+      <div class="step rv d1"><i>05</i><h3>Day-of setup</h3><p>Our team installs everything quickly and cleanly. Most weddings are fully set in under two hours.</p></div>
+      <div class="step rv d2"><i>06</i><h3>Cleanup</h3><p>We return after the event to break down and clean up, leaving your venue spotless.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec comm" id="community">
+  <div class="wrap grid">
+    <img class="rv" src="img/astros.jpg" alt="Large white floral arrangement at a Houston ballpark ceremony" loading="lazy">
+    <div class="rv d1">
+      <p class="eyebrow">Rooted in community</p>
+      <h2>Committed to <em>joy.</em></h2>
+      <p class="lead">For nearly three decades we've designed florals for weddings, galas, graduations and milestone moments across Houston. Our clients become family.</p>
+      <div class="pt">
+        <h3>Trusted by Houston's venues</h3>
+        <p>Proud partners with places like The Bell Tower on 34th, NRG and the George R. Brown Convention Center, which trust us to deliver quality and professionalism.</p>
+      </div>
+      <div class="pt">
+        <h3>Floral Recycle Program</h3>
+        <p>Through our partnership with Pedal Power Gives, leftover florals are repurposed and donated to local retirement homes, fire stations and hospitals. Your flowers keep giving, even after your event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec quote">
+  <div class="wrap rv">
+    <span class="mark">“</span>
+    <p class="eyebrow">What clients are saying</p>
+    <blockquote>Floral Events made my wedding day unforgettable. Erin walked me through every decision with so much care and expertise. When I saw my bouquet, I actually cried.</blockquote>
+    <cite>Michelle R.</cite>
+  </div>
+</section>
+
+<section class="sec faq" id="faq">
+  <div class="wrap grid">
+    <div class="rv"><p class="eyebrow">FAQ</p><h2 style="margin-top:1rem">Good <em>questions.</em></h2></div>
+    <div class="rv d1">
+      <details open><summary>How far in advance should I book?</summary><p>For weddings and large events, we recommend 6 to 12 months. For subscriptions or shop orders, a few days is usually enough.</p></details>
+      <details><summary>Can I request specific flowers?</summary><p>Yes. Every design starts with your preferences. We source your favorite flowers and build around your colors and theme.</p></details>
+      <details><summary>What if I need to make changes?</summary><p>At your reveal appointment you preview your florals exactly as they will look on the day. If anything feels off, we make changes, and we offer a second reveal at no additional cost.</p></details>
+      <details><summary>Do you deliver outside Houston?</summary><p>Tell us your venue and date and we'll confirm availability and delivery details for your event.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="bg"></div>
+  <div class="wrap rv">
+    <p class="eyebrow" style="color:#e8dcc7">Book my floral consult</p>
+    <h2>Let's create something <em>beautiful.</em></h2>
+    <p>Start with a conversation. No pressure. We'll walk you through our process, share ideas and help you decide if we're the right fit for your floral vision.</p>
+    <a class="btn paper" href="https://calendly.com/floraleventsinc" target="_blank" rel="noopener">Book my floral consult <span class="arrow"></span></a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="logo">Floral Events<small>Houston · Since 1995</small></div>
+        <p>4901 Milwee, #202<br>Houston, Texas 77092</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#weddings">Weddings</a></li><li><a href="#gallery">Events</a></li><li><a href="#contact">Anniversary</a></li><li><a href="#contact">Subscriptions</a></li><li><a href="https://order.floralevents.com/" target="_blank" rel="noopener">Shop</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+17138637900">Office: 713-863-7900</a></li>
+          <li><a href="sms:+18328402248">Text: 832-840-2248</a></li>
+          <li><a href="mailto:inquiry@floralevents.com">inquiry@floralevents.com</a></li>
+          <li><a href="https://www.instagram.com/floraleventshouston/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/floralevents/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.tiktok.com/@floraleventshouston" target="_blank" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Subscribe</h4>
+        <p style="font-size:.92rem">News, seasonal ideas and offers, straight to your inbox.</p>
+        <form class="news" id="news"><input type="email" placeholder="Your email" aria-label="Email" required><button>Subscribe</button></form>
+      </div>
+    </div>
+    <div class="bot">
+      <span>© 2026 Floral Events</span>
+      <span>Sample version designed by <a href="https://cybervision.com.mx" target="_blank" rel="noopener">CyberVision</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="https://calendly.com/floraleventsinc" target="_blank" rel="noopener">Book a free consult</a></div>
+
+<script>
+(function(){
+  var body=document.body;
+  /* header sólido al hacer scroll */
+  function onScroll(){body.classList.toggle('scrolled',window.scrollY>40)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* menú móvil */
+  var burger=document.querySelector('.burger'),drawer=document.getElementById('drawer');
+  function menu(open){body.classList.toggle('menu',open);burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');document.documentElement.style.overflow=open?'hidden':''}
+  burger.addEventListener('click',function(){menu(!body.classList.contains('menu'))});
+  drawer.addEventListener('click',function(e){if(e.target.closest('a'))menu(false)});
+  window.addEventListener('resize',function(){if(innerWidth>860)menu(false)});
+
+  /* aparición al hacer scroll (con respaldo por scroll) */
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  function show(e){e.classList.add('in')}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }
+  function fallback(){var h=innerHeight;els.forEach(function(e){if(!e.classList.contains('in')&&e.getBoundingClientRect().top<h*.94)show(e)})}
+  window.addEventListener('scroll',fallback,{passive:true});window.addEventListener('load',fallback);fallback();
+
+  /* lightbox */
+  var lb=document.getElementById('lb'),img=lb.querySelector('img'),cap=lb.querySelector('.cap');
+  var figs=[].slice.call(document.querySelectorAll('#grid figure')),cur=0;
+  function open(i){cur=(i+figs.length)%figs.length;var f=figs[cur].querySelector('img');img.src=f.currentSrc||f.src;img.alt=f.alt;cap.textContent=figs[cur].querySelector('figcaption').textContent;if(!lb.open)lb.showModal()}
+  figs.forEach(function(f,i){f.querySelector('button').addEventListener('click',function(){open(i)})});
+  lb.querySelector('.x').addEventListener('click',function(){lb.close()});
+  lb.querySelector('.pv').addEventListener('click',function(){open(cur-1)});
+  lb.querySelector('.nx').addEventListener('click',function(){open(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('stage'))lb.close()});
+  lb.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')open(cur-1);if(e.key==='ArrowRight')open(cur+1)});
+
+  /* newsletter (demo) */
+  document.getElementById('news').addEventListener('submit',function(e){e.preventDefault();var b=this.querySelector('button');b.textContent='Thank you';this.querySelector('input').value=''});
+})();
+</script>
+</body>
+</html>
