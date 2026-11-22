@@ -12,6 +12,7 @@ type Plan = {
   tagline: string;
   examples: string;
   price: string;
+  currency?: string;
   priceNote: string;
   features: string[];
   extra?: string;
@@ -27,6 +28,7 @@ const plansEs: Plan[] = [
     tagline: 'Tu negocio en Google, con tu menú y tus fotos.',
     examples: 'Cafeterías, restaurantes, tiendas, servicios y más.',
     price: '$7,500',
+    currency: 'MXN',
     priceNote: 'Desde · pago único',
     features: [
       'Diseño a la medida con tus colores y tu marca',
@@ -44,6 +46,7 @@ const plansEs: Plan[] = [
     tagline: 'Tus clientes agendan solos, tú solo atiendes.',
     examples: 'Barberías, clínicas, dentistas, lashes, estéticas y más.',
     price: '$13,500',
+    currency: 'MXN',
     priceNote: 'Pago único',
     features: [
       'Todo lo del plan Landing Page',
@@ -84,7 +87,8 @@ const plansEn: Plan[] = [
     name: 'Landing Page',
     tagline: 'Your business on Google, with your menu and your photos.',
     examples: 'Cafés, restaurants, shops, services and more.',
-    price: '$7,500',
+    price: '$400',
+    currency: 'USD',
     priceNote: 'From · one-time payment',
     features: [
       'Custom design with your colors and brand',
@@ -94,14 +98,15 @@ const plansEn: Plan[] = [
       'Optimized for mobile and to show up on Google',
     ],
     cta: 'I want my landing page',
-    message: "Hello, I'm interested in CyberVision's Landing Page plan (from $7,500 MXN) 👀",
+    message: "Hello, I'm interested in CyberVision's Landing Page plan (from $400 USD) 👀",
   },
   {
     icon: <CalendarCheck size={24} />,
     name: 'Booking Website',
     tagline: 'Your clients book on their own, you just serve them.',
     examples: 'Barbershops, clinics, dentists, lashes, salons and more.',
-    price: '$13,500',
+    price: '$750',
+    currency: 'USD',
     priceNote: 'One-time payment',
     features: [
       'Everything in the Landing Page plan',
@@ -112,7 +117,7 @@ const plansEn: Plan[] = [
     ],
     extra: 'Prefer your own booking system, without depending on Setmore? It can be added as an extra one-time payment (quoted separately).',
     cta: 'I want online booking',
-    message: "Hello, I'm interested in CyberVision's Booking Website plan ($13,500 MXN) 👀",
+    message: "Hello, I'm interested in CyberVision's Booking Website plan ($750 USD) 👀",
     popular: true,
   },
   {
@@ -141,7 +146,8 @@ const text = {
     tag: 'Precios',
     h1: 'Planes claros, ',
     h2: 'sin letras chiquitas',
-    p: 'Pagas el desarrollo una sola vez y eliges cómo quieres mantener tu sitio en línea. Precios en pesos mexicanos (MXN).',
+    p: 'Pagas el desarrollo una sola vez y eliges cómo quieres mantener tu sitio en línea. Todos los precios están en pesos mexicanos (MXN).',
+    cur: 'MXN', p1: '$750', p2: '$1,500',
     popular: 'Más elegido',
     monthlyTitle: 'Después, elige cómo mantener tu sitio',
     monthlyIntro: 'Aplica a los tres planes. Eliges una de las dos opciones mensuales.',
@@ -155,7 +161,8 @@ const text = {
     tag: 'Pricing',
     h1: 'Clear plans, ',
     h2: 'no fine print',
-    p: 'You pay for development once and choose how to keep your site online. Prices in Mexican pesos (MXN).',
+    p: 'You pay for development once and choose how to keep your site online. All prices are in US dollars (USD).',
+    cur: 'USD', p1: '$40', p2: '$80',
     popular: 'Most popular',
     monthlyTitle: 'Then, choose how to maintain your site',
     monthlyIntro: 'Applies to all three plans. You choose one of the two monthly options.',
@@ -233,7 +240,7 @@ export default function Pricing() {
               <p className="text-slate-500 text-sm mt-1">{plan.examples}</p>
 
               <div className="mt-6 mb-6 pb-6 border-b border-slate-800">
-                <div className="text-4xl font-black tracking-tight">{plan.price}</div>
+                <div className="text-4xl font-black tracking-tight">{plan.price}{plan.currency && <span className="ml-2 text-lg font-semibold text-slate-400 tracking-normal">{plan.currency}</span>}</div>
                 <div className="text-sm text-slate-400 mt-1">{plan.priceNote}</div>
               </div>
 
@@ -286,8 +293,8 @@ export default function Pricing() {
               <div className="text-sm font-bold text-blue-400 uppercase tracking-wider mb-2">{t.opt1}</div>
               <h4 className="text-xl font-bold">{t.opt1Title}</h4>
               <div className="mt-3 mb-4">
-                <span className="text-4xl font-black">$750</span>
-                <span className="text-slate-400">{t.month}</span>
+                <span className="text-4xl font-black">{t.p1}</span>
+                <span className="text-slate-400"> {t.cur}{t.month}</span>
               </div>
               <p className="text-slate-400">
                 {t.opt1Text}
@@ -298,8 +305,8 @@ export default function Pricing() {
               <div className="text-sm font-bold text-blue-300 uppercase tracking-wider mb-2">{t.opt2}</div>
               <h4 className="text-xl font-bold">{t.opt2Title}</h4>
               <div className="mt-3 mb-4">
-                <span className="text-4xl font-black">$1,500</span>
-                <span className="text-slate-300">{t.month}</span>
+                <span className="text-4xl font-black">{t.p2}</span>
+                <span className="text-slate-300"> {t.cur}{t.month}</span>
               </div>
               <p className="text-slate-300">
                 {t.opt2Text}

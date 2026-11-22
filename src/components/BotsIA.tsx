@@ -18,6 +18,7 @@ const text = {
     steps: ['Nos explicas qué necesitas', 'Analizamos cómo quieres que trabaje tu asistente', 'Lo programamos a tu medida', 'Lo ajustamos según tu estilo, objetivos y tipo de uso', 'Lo dejamos listo para ayudarte en tu vida personal o en tu negocio'],
     howQuote: '"Cada asistente se configura de forma distinta, porque cada cliente necesita algo diferente."',
     plansTitle: 'Planes y Precios',
+    plansNote: 'Todos los precios están en pesos mexicanos (MXN).',
     recommended: 'Recomendado',
     setupLabel: 'Instalación:',
     monthlyLabel: 'Mensualidad:',
@@ -49,14 +50,15 @@ const text = {
     steps: ['You tell us what you need', 'We analyze how you want your assistant to work', 'We program it to your needs', 'We fine-tune it to your style, goals and type of use', 'We leave it ready to help you in your personal life or your business'],
     howQuote: '"Every assistant is set up differently, because every client needs something different."',
     plansTitle: 'Plans and Pricing',
+    plansNote: 'All prices are in US dollars (USD).',
     recommended: 'Recommended',
     setupLabel: 'Setup:',
     monthlyLabel: 'Monthly:',
     choose: 'Choose Plan',
     plans: [
-      { title: 'Personal Basic Plan', subtitle: 'Ideal for people who want a personal assistant adapted to their routine', features: ['Personalized assistant', 'Reminders', 'Task organization', 'Support with habits, diet, exercise or medication', 'Basic adjustment to your needs'], setup: '$2,997 MXN', monthly: '$897 MXN', recommended: false },
-      { title: 'Entrepreneur Plan', subtitle: 'Ideal for small businesses that want to reply to messages and serve their customers better', features: ['Custom bot for your business', 'Automatic replies', 'Information about services or products', 'Basic customer service', 'Adapted to your business style'], setup: '$5,997 MXN', monthly: '$1,797 MXN', recommended: true },
-      { title: 'Business Pro Plan', subtitle: 'Ideal for businesses that want to automate sales and maximize customers', features: ['Advanced bot focused on conversion', 'Professional salesperson simulation', 'Replies optimized to persuade and book', 'Automatic follow-up with interested customers', 'Strategic setup for your business'], setup: '$11,997 MXN', monthly: '$2,997 MXN', recommended: false },
+      { title: 'Personal Basic Plan', subtitle: 'Ideal for people who want a personal assistant adapted to their routine', features: ['Personalized assistant', 'Reminders', 'Task organization', 'Support with habits, diet, exercise or medication', 'Basic adjustment to your needs'], setup: '$165 USD', monthly: '$50 USD', recommended: false },
+      { title: 'Entrepreneur Plan', subtitle: 'Ideal for small businesses that want to reply to messages and serve their customers better', features: ['Custom bot for your business', 'Automatic replies', 'Information about services or products', 'Basic customer service', 'Adapted to your business style'], setup: '$330 USD', monthly: '$100 USD', recommended: true },
+      { title: 'Business Pro Plan', subtitle: 'Ideal for businesses that want to automate sales and maximize customers', features: ['Advanced bot focused on conversion', 'Professional salesperson simulation', 'Replies optimized to persuade and book', 'Automatic follow-up with interested customers', 'Strategic setup for your business'], setup: '$660 USD', monthly: '$165 USD', recommended: false },
     ],
     planMsg: (title: string, setup: string, monthly: string) => `Hello, I'm interested in the ${title} for CyberVision's AI Bots & Assistants (setup ${setup} + monthly ${monthly}) 👀`,
     closeQuote: '"At CyberVision we understand that every person and every business works differently, which is why our assistants are not the same for everyone. We adapt to what you need and build a solution designed specifically for you."',
@@ -202,7 +204,8 @@ export default function BotsIA() {
           variants={containerVariants}
           className="mb-24"
         >
-          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-center mb-12">{t.plansTitle}</motion.h2>
+          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold text-center mb-3">{t.plansTitle}</motion.h2>
+          <motion.p variants={itemVariants} className="text-center text-slate-400 mb-12">{t.plansNote}</motion.p>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {plans.map((plan, index) => (
               <motion.div 
