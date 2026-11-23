@@ -27,7 +27,7 @@ const plansEs: Plan[] = [
     name: 'Landing Page',
     tagline: 'Tu negocio en Google, con tu menú y tus fotos.',
     examples: 'Cafeterías, restaurantes, florerías, tiendas, servicios y más.',
-    price: '$7,500',
+    price: '$8,500',
     currency: 'MXN',
     priceNote: 'Desde · pago único',
     features: [
@@ -40,7 +40,7 @@ const plansEs: Plan[] = [
     ],
     extra: 'Los pedidos llegan por WhatsApp. Si quieres cobrar con tarjeta directo en tu sitio, eso va en el plan Sistema a la Medida.',
     cta: 'Quiero mi landing',
-    message: 'Hola, me interesa el plan de Landing Page (desde $7,500) de CyberVision 👀',
+    message: 'Hola, me interesa el plan de Landing Page (desde $8,500) de CyberVision 👀',
   },
   {
     icon: <CalendarCheck size={24} />,
@@ -90,7 +90,7 @@ const plansEn: Plan[] = [
     name: 'Landing Page',
     tagline: 'Your business on Google, with your menu and your photos.',
     examples: 'Cafés, restaurants, florists, shops, services and more.',
-    price: '$390',
+    price: '$440',
     currency: 'USD',
     priceNote: 'From · one-time payment',
     features: [
@@ -103,7 +103,7 @@ const plansEn: Plan[] = [
     ],
     extra: 'Orders arrive on WhatsApp. If you want to charge by card directly on your site, that is part of the Custom System plan.',
     cta: 'I want my landing page',
-    message: "Hello, I'm interested in CyberVision's Landing Page plan (from $390 USD) 👀",
+    message: "Hello, I'm interested in CyberVision's Landing Page plan (from $440 USD) 👀",
   },
   {
     icon: <CalendarCheck size={24} />,
