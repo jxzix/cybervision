@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flowers by Stephanie | Houston Florist & Flower Delivery</title>
+<meta name="description" content="Hand-arranged fresh flowers made in house and delivered in Houston, TX. Same-day delivery and nationwide through our florist network.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#23352b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#23352b; --green2:#182419; --terra:#c4663c; --terra-d:#a4502b; --cream:#faf5ee; --sand:#f0e6d8; --gold:#d9a548;
+  --ink:#27231f; --muted:#7a7066; --line:#e6dccd;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Jost",system-ui,-apple-system,sans-serif; --script:"Pinyon Script",cursive;
+  --wrap:1280px; --hdr:76px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:300;font-size:1.03rem;line-height:1.65;color:var(--ink);background:var(--cream);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.wrap{width:min(var(--wrap),100% - 3rem);margin-inline:auto}
+section[id]{scroll-margin-top:calc(var(--hdr) + 8px)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05}
+h2{font-size:clamp(2.2rem,4.6vw,3.6rem)}
+em{font-style:italic;color:var(--terra-d)}
+.dk em{color:var(--gold)}
+.eyebrow{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:var(--terra-d)}
+.dk .eyebrow{color:var(--gold)}
+.lead{font-size:1.1rem;color:var(--muted);max-width:52ch}
+.dk .lead{color:#b8c4b9}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 2rem;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;background:var(--terra);color:#fff;border:1px solid var(--terra);transition:.3s}
+.btn:hover{background:var(--green);border-color:var(--green)}
+.btn.line{background:transparent;color:var(--green);border-color:var(--green)}
+.btn.line:hover{background:var(--green);color:#fff}
+.btn.lt{background:#fff;color:var(--green);border-color:#fff}
+.btn.lt:hover{background:var(--gold);border-color:var(--gold)}
+
+.bar{background:var(--green2);color:#d8e0d6;text-align:center;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;padding:.55rem 1rem}
+.bar b{color:var(--gold);font-weight:500}
+header{position:sticky;top:0;z-index:50;background:rgba(250,245,238,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .in{height:var(--hdr);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+nav.l{display:flex;gap:1.8rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+nav.l a{position:relative;padding:.3rem 0}
+nav.l a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav.l a:hover::after{transform:scaleX(1)}
+.logo{font-family:var(--script);font-size:2.3rem;line-height:1;text-align:center;color:var(--green);white-space:nowrap}
+.tools{display:flex;justify-content:flex-end;align-items:center;gap:.4rem}
+.tel{font-size:.86rem;font-weight:500;margin-right:.8rem;white-space:nowrap}
+.cartbtn{position:relative;width:46px;height:46px;display:grid;place-items:center}
+.cartbtn svg{width:24px;height:24px}
+.cartbtn b{position:absolute;top:3px;right:1px;min-width:19px;height:19px;border-radius:999px;background:var(--terra);color:#fff;font-size:.68rem;font-weight:500;display:grid;place-items:center;padding:0 5px;transform:scale(0);transition:transform .3s}
+.cartbtn b.on{transform:scale(1)}
+.burger{display:none;width:46px;height:46px;position:relative}
+.burger i{position:absolute;left:11px;right:11px;height:1.5px;background:var(--ink);transition:.3s}
+.burger i:nth-child(1){top:18px}.burger i:nth-child(2){top:23px}.burger i:nth-child(3){top:28px}
+body.menu .burger i:nth-child(1){top:23px;transform:rotate(45deg)}
+body.menu .burger i:nth-child(2){opacity:0}
+body.menu .burger i:nth-child(3){top:23px;transform:rotate(-45deg)}
+.drawer{position:fixed;inset:calc(var(--hdr) + 34px) 0 0 0;z-index:40;background:var(--cream);padding:1.5rem;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:.3s}
+body.menu .drawer{opacity:1;visibility:visible}
+.drawer a{font-family:var(--serif);font-size:2.1rem;padding:.5rem 0;border-bottom:1px solid var(--line)}
+
+/* hero */
+.hero{position:relative;background:var(--green);color:#fff;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1fr 1fr;min-height:min(86vh,720px)}
+.hero .txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,5rem) clamp(3rem,6vw,5rem) max(1.5rem,calc((100vw - var(--wrap))/2))}
+.hero h1{font-size:clamp(3.2rem,7vw,6.2rem);margin:1.2rem 0 1.4rem;font-weight:400}
+.hero h1 em{color:var(--gold)}
+.hero .lead{color:#c3cfc4;margin-bottom:2.2rem}
+.hero .acts{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero .pics{position:relative;background:var(--sand);display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.hero .pics div{background:#fff;display:grid;place-items:center;overflow:hidden}
+.hero .pics div:first-child{grid-row:span 2}
+.hero .pics img{width:100%;height:100%;object-fit:cover}
+.hero .stamp{position:absolute;left:-58px;bottom:2.4rem;width:116px;height:116px;border-radius:50%;background:var(--terra);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--serif);font-size:1rem;line-height:1.1;padding:1rem;box-shadow:0 14px 30px -14px rgba(0,0,0,.6);transform:rotate(-8deg);z-index:2}
+.hero .stamp b{display:block;font-size:1.5rem;font-weight:500}
+
+.perks{background:var(--sand);border-bottom:1px solid var(--line)}
+.perks .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.perk{display:flex;align-items:center;gap:.9rem;padding:1.5rem 0;font-size:.9rem;line-height:1.35}
+.perk svg{flex:none;width:30px;height:30px;color:var(--terra-d)}
+.perk b{display:block;font-weight:500;letter-spacing:.04em}
+.perk span{color:var(--muted);font-size:.84rem}
+
+.sec{padding:clamp(4.5rem,8vw,7rem) 0}
+.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:1.2rem;margin-bottom:2rem}
+.head h2{margin-top:.8rem}
+
+/* shop */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.2rem}
+.chip{padding:.55rem 1.2rem;border:1px solid var(--line);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--muted);transition:.25s;background:#fff}
+.chip:hover{border-color:var(--terra);color:var(--terra-d)}
+.chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem 1.4rem}
+.prod.hide{display:none}
+.prod .ph{position:relative;aspect-ratio:1;background:#fff;overflow:hidden;border:1px solid var(--line)}
+.prod .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.prod:hover .ph img{transform:scale(1.05)}
+.prod .tag{position:absolute;top:.7rem;left:.7rem;background:var(--terra);color:#fff;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:.3rem .65rem}
+.prod .tag.off{background:var(--muted)}
+.prod .add{position:absolute;left:0;right:0;bottom:0;padding:.95rem;background:var(--green);color:#fff;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transform:translateY(101%);transition:transform .35s}
+.prod:hover .add,.prod .add:focus-visible{transform:none}
+.prod.na .ph img{opacity:.5}
+.prod.na .add{display:none}
+.prod h3{margin-top:.9rem;font-size:1.3rem;line-height:1.15}
+.prod .pr{font-size:1rem;color:var(--terra-d);font-weight:500;margin-top:.15rem}
+.prod .pr s{color:var(--muted);font-weight:300;margin-right:.4rem}
+.touch .add{display:none}
+.mini{display:none;margin-top:.6rem;width:100%;padding:.75rem;border:1px solid var(--green);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.prod.na .mini{display:none!important}
+
+/* occasions */
+.dk{background:var(--green);color:#fff}
+.occ{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+.occ a{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;background:#fff}
+.occ img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.occ a:hover img{transform:scale(1.06)}
+.occ span{position:absolute;left:0;right:0;bottom:0;padding:2.6rem 1.2rem 1.1rem;background:linear-gradient(transparent,rgba(24,36,25,.92));font-family:var(--serif);font-size:1.6rem;line-height:1}
+.occ small{display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+
+/* about */
+.about .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.about .ph{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.about .ph div{aspect-ratio:3/4;background:#fff;border:1px solid var(--line);overflow:hidden}
+.about .ph div:nth-child(2){margin-top:2.6rem}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+.about h2{margin:.9rem 0 1.2rem}
+.about p{color:var(--muted);margin-bottom:1rem;max-width:54ch}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.facts b{display:block;font-family:var(--serif);font-size:2.2rem;font-weight:500;line-height:1;color:var(--green)}
+.facts span{font-size:.8rem;color:var(--muted)}
+
+.deliv{background:var(--sand)}
+.deliv .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.deliv h2{margin:.9rem 0 1.2rem}
+.info{display:grid;gap:1.1rem;margin-top:1.8rem}
+.info p b{display:block;font-weight:500}
+.info p span{color:var(--muted);font-size:.95rem}
+.map{margin-top:1.6rem;aspect-ratio:16/10;border:1px solid var(--line);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0}
+form.card{background:#fff;border:1px solid var(--line);padding:clamp(1.4rem,3vw,2.4rem)}
+form.card h3{font-size:1.9rem;margin-bottom:.3rem}
+form.card>p{color:var(--muted);font-size:.92rem;margin-bottom:1.4rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:block;margin-bottom:1rem;font-size:.74rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+input,select,textarea{display:block;width:100%;margin-top:.35rem;padding:.8rem .9rem;border:1px solid var(--line);background:var(--cream);font-weight:300;font-size:1rem;letter-spacing:0;text-transform:none}
+textarea{min-height:90px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--terra);outline-offset:0;background:#fff}
+form .btn{width:100%}
+.ok{display:none;text-align:center;padding:2.2rem 1rem}
+.ok h3{font-size:2rem;margin-bottom:.5rem}
+.ok p{color:var(--muted)}
+form.sent>*:not(.ok){display:none}
+form.sent .ok{display:block}
+
+footer{background:var(--green2);color:#aebbaf;padding:3.5rem 0 2rem}
+footer .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid #ffffff1f}
+footer .logo{color:#fff;text-align:left}
+footer ul{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;font-size:.86rem;align-self:center}
+footer ul a:hover{color:#fff}
+footer .bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem 2rem;padding-top:1.5rem;font-size:.82rem}
+footer .bot a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+
+/* cart panel */
+.scrim{position:fixed;inset:0;z-index:90;background:rgba(24,36,25,.55);opacity:0;visibility:hidden;transition:.3s}
+.scrim.on{opacity:1;visibility:visible}
+.panel{position:fixed;top:0;right:0;bottom:0;z-index:95;width:min(440px,100%);background:var(--cream);transform:translateX(102%);transition:transform .4s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+.panel.on{transform:none}
+.panel .ph2{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 1.5rem;border-bottom:1px solid var(--line)}
+.panel .ph2 h3{font-size:1.7rem}
+.panel .ph2 button{font-size:2rem;line-height:1}
+.panel .items{flex:1;overflow:auto;padding:.5rem 1.5rem}
+.empty{text-align:center;color:var(--muted);padding:3rem 1rem}
+.li{display:grid;grid-template-columns:72px 1fr auto;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:center}
+.li img{width:72px;height:72px;object-fit:cover;border:1px solid var(--line);background:#fff}
+.li b{font-family:var(--serif);font-weight:500;font-size:1.1rem;line-height:1.15;display:block}
+.li small{color:var(--muted)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);margin-top:.4rem;background:#fff}
+.qty button{width:30px;height:30px;font-size:1.1rem}
+.qty span{min-width:26px;text-align:center;font-size:.9rem}
+.li .rm{font-size:.72rem;color:var(--muted);text-decoration:underline;display:block;margin-top:.3rem;text-align:right}
+.panel .ft{padding:1.3rem 1.5rem;border-top:1px solid var(--line);background:#fff}
+.panel .tot{display:flex;justify-content:space-between;font-family:var(--serif);font-size:1.5rem;margin-bottom:.3rem}
+.panel .ft p{font-size:.8rem;color:var(--muted);margin-bottom:1rem}
+.panel .ft .btn{width:100%}
+.panel .done{display:none;text-align:center;padding:3rem 1.5rem}
+.panel.fin .items,.panel.fin .ft{display:none}
+.panel.fin .done{display:block}
+.done h3{font-size:2rem;margin-bottom:.6rem}
+.done p{color:var(--muted);margin-bottom:1.4rem}
+
+.mbar{display:none}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:1020px){
+  nav.l,.tel{display:none}
+  header .in{grid-template-columns:auto 1fr auto}
+  .burger{display:block}
+  .logo{text-align:left;font-size:2rem}
+  .hero .grid{grid-template-columns:1fr;min-height:0}
+  .hero .txt{padding:3rem 1.5rem}
+  .hero .pics{aspect-ratio:16/10}
+  .hero .stamp{left:auto;right:1rem;bottom:1rem;width:96px;height:96px;font-size:.82rem}
+  .perks .wrap{grid-template-columns:1fr 1fr}
+  .grid4{grid-template-columns:repeat(2,1fr);gap:2rem 1rem}
+  .occ{grid-template-columns:repeat(2,1fr)}
+  .about .grid,.deliv .grid{grid-template-columns:1fr}
+  .touch .add{display:none}
+  .mini{display:block}
+}
+@media (max-width:640px){
+  body{padding-bottom:68px}
+  .logo{font-size:1.65rem}
+  header .in{gap:.4rem}
+  .bar{font-size:.66rem;letter-spacing:.08em}
+  .row{grid-template-columns:1fr}
+  .perks .wrap{grid-template-columns:1fr;gap:0}
+  .perk{padding:1rem 0;border-bottom:1px solid var(--line)}
+  .prod h3{font-size:1.12rem}
+  .facts b{font-size:1.8rem}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--green2);padding:.6rem;gap:.6rem}
+  .mbar a,.mbar button{display:flex;align-items:center;justify-content:center;padding:.85rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:#fff;border:1px solid #ffffff44}
+  .mbar a:first-child{background:var(--terra);border-color:var(--terra)}
+}
+</style>
+</head>
+<body>
+<div class="bar">Same-day flower delivery in <b>Houston</b> · Call <b>(281) 866-0895</b></div>
+
+<header id="top">
+  <div class="wrap in">
+    <nav class="l" aria-label="Main"><a href="#shop">Shop</a><a href="#occasions">Occasions</a><a href="#about">About</a><a href="#visit">Delivery</a></nav>
+    <a class="logo" href="#top">Flowers by Stephanie</a>
+    <div class="tools"><a class="tel" href="tel:+12818660895">(281) 866-0895</a>
+      <button class="cartbtn" id="cartbtn" aria-label="Open cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><b id="cnt">0</b></button>
+      <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button></div>
+  </div>
+</header>
+<div class="drawer"><a href="#shop">Shop flowers</a><a href="#occasions">Occasions</a><a href="#about">About us</a><a href="#visit">Delivery &amp; contact</a></div>
+
+<main>
+<section class="hero">
+  <div class="grid">
+    <div class="txt">
+      <span class="eyebrow">Houston florist · Hand-arranged in house</span>
+      <h1>Fresh flowers, <em>made for the season.</em></h1>
+      <p class="lead">Every bouquet is arranged by hand in our Houston shop and delivered personally, so what you order is exactly what arrives, fresh. Thanksgiving centerpieces and fall color are ready now.</p>
+      <div class="acts"><a class="btn" href="#shop">Shop flowers</a><a class="btn lt" href="#visit">Delivery info</a></div>
+    </div>
+    <div class="pics">
+      <div><img src="img/pure-happiness.jpg" alt="Sunflower and red rose bouquet" fetchpriority="high"></div>
+      <div><img src="img/family-gathering.jpg" alt="Thanksgiving centerpiece with candles"></div>
+      <div><img src="img/beautiful-whisper.jpg" alt="Soft pink bouquet in glass vase"></div>
+      <span class="stamp"><span><b>Same-day</b>delivery</span></span>
+    </div>
+  </div>
+</section>
+
+<div class="perks"><div class="wrap">
+  <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h12v9H3zM15 10h3.5L21 13v3h-6"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><p><b>Same-day delivery</b><span>In and around Houston</span></p></div>
+  <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21c4-3 6-6 6-9.5A6 6 0 0 0 6 11.500C6 15 8 18 12 21z"/><path d="M12 21V9"/></svg><p><b>Made in house</b><span>Hand-arranged with care</span></p></div>
+  <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><p><b>Nationwide</b><span>Through our florist network</span></p></div>
+  <div class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l2.6 5.6 6 .7-4.4 4.1 1.2 6L12 16.500 6.600 19.400l1.200-6L3.400 9.300l6-.7z"/></svg><p><b>Custom designs</b><span>Arrangements &amp; gift baskets</span></p></div>
+</div></div>
+
+<section class="sec" id="shop">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow">Our most popular bouquets</span><h2>Shop <em>fresh flowers</em></h2></div>
+      <p class="lead">Pick an arrangement, add it to your cart and tell us where and when to deliver. This is a sample cart.</p></div>
+    <div class="chips" role="group" aria-label="Filter">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="thanks">Thanksgiving</button>
+      <button class="chip" aria-pressed="false" data-f="love">Love &amp; romance</button>
+      <button class="chip" aria-pressed="false" data-f="smile">Make someone smile</button>
+      <button class="chip" aria-pressed="false" data-f="plant">Plants</button>
+    </div>
+    <div class="grid4" id="grid"></div>
+  </div>
+</section>
+
+<section class="sec dk" id="occasions">
+  <div class="wrap">
+    <div class="head rv"><div><span class="eyebrow">Shop by occasion</span><h2>A flower for <em>every moment</em></h2></div>
+      <p class="lead">Birthdays, anniversaries, thank-yous and the quiet moments. Tell us the occasion and we will help you choose.</p></div>
+    <div class="occ rv">
+      <a href="#shop" data-go="thanks"><img src="img/family-gathering.jpg" alt="" loading="lazy"><span><small>Seasonal</small>Thanksgiving</span></a>
+      <a href="#shop" data-go="love"><img src="img/dance-with-me.jpg" alt="" loading="lazy"><span><small>Romance</small>Love &amp; Romance</span></a>
+      <a href="#shop" data-go="smile"><img src="img/cotton-candy.jpg" alt="" loading="lazy"><span><small>Everyday</small>Make Someone Smile</span></a>
+      <a href="#shop" data-go="plant"><img src="img/serene-retreat.jpg" alt="" loading="lazy"><span><small>Sympathy &amp; gifts</small>Plants</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap grid">
+    <div class="ph rv"><div><img src="img/uniquely-chic.jpg" alt="Orange lily and rose arrangement" loading="lazy"></div><div><img src="img/purple-tulips.jpg" alt="Purple tulips" loading="lazy"></div></div>
+    <div class="rv">
+      <span class="eyebrow">About Flowers by Stephanie</span>
+      <h2>Your Houston florist, <em>start to finish</em>.</h2>
+      <p>Flowers by Stephanie is committed to creating beautiful arrangements and floral gifts for any occasion, from anniversaries and birthdays to Valentine's Day and Mother's Day.</p>
+      <p>Each bouquet is made in house and delivered personally in Houston, so every order gets the time and attention it deserves. We can also build a custom arrangement or gift basket for your special occasion.</p>
+      <div class="facts"><div><b>Same-day</b><span>Houston delivery</span></div><div><b>In house</b><span>Hand-made bouquets</span></div><div><b>50 states</b><span>Via our florist network</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec deliv" id="visit">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="eyebrow">Delivery &amp; contact</span>
+      <h2>Order by phone or <em>send a note</em>.</h2>
+      <p class="lead">Flower delivery in and around Houston, plus nationwide delivery through our reliable florist network.</p>
+      <div class="info">
+        <p><b>Flowers by Stephanie</b><span>3951 Cypress Creek Pkwy, Houston, TX 77068</span></p>
+        <p><b>Phone</b><span><a href="tel:+12818660895">(281) 866-0895</a></span></p>
+      </div>
+      <div class="map"><iframe title="Map to Flowers by Stephanie" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=3951+Cypress+Creek+Pkwy,+Houston,+TX&output=embed"></iframe></div>
+    </div>
+    <form class="card rv" id="f" novalidate>
+      <h3>Custom arrangement or question</h3>
+      <p>Tell us what you need. This is a sample form.</p>
+      <div class="row"><label>Your name<input name="n" required autocomplete="name"></label><label>Phone<input name="p" type="tel" required autocomplete="tel"></label></div>
+      <div class="row"><label>Occasion<select><option>Birthday</option><option>Anniversary</option><option>Thanksgiving</option><option>Sympathy</option><option>Other</option></select></label><label>Needed by<input type="date"></label></div>
+      <label>Message<textarea placeholder="Colors, budget, delivery zip…"></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+      <div class="ok"><h3>Thank you!</h3><p>This is a sample form, so nothing was sent. On the real site, Stephanie's team would reply shortly.</p></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top"><a class="logo" href="#top">Flowers by Stephanie</a>
+      <ul><li><a href="#shop">Shop</a></li><li><a href="#occasions">Occasions</a></li><li><a href="#about">About</a></li><li><a href="#visit">Delivery</a></li></ul></div>
+    <div class="bot"><span>3951 Cypress Creek Pkwy, Houston, TX 77068 · (281) 866-0895</span><span>Sample version designed by <a href="https://cybervision.com.mx" target="_blank" rel="noopener">CyberVision</a></span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:+12818660895">Call now</a><button id="mcart">View cart</button></div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="panel" id="panel" aria-label="Cart">
+  <div class="ph2"><h3>Your cart</h3><button id="cx" aria-label="Close cart">×</button></div>
+  <div class="items" id="items"></div>
+  <div class="ft">
+    <div class="tot"><span>Subtotal</span><b id="sub">$0.00</b></div>
+    <p>Delivery fee and tax are calculated at checkout. Sample cart, no payment is taken.</p>
+    <button class="btn" id="chk">Checkout</button>
+  </div>
+  <div class="done"><h3>Thank you!</h3><p>This is a sample checkout, so no order was placed. On the real site you would enter delivery details and pay securely.</p><button class="btn line" id="cont">Keep browsing</button></div>
+</aside>
+
+<script>
+(function(){
+  var P=[
+    {i:'pure-happiness',n:'Pure Happiness',p:64.99,c:'thanks smile',na:1},
+    {i:'family-gathering',n:'Family Gathering Centerpiece',p:44.99,c:'thanks',t:'Thanksgiving'},
+    {i:'splendid-surprise',n:'Splendid Surprise by Teleflora',p:69.99,c:'smile',t:'Deal of the Day',d:1},
+    {i:'sapphire-skies',n:"Teleflora's Sapphire Skies Bouquet",p:39.99,c:'smile'},
+    {i:'cotton-candy',n:'Cotton Candy',p:69.99,c:'smile'},
+    {i:'sweet-thoughts',n:"Teleflora's Sweet Thoughts Bouquet with Red Roses",p:34.99,c:'love'},
+    {i:'morning-melody',n:"Teleflora's Morning Melody",p:44.99,c:'smile'},
+    {i:'dance-with-me',n:'Dance with Me Bouquet with Red Roses',p:79.99,c:'love',t:'Popular'},
+    {i:'red-white-delight',n:'Red And White Delight by Teleflora',p:29.99,c:'thanks smile'},
+    {i:'beautiful-dreams',n:'Beautiful Dreams by Teleflora',p:94.99,c:'smile'},
+    {i:'serene-retreat',n:'Serene Retreat',p:44.99,c:'plant',na:1},
+    {i:'uniquely-chic',n:"Teleflora's Uniquely Chic",p:49.99,c:'thanks smile'},
+    {i:'lavish-love',n:'Lavish Love Bouquet with Long Stemmed Red Roses',p:109.99,c:'love'},
+    {i:'always-a-lady',n:'Always a Lady',p:99.99,c:'smile'},
+    {i:'full-of-love',n:'Full Of Love Bouquet',p:84.99,c:'love'},
+    {i:'beautiful-whisper',n:'Beautiful Whisper',p:129.99,c:'smile'},
+    {i:'purple-tulips',n:'Passionate Purple Tulips',p:74.99,c:'love smile'},
+    {i:'pink-tulips',n:'Precious Pink Tulips',p:74.99,c:'love smile'}
+  ];
+  var $=function(s){return document.querySelector(s)}, $$=function(s){return document.querySelectorAll(s)};
+  var money=function(v){return '$'+v.toFixed(2)};
+  var cart={};try{cart=JSON.parse(localStorage.getItem('fbs_cart')||'{}')}catch(e){}
+  function save(){try{localStorage.setItem('fbs_cart',JSON.stringify(cart))}catch(e){}}
+  var byId={};P.forEach(function(p){byId[p.i]=p});
+
+  var g=$('#grid');
+  g.innerHTML=P.map(function(p){
+    return '<article class="prod'+(p.na?' na':'')+'" data-c="'+p.c+'"><div class="ph"><img src="img/'+p.i+'.jpg" alt="'+p.n+'" loading="lazy" width="720" height="720">'
+      +(p.na?'<span class="tag off">Temporarily unavailable</span>':(p.t?'<span class="tag">'+p.t+'</span>':''))
+      +'<button class="add" data-add="'+p.i+'">Add to cart</button></div><h3>'+p.n+'</h3><p class="pr">'+money(p.p)+'</p>'
+      +'<button class="mini" data-add="'+p.i+'">Add to cart</button></article>';
+  }).join('');
+
+  function render(){
+    var ids=Object.keys(cart).filter(function(k){return byId[k]&&cart[k]>0}),n=0,s=0;
+    $('#items').innerHTML=ids.length?ids.map(function(k){var p=byId[k];n+=cart[k];s+=p.p*cart[k];
+      return '<div class="li"><img src="img/'+k+'.jpg" alt=""><div><b>'+p.n+'</b><small>'+money(p.p)+'</small><div class="qty"><button data-q="-1" data-id="'+k+'" aria-label="Less">−</button><span>'+cart[k]+'</span><button data-q="1" data-id="'+k+'" aria-label="More">+</button></div></div><div><b>'+money(p.p*cart[k])+'</b><button class="rm" data-rm="'+k+'">Remove</button></div></div>'}).join('')
+      :'<p class="empty">Your cart is empty.</p>';
+    $('#sub').textContent=money(s);
+    var c=$('#cnt');c.textContent=n;c.classList.toggle('on',n>0);
+    $('#chk').disabled=!ids.length;$('#chk').style.opacity=ids.length?1:.5;
+    var m=$('#mcart');if(m)m.textContent=n?'View cart ('+n+')':'View cart';
+  }
+  function open(){$('#panel').classList.remove('fin');$('#panel').classList.add('on');$('#scrim').classList.add('on')}
+  function close(){$('#panel').classList.remove('on');$('#scrim').classList.remove('on')}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-add]');
+    if(a){var k=a.dataset.add;cart[k]=(cart[k]||0)+1;save();render();open();return}
+    var q=e.target.closest('[data-q]');
+    if(q){var id=q.dataset.id;cart[id]=Math.max(0,(cart[id]||0)+parseInt(q.dataset.q));if(!cart[id])delete cart[id];save();render();return}
+    var r=e.target.closest('[data-rm]');
+    if(r){delete cart[r.dataset.rm];save();render();return}
+    var o=e.target.closest('[data-go]');
+    if(o){var f=o.dataset.go;$$('.chip').forEach(function(x){if(x.dataset.f===f)x.click()})}
+  });
+  $('#cartbtn').addEventListener('click',open);$('#mcart').addEventListener('click',open);
+  $('#cx').addEventListener('click',close);$('#scrim').addEventListener('click',close);
+  $('#cont').addEventListener('click',close);
+  $('#chk').addEventListener('click',function(){cart={};save();render();$('#panel').classList.add('fin')});
+  $$('.chip').forEach(function(c){c.addEventListener('click',function(){
+    $$('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+    var f=c.dataset.f;$$('.prod').forEach(function(p){p.classList.toggle('hide',f!=='all'&&p.dataset.c.split(' ').indexOf(f)<0)});
+  })});
+  var b=document.body,bg=$('.burger');
+  bg.addEventListener('click',function(){var o=b.classList.toggle('menu');bg.setAttribute('aria-expanded',o)});
+  $$('.drawer a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('menu')})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){close();b.classList.remove('menu')}});
+  $('#f').addEventListener('submit',function(e){e.preventDefault();this.classList.add('sent')});
+  render();
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1});
+    $$('.rv').forEach(function(r){io.observe(r)});
+  }else{$$('.rv').forEach(function(r){r.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
