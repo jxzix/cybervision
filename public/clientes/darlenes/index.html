@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Darlene's Flower & Gift Shop | Houston Florist Since 1969</title>
+<meta name="description" content="Houston's family florist and gift shop since 1969. Custom arrangements, weddings and events, D Boutique fashion, gifts and home décor.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#3a1d36">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#3a1d36; --plum2:#2a1327; --rose:#c9697f; --rose-d:#a94c62; --blush:#f6e6e4; --cream:#fbf6f1; --sage:#7d8f76;
+  --ink:#2a1f29; --muted:#756870; --line:#e8d8d4;
+  --serif:"Fraunces",Georgia,serif; --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1240px; --hdr:78px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:1.03rem;line-height:1.7;color:var(--ink);background:var(--cream);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.wrap{width:min(var(--wrap),100% - 3rem);margin-inline:auto}
+section[id]{scroll-margin-top:calc(var(--hdr) + 6px)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+h3{font-size:1.3rem}
+h1 em,h2 em{font-style:italic;color:var(--rose-d);font-weight:300}
+.dk h2 em{color:#f0a9b8}
+.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--rose-d)}
+.dk .eyebrow{color:#f0a9b8}
+.lead{font-size:1.12rem;color:var(--muted);max-width:54ch}
+.dk .lead{color:#cdb9c6}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.9rem;border-radius:999px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border:1px solid var(--plum);transition:.3s}
+.btn.solid{background:var(--plum);color:#fff}
+.btn.solid:hover{background:var(--rose-d);border-color:var(--rose-d)}
+.btn.line{color:var(--plum)}
+.btn.line:hover{background:var(--plum);color:#fff}
+.dk .btn.solid{background:#f0a9b8;border-color:#f0a9b8;color:var(--plum2)}
+.dk .btn.solid:hover{background:#fff;border-color:#fff}
+.dk .btn.line{color:#fff;border-color:#ffffff55}
+.dk .btn.line:hover{background:#fff;color:var(--plum2)}
+
+/* header */
+.bar{background:var(--plum2);color:#e9d6e0;font-size:.78rem;text-align:center;padding:.5rem 1rem;letter-spacing:.04em}
+.bar b{color:#f0a9b8;font-weight:600}
+header{position:sticky;top:0;z-index:50;background:rgba(251,246,241,.94);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
+header .in{height:var(--hdr);display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.logo{line-height:1}
+.logo b{font-family:var(--serif);font-weight:400;font-size:1.7rem;letter-spacing:-.01em;display:block}
+.logo b i{color:var(--rose-d);font-weight:300}
+.logo small{display:block;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;margin-top:.35rem;color:var(--muted);font-weight:600}
+nav.main{display:flex;gap:1.8rem;font-size:.82rem;font-weight:500}
+nav.main a{position:relative;padding:.3rem 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:100%;background:var(--rose-d);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav.main a:hover::after{transform:scaleX(1)}
+.hcta{display:flex;align-items:center;gap:1rem}
+.hcta .tel{font-weight:600;font-size:.9rem;white-space:nowrap}
+.hcta .btn{padding:.75rem 1.4rem}
+.burger{display:none;width:46px;height:46px;position:relative}
+.burger i{position:absolute;left:11px;right:11px;height:1.5px;background:var(--ink);transition:.3s}
+.burger i:nth-child(1){top:18px}.burger i:nth-child(2){top:23px}.burger i:nth-child(3){top:28px}
+body.menu .burger i:nth-child(1){top:23px;transform:rotate(45deg)}
+body.menu .burger i:nth-child(2){opacity:0}
+body.menu .burger i:nth-child(3){top:23px;transform:rotate(-45deg)}
+.drawer{position:fixed;inset:calc(var(--hdr) + 34px) 0 0 0;z-index:40;background:var(--cream);padding:1.5rem;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:.3s;overflow:auto}
+body.menu .drawer{opacity:1;visibility:visible}
+.drawer a{font-family:var(--serif);font-size:2rem;padding:.5rem 0;border-bottom:1px solid var(--line)}
+.drawer .btn{margin-top:1.4rem;font-family:var(--sans);font-size:.85rem;border-bottom:1px solid var(--plum);padding:1rem}
+
+/* hero */
+.hero{padding:clamp(2.5rem,6vw,5rem) 0 clamp(3rem,6vw,5rem)}
+.hero .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.hero h1{font-size:clamp(2.9rem,6.4vw,5.6rem);margin:1.2rem 0 1.4rem}
+.hero .lead{margin-bottom:2rem}
+.hero .acts{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero .facts{display:flex;flex-wrap:wrap;gap:1.6rem 2.6rem;margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.hero .facts b{display:block;font-family:var(--serif);font-size:2rem;font-weight:400;line-height:1}
+.hero .facts span{font-size:.78rem;color:var(--muted);letter-spacing:.04em}
+.hero .pic{position:relative}
+.hero .pic .main{aspect-ratio:4/5;border-radius:240px 240px 12px 12px;overflow:hidden;background:var(--blush)}
+.hero .pic img{width:100%;height:100%;object-fit:cover}
+.hero .pic .sm{position:absolute;left:-2rem;bottom:2.5rem;width:36%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:7px solid var(--cream);box-shadow:0 24px 40px -24px rgba(58,29,54,.6)}
+.hero .badge{position:absolute;right:-.5rem;top:2rem;background:var(--plum);color:#fff;border-radius:999px;width:116px;height:116px;display:grid;place-items:center;text-align:center;font-family:var(--serif);font-size:.95rem;line-height:1.15;padding:1rem;transform:rotate(8deg)}
+.hero .badge b{display:block;font-size:1.7rem;font-weight:400;color:#f0a9b8}
+
+.strip{background:var(--plum);color:#f3dfe7;overflow:hidden}
+.strip .wrap{display:flex;justify-content:center;flex-wrap:wrap;gap:.4rem 2.6rem;padding:1.3rem 0;font-family:var(--serif);font-style:italic;font-weight:300;font-size:1.35rem}
+.strip span+span::before{content:"✿";font-style:normal;font-size:.8rem;color:#f0a9b8;margin-right:2.6rem}
+
+.sec{padding:clamp(4.5rem,9vw,8rem) 0}
+.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:1.4rem;margin-bottom:2.6rem}
+.head h2{margin-top:.8rem}
+
+/* about */
+.about .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.about .stack{position:relative;aspect-ratio:1/1.1}
+.about .stack div{position:absolute;overflow:hidden;border-radius:12px;box-shadow:0 30px 50px -30px rgba(58,29,54,.5)}
+.about .stack div:first-child{inset:0 22% 18% 0}
+.about .stack div:last-child{inset:34% 0 0 38%;border:8px solid var(--cream);border-radius:16px}
+.about .stack img{width:100%;height:100%;object-fit:cover}
+.about h2{margin:.9rem 0 1.3rem}
+.about p{color:var(--muted);margin-bottom:1rem;max-width:56ch}
+.about .sig{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--plum);margin-top:1.4rem}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem 1.6rem;margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid var(--line);list-style:none;font-size:.95rem}
+.cats li::before{content:"✿";color:var(--rose);margin-right:.7rem;font-size:.75rem}
+
+/* flowers */
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem}
+.chip{padding:.6rem 1.3rem;border:1px solid var(--line);border-radius:999px;font-size:.8rem;font-weight:600;color:var(--muted);transition:.25s;background:#fff}
+.chip:hover{border-color:var(--rose);color:var(--rose-d)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.gal figure{position:relative;overflow:hidden;border-radius:10px;aspect-ratio:4/5;background:var(--blush);cursor:pointer}
+.gal figure.hide{display:none}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.4rem 1rem .9rem;background:linear-gradient(transparent,rgba(42,19,39,.78));color:#fff;font-family:var(--serif);font-size:1.1rem}
+.gal figcaption small{display:block;font-family:var(--sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.pricebox{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.4rem}
+.pricebox div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.6rem;display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.pricebox b{font-family:var(--serif);font-weight:400;font-size:1.15rem}
+.pricebox span{font-family:var(--serif);font-size:1.6rem;color:var(--rose-d)}
+.pricebox small{display:block;color:var(--muted);font-size:.8rem}
+.note{margin-top:1.2rem;font-size:.88rem;color:var(--muted)}
+
+/* boutique */
+.dk{background:var(--plum);color:#fff}
+.boutique .top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:end;margin-bottom:3rem}
+.boutique h2{margin-top:.9rem}
+.bt{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.bt figure{overflow:hidden;border-radius:10px;aspect-ratio:3/4;background:#ffffff14}
+.bt figure:nth-child(even){transform:translateY(1.6rem)}
+.bt img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.bt figure:hover img{transform:scale(1.06)}
+.bt+.tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:4rem}
+.tags span{padding:.55rem 1.1rem;border:1px solid #ffffff33;border-radius:999px;font-size:.82rem;color:#e9d6e0}
+
+/* events */
+.ev .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.ev .mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:200px 200px;gap:.9rem}
+.ev .mosaic figure{overflow:hidden;border-radius:10px;background:var(--blush)}
+.ev .mosaic figure:nth-child(1){grid-row:span 2}
+.ev .mosaic figure:nth-child(4){grid-column:span 2}
+.ev .mosaic img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.ev .mosaic figure:hover img{transform:scale(1.05)}
+.ev h2{margin:.9rem 0 1.2rem}
+.ev .lead{margin-bottom:1.6rem}
+.ticks{list-style:none;display:grid;gap:.6rem;margin-bottom:2rem}
+.ticks li{display:flex;gap:.8rem}
+.ticks li::before{content:"";flex:none;width:7px;height:7px;margin-top:.6rem;background:var(--rose);border-radius:50%}
+
+/* gifts */
+.gifts{background:var(--blush)}
+.gifts .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.gifts .pics{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.gifts .pics figure{overflow:hidden;border-radius:10px;aspect-ratio:4/5}
+.gifts .pics figure:nth-child(2){margin-top:2.4rem}
+.gifts img{width:100%;height:100%;object-fit:cover}
+.gifts h2{margin:.9rem 0 1.2rem}
+.gifts .cats{border-color:#e0c8c8}
+
+/* order */
+.order .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.order h2{margin:.9rem 0 1.2rem}
+.info{margin-top:2rem;display:grid;gap:1.2rem}
+.info div{display:flex;gap:1rem;align-items:flex-start}
+.info svg{flex:none;width:22px;height:22px;color:var(--rose-d);margin-top:.2rem}
+.info b{display:block;font-weight:600}
+.info span{color:var(--muted);font-size:.95rem}
+.map{margin-top:1.8rem;border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10}
+.map iframe{width:100%;height:100%;border:0}
+form.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(1.4rem,3vw,2.4rem);box-shadow:0 30px 60px -40px rgba(58,29,54,.4)}
+form.card h3{font-size:1.6rem;margin-bottom:.3rem}
+form.card>p{color:var(--muted);font-size:.92rem;margin-bottom:1.4rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:block;margin-bottom:1rem;font-size:.8rem;font-weight:600;letter-spacing:.04em}
+input,select,textarea{display:block;width:100%;margin-top:.35rem;padding:.8rem .95rem;border:1px solid var(--line);border-radius:8px;background:var(--cream);font-weight:400;font-size:.98rem}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--rose);outline-offset:0;background:#fff}
+form .btn{width:100%;margin-top:.4rem}
+.ok{display:none;padding:2.4rem 1rem;text-align:center}
+.ok h3{font-size:1.8rem;margin-bottom:.6rem}
+.ok p{color:var(--muted)}
+form.sent>*:not(.ok){display:none}
+form.sent .ok{display:block}
+
+footer{background:var(--plum2);color:#cdb9c6;padding:3.5rem 0 2rem}
+footer .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid #ffffff1f}
+footer .logo b{color:#fff}
+footer .logo small{color:#cdb9c6}
+footer ul{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;font-size:.9rem;align-self:center}
+footer ul a:hover{color:#fff}
+footer .bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem 2rem;padding-top:1.5rem;font-size:.82rem}
+footer .bot a{color:#f0a9b8;text-decoration:underline;text-underline-offset:3px}
+
+.mbar{display:none}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(42,19,39,.92);display:none;place-items:center;padding:1.5rem}
+.lb.on{display:grid}
+.lb img{max-height:88vh;max-width:min(92vw,900px);border-radius:10px;object-fit:contain}
+.lb button{position:absolute;top:1rem;right:1.2rem;color:#fff;font-size:2.2rem;line-height:1}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:1020px){
+  nav.main,.hcta .tel,.hcta .btn{display:none}
+  .burger{display:block}
+  .hero .grid,.about .grid,.boutique .top,.ev .grid,.gifts .grid,.order .grid{grid-template-columns:1fr}
+  .hero .pic{max-width:520px;margin-inline:auto;width:100%}
+  .hero .pic .sm{left:-.6rem}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .bt{grid-template-columns:repeat(3,1fr)}
+  .bt figure:nth-child(even){transform:none}
+  .pricebox{grid-template-columns:1fr}
+  .about .stack{max-width:480px}
+}
+@media (max-width:640px){
+  body{padding-bottom:68px}
+  .bar{font-size:.7rem}
+  .logo b{font-size:1.45rem}
+  .hero .badge{width:92px;height:92px;font-size:.78rem;right:-.2rem}
+  .hero .badge b{font-size:1.3rem}
+  .gal{gap:.7rem}
+  .bt{grid-template-columns:repeat(2,1fr)}
+  .ev .mosaic{grid-template-rows:150px 150px}
+  .row,.cats{grid-template-columns:1fr}
+  .gifts .pics figure:nth-child(2){margin-top:1.4rem}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--plum2);padding:.6rem;gap:.6rem}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;border:1px solid #ffffff44}
+  .mbar a:first-child{background:#f0a9b8;border-color:#f0a9b8;color:var(--plum2)}
+}
+</style>
+</head>
+<body>
+<div class="bar">Family florist in Houston since <b>1969</b> · Call <b>(713) 680-2350</b> to place your order</div>
+
+<header id="top">
+  <div class="wrap in">
+    <a class="logo" href="#top" aria-label="Darlene's Flower & Gift Shop"><b>Darlene's <i>Flowers</i></b><small>& Gift Shop · Est. 1969</small></a>
+    <nav class="main" aria-label="Main">
+      <a href="#about">Our story</a><a href="#flowers">Flowers</a><a href="#boutique">D Boutique</a><a href="#events">Weddings &amp; events</a><a href="#gifts">Gifts</a><a href="#order">Visit</a>
+    </nav>
+    <div class="hcta"><a class="tel" href="tel:+17136802350">(713) 680-2350</a><a class="btn solid" href="#order">Order flowers</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button></div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <a href="#about">Our story</a><a href="#flowers">Flowers</a><a href="#boutique">D Boutique</a><a href="#events">Weddings &amp; events</a><a href="#gifts">Gifts &amp; décor</a><a href="#order">Visit &amp; order</a>
+  <a class="btn solid" href="tel:+17136802350">Call (713) 680-2350</a>
+</div>
+
+<main>
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Houston · Northwest Freeway</span>
+      <h1>Flowers, gifts &amp; <em>a little more</em> beauty.</h1>
+      <p class="lead">For over fifty years we have designed the arrangements Houston sends for birthdays, weddings, thank-yous and goodbyes. Come in and browse flowers, gifts, home décor and D Boutique fashion, all under one roof.</p>
+      <div class="acts"><a class="btn solid" href="#order">Order flowers</a><a class="btn line" href="#flowers">See our work</a></div>
+      <div class="facts">
+        <div><b>1969</b><span>Serving Houston since</span></div>
+        <div><b>50+</b><span>Years of design experience</span></div>
+        <div><b>2</b><span>Sisters, one family shop</span></div>
+      </div>
+    </div>
+    <div class="pic rv">
+      <div class="main"><img src="img/hero.jpg" alt="Custom purple and pink arrangement from Darlene's" width="1050" height="1400" fetchpriority="high"></div>
+      <div class="sm"><img src="img/fl-peach.jpg" alt="Peach rose arrangement" loading="lazy"></div>
+      <div class="badge"><span><b>Since</b>1969</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap"><span>Everyday bouquets</span><span>Weddings &amp; events</span><span>Sympathy tributes</span><span>Gift baskets</span><span>D Boutique</span></div></div>
+
+<section class="sec about" id="about">
+  <div class="wrap grid">
+    <div class="stack rv"><div><img src="img/fl-tulip.jpg" alt="Tulip and spider mum arrangement" loading="lazy"></div><div><img src="img/fl-sun.jpg" alt="Sunflower arrangement" loading="lazy"></div></div>
+    <div class="rv">
+      <span class="eyebrow">Our story</span>
+      <h2>A Houston Heights family, <em>still arranging</em>.</h2>
+      <p>Darlene's opened in 1969, and since 1982 it has been owned and run by sisters Susan Tate and Judy Bankhead, who were born and raised in the Houston Heights. Every arrangement is still designed by hand, to your colors, your budget and your occasion.</p>
+      <p>Whether you want a simple bouquet for a friend or the florals for an entire celebration, you are talking to the people who will actually make it.</p>
+      <ul class="cats">
+        <li>Cut flowers &amp; plants</li><li>Inspirational gifts</li><li>Bath &amp; body</li><li>Candles &amp; potpourri</li><li>Garden &amp; home décor</li><li>Gourmet items</li>
+      </ul>
+      <p class="sig">Susan &amp; Judy</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="flowers" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="eyebrow">Flowers for all occasions</span><h2>Custom-made, <em>never</em> off the shelf.</h2></div>
+      <p class="lead">Tell us who it is for and what you would like to say. We choose the freshest flowers of the day and design the rest. Local delivery across Houston and surrounding areas.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Filter">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="every">Everyday</button>
+      <button class="chip" aria-pressed="false" data-f="holiday">Holiday</button>
+      <button class="chip" aria-pressed="false" data-f="sym">Sympathy</button>
+    </div>
+    <div class="gal rv">
+      <figure data-c="every"><img src="img/fl-roses.jpg" alt="Pink rose and hydrangea arrangement" loading="lazy"><figcaption><small>Everyday</small>Garden Roses</figcaption></figure>
+      <figure data-c="every"><img src="img/fl-bright.jpg" alt="Bright mixed bouquet with baby's breath" loading="lazy"><figcaption><small>Everyday</small>Sunny Greetings</figcaption></figure>
+      <figure data-c="holiday"><img src="img/fl-sun.jpg" alt="Sunflower autumn arrangement" loading="lazy"><figcaption><small>Holiday</small>Autumn Harvest</figcaption></figure>
+      <figure data-c="every"><img src="img/fl-purple.jpg" alt="Purple orchid arrangement" loading="lazy"><figcaption><small>Everyday</small>Orchid Elegance</figcaption></figure>
+      <figure data-c="every"><img src="img/fl-tropic.jpg" alt="Tropical bird of paradise arrangement" loading="lazy"><figcaption><small>Everyday</small>Tropical Statement</figcaption></figure>
+      <figure data-c="every"><img src="img/fl-mix.jpg" alt="Coral rose and hydrangea arrangement" loading="lazy"><figcaption><small>Everyday</small>Coral &amp; Blue</figcaption></figure>
+      <figure data-c="holiday"><img src="img/fl-basket.jpg" alt="Flowers with a gift basket" loading="lazy"><figcaption><small>Holiday</small>Bouquet &amp; Gift</figcaption></figure>
+      <figure data-c="sym"><img src="img/fl-spray.jpg" alt="Casket spray in pink and purple" loading="lazy"><figcaption><small>Sympathy</small>Standing Spray</figcaption></figure>
+      <figure data-c="sym"><img src="img/fl-cross.jpg" alt="Floral cross tribute" loading="lazy"><figcaption><small>Sympathy</small>Cross Tribute</figcaption></figure>
+      <figure data-c="every"><img src="img/fl-pink.jpg" alt="Pink flowers in a ceramic purse vase" loading="lazy"><figcaption><small>Everyday</small>Purse Bouquet</figcaption></figure>
+    </div>
+    <div class="pricebox rv">
+      <div><b>Funeral baskets<small>Sympathy</small></b><span>$75+</span></div>
+      <div><b>Easels<small>Sympathy</small></b><span>$175+</span></div>
+      <div><b>Plants<small>Sympathy &amp; gifting</small></b><span>$50+</span></div>
+    </div>
+    <p class="note">Casket sprays for closed caskets also available. All deliveries are subject to a delivery fee based on location. Call (713) 680-2350.</p>
+  </div>
+</section>
+
+<section class="sec dk boutique" id="boutique">
+  <div class="wrap">
+    <div class="top rv">
+      <div><span class="eyebrow">A dazzling division of Darlene's</span><h2>D <em>Boutique</em></h2></div>
+      <p class="lead">Stylish clothing and accessories, chosen for everyday life and special evenings. New pieces arrive with every season.</p>
+    </div>
+    <div class="bt rv">
+      <figure><img src="img/bt-bag.jpg" alt="Leather bags and boots" loading="lazy"></figure>
+      <figure><img src="img/bt-vest.jpg" alt="Printed vest outfit" loading="lazy"></figure>
+      <figure><img src="img/bt-dress.jpg" alt="Floral dress" loading="lazy"></figure>
+      <figure><img src="img/bt-purple.jpg" alt="Blouses and purses" loading="lazy"></figure>
+      <figure><img src="img/bt-jewel.jpg" alt="Handcrafted jewelry" loading="lazy"></figure>
+      <figure><img src="img/bt-scarf.jpg" alt="Seasonal footwear and accessories" loading="lazy"></figure>
+    </div>
+    <div class="tags rv"><span>Clutches</span><span>Jewelry sets</span><span>Seasonal shoes</span><span>Blouses &amp; cardigans</span><span>Vests &amp; dresses</span><span>Purses &amp; bags</span><span>Scarves &amp; hats</span></div>
+  </div>
+</section>
+
+<section class="sec ev" id="events">
+  <div class="wrap grid">
+    <div class="mosaic rv">
+      <figure><img src="img/ev-tall.jpg" alt="Tall ceremony arrangement" loading="lazy"></figure>
+      <figure><img src="img/ev-mantel.jpg" alt="Floral mantel decor" loading="lazy"></figure>
+      <figure><img src="img/ev-cross.jpg" alt="Chapel arch with flowers" loading="lazy"></figure>
+      <figure><img src="img/ev-tent.jpg" alt="Tented reception with white centerpieces" loading="lazy"></figure>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Weddings &amp; special events</span>
+      <h2>Put your personal touch <em>in petals</em>.</h2>
+      <p class="lead">From a single statement piece to complete floral service for your entire event, we design with your favorite flowers and colors, and install on site.</p>
+      <ul class="ticks">
+        <li>Bridal bouquets, wedding party florals, archways, centerpieces and cake toppers</li>
+        <li>Birthdays, baby and bridal showers</li>
+        <li>Office events and corporate functions</li>
+        <li>Private parties, home staging and holiday decorating</li>
+      </ul>
+      <a class="btn solid" href="#order">Plan your event</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec gifts" id="gifts">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="eyebrow">Gifts &amp; home décor</span>
+      <h2>Gifts for <em>everyone</em> on your list.</h2>
+      <p class="lead">Fun, fresh and unique finds, always changing, and free of the usual. Gift wrapping is available year-round, and we are happy to build a custom basket for any occasion.</p>
+      <ul class="cats">
+        <li>Candles &amp; fragrances</li><li>Gourmet food items</li><li>Kitchen accessories</li><li>Soaps &amp; bath bombs</li><li>Jewelry &amp; purses</li><li>Blown glass art</li><li>Cards &amp; books</li><li>Collectibles &amp; figurines</li><li>Home décor pieces</li><li>Handcrafted gift baskets</li>
+      </ul>
+    </div>
+    <div class="pics rv">
+      <figure><img src="img/fl-basket.jpg" alt="Gift basket with flowers" loading="lazy"></figure>
+      <figure><img src="img/bt-scarf.jpg" alt="Gift and accessory display" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec order" id="order">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="eyebrow">Visit &amp; order</span>
+      <h2>Come see us on the <em>Northwest Freeway</em>.</h2>
+      <p class="lead">Stop by to browse, or send us the details and we will call you back to confirm your arrangement.</p>
+      <div class="info">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><p><b>Shop</b><span>10570 Northwest Fwy, Houston, TX 77092</span></p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><p><b>Phone</b><span><a href="tel:+17136802350">(713) 680-2350</a></span></p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h13v10H3zM16 10h3l2 3v4h-5"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg><p><b>Local delivery</b><span>Houston and surrounding areas. Delivery fee based on location.</span></p></div>
+      </div>
+      <div class="map"><iframe title="Map to Darlene's Flower & Gift Shop" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=10570+Northwest+Fwy,+Houston,+TX+77092&output=embed"></iframe></div>
+    </div>
+    <form class="card rv" id="f" novalidate>
+      <h3>Request an arrangement</h3>
+      <p>Tell us what you have in mind. This is a sample form.</p>
+      <div class="row"><label>Your name<input name="n" required autocomplete="name"></label><label>Phone<input name="p" type="tel" required autocomplete="tel"></label></div>
+      <div class="row">
+        <label>Occasion<select name="o"><option>Birthday</option><option>Anniversary</option><option>Sympathy</option><option>Wedding / event</option><option>Just because</option></select></label>
+        <label>Needed by<input name="d" type="date"></label>
+      </div>
+      <label>Delivery or pickup<select name="m"><option>Local delivery</option><option>Pickup at the shop</option></select></label>
+      <label>Delivery address &amp; notes<textarea name="t" placeholder="Colors, budget, card message…"></textarea></label>
+      <button class="btn solid" type="submit">Send request</button>
+      <div class="ok"><h3>Thank you!</h3><p>This is a sample form, so nothing was sent. On the real site, Darlene's would call you to confirm.</p></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href="#top"><b>Darlene's Flowers</b><small>& Gift Shop · Est. 1969</small></a>
+      <ul><li><a href="#about">Our story</a></li><li><a href="#flowers">Flowers</a></li><li><a href="#boutique">D Boutique</a></li><li><a href="#events">Weddings &amp; events</a></li><li><a href="#gifts">Gifts</a></li><li><a href="#order">Visit</a></li></ul>
+    </div>
+    <div class="bot"><span>10570 Northwest Fwy, Houston, TX 77092 · (713) 680-2350</span><span>Sample version designed by <a href="https://cybervision.com.mx" target="_blank" rel="noopener">CyberVision</a></span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:+17136802350">Call now</a><a href="#order">Order</a></div>
+<div class="lb" id="lb"><button aria-label="Close">×</button><img alt=""></div>
+
+<script>
+(function(){
+  var b=document.body, bg=document.querySelector('.burger');
+  bg.addEventListener('click',function(){var o=b.classList.toggle('menu');bg.setAttribute('aria-expanded',o)});
+  document.querySelectorAll('.drawer a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('menu');bg.setAttribute('aria-expanded',false)})});
+  document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+    var f=c.dataset.f;document.querySelectorAll('.gal figure').forEach(function(g){g.classList.toggle('hide',f!=='all'&&g.dataset.c!==f)});
+  })});
+  var lb=document.getElementById('lb'),li=lb.querySelector('img');
+  document.querySelectorAll('.gal figure').forEach(function(g){g.addEventListener('click',function(){var im=g.querySelector('img');li.src=im.src;li.alt=im.alt;lb.classList.add('on')})});
+  lb.addEventListener('click',function(){lb.classList.remove('on')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){lb.classList.remove('on');b.classList.remove('menu')}});
+  document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();this.classList.add('sent')});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    document.querySelectorAll('.rv').forEach(function(r){io.observe(r)});
+  }else{document.querySelectorAll('.rv').forEach(function(r){r.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
