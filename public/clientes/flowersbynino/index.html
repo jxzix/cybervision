@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flowers By Nino | Luxury Houston Florist Since 1998</title>
+<meta name="description" content="Handcrafted floral designs, weddings, events and sympathy flowers by Nino Shbeeb. Your local Houston florist with same-day delivery.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#13241b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1c3327; --deep:#13241b; --gold:#b8995a; --gold-l:#d8c08a; --cream:#f6f1e7; --paper:#fcfaf5;
+  --ink:#1d1b18; --muted:#6b675d; --line:#e2dac9;
+  --serif:"Gilda Display",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1220px; --bar:36px; --hdr:80px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:300;font-size:1.0625rem;line-height:1.7;color:var(--ink);background:var(--cream);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{width:min(var(--wrap),100% - 3rem);margin-inline:auto}
+section[id]{scroll-margin-top:calc(var(--hdr) + 10px)}
+
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;letter-spacing:.005em}
+h2{font-size:clamp(2.1rem,4.3vw,3.4rem)}
+h3{font-size:1.4rem}
+em{font-style:normal;color:var(--gold)}
+.dark em,.hero em{color:var(--gold-l)}
+.eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--gold)}
+.lead{font-size:1.1rem;color:var(--muted);max-width:56ch}
+.dark .lead,.hero .lead{color:#c5cdc4}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1.05rem 2rem;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border:1px solid var(--gold);transition:background .3s,color .3s,border-color .3s}
+.btn.solid{background:var(--gold);color:var(--deep)}
+.btn.solid:hover{background:var(--gold-l);border-color:var(--gold-l)}
+.btn.line{color:var(--gold)}
+.btn.line:hover{background:var(--gold);color:var(--deep)}
+.btn.dk{background:var(--forest);border-color:var(--forest);color:#fff}
+.btn.dk:hover{background:var(--deep);border-color:var(--deep)}
+.btn.ghost{color:var(--forest);border-color:var(--forest)}
+.btn.ghost:hover{background:var(--forest);color:#fff}
+.arrow{display:inline-block;width:1.4rem;height:1px;background:currentColor;position:relative}
+.arrow::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+/* barra + header */
+.bar{background:var(--deep);color:var(--gold-l);text-align:center;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;height:var(--bar);line-height:var(--bar);font-weight:500}
+.bar .s{display:none}
+header{position:sticky;top:0;z-index:50;background:var(--forest);color:#fff;border-bottom:1px solid #ffffff14;transition:box-shadow .3s}
+header.sh{box-shadow:0 10px 30px -18px rgba(0,0,0,.7)}
+header .in{height:var(--hdr);display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-family:var(--serif);font-weight:400;font-size:1.8rem;letter-spacing:.02em}
+.logo small{font-size:.54rem;letter-spacing:.38em;text-transform:uppercase;margin-top:.45rem;color:var(--gold-l);font-weight:600}
+nav.main{display:flex;gap:1.7rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+nav.main a{position:relative;padding:.4rem 0;color:#e8ece6}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav.main a:hover::after{transform:scaleX(1)}
+.h-tel{font-size:.78rem;letter-spacing:.06em;font-weight:500;color:var(--gold-l);white-space:nowrap}
+.burger{display:none;width:46px;height:46px;position:relative}
+.burger i{position:absolute;left:11px;right:11px;height:1px;background:#fff;transition:transform .3s,top .3s,opacity .3s}
+.burger i:nth-child(1){top:18px}.burger i:nth-child(2){top:23px}.burger i:nth-child(3){top:28px}
+body.menu .burger i:nth-child(1){top:23px;transform:rotate(45deg)}
+body.menu .burger i:nth-child(2){opacity:0}
+body.menu .burger i:nth-child(3){top:23px;transform:rotate(-45deg)}
+.drawer{position:fixed;inset:calc(var(--bar) + var(--hdr)) 0 0 0;z-index:40;background:var(--forest);padding:1.5rem;display:flex;flex-direction:column;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .3s,visibility 0s .3s;overflow:auto}
+body.menu .drawer{opacity:1;transform:none;visibility:visible;transition:opacity .3s,transform .3s}
+.drawer a{font-family:var(--serif);font-size:1.9rem;padding:.55rem 0;border-bottom:1px solid #ffffff1c;color:#fff}
+
+/* hero */
+.hero{background:var(--forest);color:#fff;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center;padding:clamp(3rem,7vw,6rem) 0}
+.hero h1{font-size:clamp(2.7rem,6.4vw,5.4rem);margin:1.4rem 0 1.5rem;letter-spacing:-.005em}
+.hero .lead{margin-bottom:2.2rem}
+.hero .acts{display:flex;flex-wrap:wrap;gap:.9rem}
+.hero .pic{position:relative}
+.hero .pic img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:300px 300px 0 0}
+.hero .pic::after{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid var(--gold);border-radius:310px 310px 0 0;z-index:-1}
+.hero .tag{position:absolute;left:-1.2rem;bottom:2rem;background:var(--paper);color:var(--forest);padding:1rem 1.4rem;font-family:var(--serif);font-size:1.05rem;line-height:1.2;box-shadow:0 20px 40px -22px rgba(0,0,0,.6)}
+.hero .tag small{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;font-weight:600}
+
+/* cifras */
+.facts{background:var(--deep);color:#e8ece6;border-top:1px solid #ffffff12}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.facts div{padding:1.9rem 1.2rem;border-left:1px solid #ffffff14;text-align:center}
+.facts div:first-child{border-left:0}
+.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:2.1rem;line-height:1;color:var(--gold-l)}
+.facts span{display:block;margin-top:.7rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;opacity:.85}
+
+.sec{padding:clamp(4.5rem,9vw,8rem) 0}
+.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:1.4rem;margin-bottom:2.4rem}
+.head h2{margin-top:.9rem}
+
+/* colecciones */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.col{position:relative;aspect-ratio:4/5;overflow:hidden;color:#fff;display:flex;align-items:flex-end;background:var(--deep)}
+.col img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.col::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(10,22,15,.82))}
+.col:hover img{transform:scale(1.06)}
+.col div{position:relative;z-index:2;padding:1.6rem;width:100%}
+.col h3{font-size:1.7rem}
+.col span{display:flex;align-items:center;gap:.7rem;margin-top:.6rem;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);font-weight:600}
+
+/* designer's choice */
+.dc{background:var(--paper);border-block:1px solid var(--line)}
+.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:3.4rem}
+.st{cursor:pointer;text-align:left}
+.st .ph{aspect-ratio:1;overflow:hidden;background:#e9e2d3;position:relative}
+.st img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.st:hover img{transform:scale(1.05)}
+.st[aria-pressed=true] .ph{outline:2px solid var(--gold);outline-offset:-2px}
+.st[aria-pressed=true] .ph::after{content:"Selected";position:absolute;top:.8rem;right:.8rem;background:var(--gold);color:var(--deep);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:.35rem .7rem}
+.st h3{margin-top:.9rem;font-size:1.25rem}
+.st p{font-size:.88rem;color:var(--muted)}
+.dc .box{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.dc .box h3{font-size:2rem;margin:.9rem 0 1rem}
+
+form.f{display:grid;gap:1.1rem}
+form.f .row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+label{display:grid;gap:.4rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+input,select,textarea{width:100%;padding:.85rem 1rem;border:1px solid var(--line);background:var(--cream);font-size:1rem;letter-spacing:0;text-transform:none;font-weight:300;color:var(--ink);border-radius:0}
+.dark input,.dark select,.dark textarea{background:#ffffff0d;border-color:#ffffff2a;color:#fff}
+.dark label{color:#aab5aa}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.ok{display:none;padding:1rem 1.2rem;background:#e6efe0;color:var(--forest);font-size:.95rem}
+.dark .ok{background:#ffffff14;color:var(--gold-l)}
+.ok.on{display:block}
+
+/* bodas */
+.events .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.events .pics{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.events .pics img{width:100%;object-fit:cover}
+.events .pics img:first-child{aspect-ratio:3/4.4}
+.events .pics img:last-child{aspect-ratio:3/4.4;margin-top:2.6rem}
+.events h2{margin:1rem 0 1.3rem}
+.events ul{list-style:none;margin:1.8rem 0 2.2rem;display:grid;gap:.8rem}
+.events li{display:flex;gap:.9rem;padding-bottom:.8rem;border-bottom:1px solid var(--line)}
+.events li::before{content:"✦";color:var(--gold);font-size:.8rem;margin-top:.2rem}
+.consult{background:var(--forest);color:#fff;padding:clamp(1.6rem,3vw,2.6rem);margin-top:2.4rem}
+.consult h3{font-size:1.6rem;margin-bottom:1.2rem}
+
+/* simpatía */
+.symp{background:var(--deep);color:#e1e7df}
+.symp .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.symp img{width:100%;aspect-ratio:1;object-fit:cover}
+.symp h2{color:#fff;margin:1rem 0 1.3rem}
+.symp ul{list-style:none;margin:1.8rem 0 2.2rem;border-top:1px solid #ffffff1a}
+.symp li{padding:1.1rem .2rem;border-bottom:1px solid #ffffff1a;font-family:var(--serif);font-size:1.4rem;display:flex;justify-content:space-between;gap:1rem}
+.symp li span{font-family:var(--sans);font-size:.85rem;color:#9cab9d;align-self:center;text-align:right}
+
+/* bloom party */
+.bloom .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.bloom img{width:100%;aspect-ratio:4/3.4;object-fit:cover}
+.bloom h2{margin:1rem 0 1.3rem}
+
+/* nino */
+.about{background:var(--paper);border-block:1px solid var(--line)}
+.about .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about h2{margin:1rem 0 1.4rem}
+.about p+p{margin-top:1rem}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:2.4rem;padding-top:2rem;border-top:1px solid var(--line)}
+.vals h3{font-size:1.15rem;margin-bottom:.4rem}
+.vals p{font-size:.9rem;color:var(--muted)}
+
+/* galería */
+.gal .cols2{columns:3;column-gap:1.1rem}
+.gal figure{break-inside:avoid;margin-bottom:1.1rem;position:relative;overflow:hidden;cursor:zoom-in;background:#e2dac9}
+.gal figure img{width:100%;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.gal figure:hover img{transform:scale(1.04)}
+.gal figure button{position:absolute;inset:0;width:100%;height:100%}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:1rem 1.2rem;color:#fff;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;background:linear-gradient(transparent,rgba(10,22,15,.75));opacity:0;transition:.4s;pointer-events:none}
+.gal figure:hover figcaption{opacity:1}
+.credit{margin-top:1rem;font-size:.82rem;color:var(--muted)}
+dialog.lb{border:0;background:transparent;max-width:100vw;max-height:100vh;width:100%;height:100%;padding:0;color:#fff}
+dialog.lb::backdrop{background:rgba(10,20,14,.95)}
+dialog.lb .stage{height:100%;display:grid;place-items:center;padding:4rem 1rem 5rem}
+dialog.lb img{max-height:100%;max-width:min(1200px,100%);object-fit:contain}
+dialog.lb .cap{position:absolute;left:0;right:0;bottom:1.6rem;text-align:center;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#c9d2c8;padding:0 1rem}
+dialog.lb button{position:absolute;width:52px;height:52px;display:grid;place-items:center;font-size:1.6rem;font-family:var(--serif);color:#fff;border:1px solid #ffffff44;border-radius:50%;transition:background .3s}
+dialog.lb button:hover{background:#ffffff22}
+.lb .x{top:1.2rem;right:1.2rem}.lb .pv{left:1.2rem;top:50%}.lb .nx{right:1.2rem;top:50%}
+
+/* faq */
+.faq .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,6rem)}
+.faq h2{margin-top:1rem}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.4rem 0;font-family:var(--serif);font-size:1.35rem;line-height:1.25}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--sans);font-weight:200;font-size:1.8rem;transition:transform .3s;flex:none;color:var(--gold)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 2.5rem 1.5rem 0;color:var(--muted)}
+
+/* contacto */
+.contact{background:var(--forest);color:#e1e7df}
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem)}
+.contact h2{color:#fff;margin:1rem 0 1.4rem}
+.contact .info{display:grid;gap:1.2rem;margin-top:2rem}
+.contact .info div{padding-bottom:1.2rem;border-bottom:1px solid #ffffff1a}
+.contact .info b{display:block;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);font-weight:600;margin-bottom:.3rem}
+.contact .info a{text-decoration:underline;text-underline-offset:3px}
+
+footer{background:var(--deep);color:#9cab9d;padding:4rem 0 2rem;font-size:.95rem}
+footer .top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;padding-bottom:2.4rem;border-bottom:1px solid #ffffff14}
+footer .logo{color:#fff}
+footer ul{list-style:none;display:flex;gap:1.6rem;flex-wrap:wrap;align-items:center}
+footer a:hover{color:#fff}
+footer .bot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.6rem;font-size:.84rem}
+footer .bot a{color:#d3dcd2;text-decoration:underline;text-underline-offset:3px}
+
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:.8rem 1.4rem;font-size:.9rem;opacity:0;visibility:hidden;transition:.35s;z-index:90;max-width:92vw}
+.toast.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.mbar{display:none}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
+
+@media (max-width:1080px){
+  nav.main,.h-tel{display:none}.burger{display:block}
+  .cols,.styles{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+  .hero .grid,.dc .box,.events .grid,.symp .grid,.bloom .grid,.about .grid,.faq .grid,.contact .grid{grid-template-columns:1fr}
+  .hero .pic{max-width:440px;margin:0 auto;width:calc(100% - 1.6rem)}
+  .facts .wrap{grid-template-columns:repeat(2,1fr)}
+  .facts div:nth-child(3){border-left:0}
+  .facts div:nth-child(n+3){border-top:1px solid #ffffff14}
+  .gal .cols2{columns:2}
+  .events .pics{order:2}
+  .symp img{aspect-ratio:4/3.4}
+}
+@media (max-width:600px){
+  :root{--hdr:68px}
+  body{font-size:1rem;padding-bottom:64px}
+  .wrap{width:calc(100% - 2.4rem)}
+  .bar .l{display:none}.bar .s{display:inline}
+  .logo b{font-size:1.45rem}.logo small{font-size:.5rem;letter-spacing:.3em}
+  .cols{grid-template-columns:1fr}.col{aspect-ratio:4/3.4}
+  .styles{gap:.7rem}.st h3{font-size:1.05rem}.st p{display:none}
+  form.f .row{grid-template-columns:1fr}
+  .vals{grid-template-columns:1fr;gap:1.2rem}
+  .gal .cols2{column-gap:.6rem}.gal figure{margin-bottom:.6rem}
+  .faq summary{font-size:1.15rem}.faq details p{padding-right:0}
+  footer .top{flex-direction:column}
+  .hero .tag{left:-.2rem;bottom:1.2rem;padding:.8rem 1rem}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--deep);border-top:1px solid #ffffff1c;padding:.6rem 1.2rem calc(.6rem + env(safe-area-inset-bottom));gap:.6rem}
+  .mbar a{flex:1;text-align:center;padding:.85rem;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;border:1px solid var(--gold);color:var(--gold-l)}
+  .mbar a.s2{background:var(--gold);color:var(--deep)}
+  .toast{bottom:84px}
+  dialog.lb .pv,dialog.lb .nx{top:auto;bottom:1rem}dialog.lb .pv{left:1rem}dialog.lb .nx{right:1rem}
+}
+</style>
+</head>
+<body>
+
+<div class="bar"><span class="l">Your local Houston florist · Same-day delivery</span><span class="s">Your local Houston florist</span></div>
+
+<header id="hdr">
+  <div class="wrap in">
+    <a href="#top" class="logo" aria-label="Flowers by Nino, home"><b>Flowers by Nino</b><small>Houston · Since 1998</small></a>
+    <nav class="main" aria-label="Main">
+      <a href="#collections">Shop</a>
+      <a href="#designers-choice">Designer's Choice</a>
+      <a href="#events">Weddings &amp; Events</a>
+      <a href="#sympathy">Sympathy</a>
+      <a href="#bloom">Bloom Party</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="h-tel" href="tel:+12818736466">281-873-6466</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a href="#collections">Shop</a><a href="#designers-choice">Designer's Choice</a><a href="#events">Weddings &amp; Events</a><a href="#sympathy">Sympathy &amp; Funeral</a><a href="#bloom">Bloom Party</a><a href="#about">About Nino</a><a href="#contact">Contact</a>
+</div>
+
+<main id="top">
+
+<section class="hero dark">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow rv">Luxury florals · Houston</p>
+      <h1 class="rv d1">Turning your feelings into <em>award-winning designs.</em></h1>
+      <p class="lead rv d2">Handcrafted arrangements thoughtfully designed for you, never pre-made or mass produced. Premium blooms, meticulous detail and over forty years of artistry.</p>
+      <div class="acts rv d3">
+        <a class="btn solid" href="#designers-choice">Order Designer's Choice <span class="arrow"></span></a>
+        <a class="btn line" href="#events">Plan an event</a>
+      </div>
+    </div>
+    <div class="pic rv d1">
+      <img src="img/lobby.jpg" alt="Towering orchid arrangement in a hotel lobby">
+      <div class="tag"><small>Signature installation</small>Made fresh, to order</div>
+    </div>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="wrap">
+    <div><b>1998</b><span>Founded in Houston</span></div>
+    <div><b>40+</b><span>Years of experience</span></div>
+    <div><b>100%</b><span>Made fresh to order</span></div>
+    <div><b>Same-day</b><span>Delivery across Houston</span></div>
+  </div>
+</div>
+
+<section class="sec" id="collections">
+  <div class="wrap">
+    <div class="head rv"><div><p class="eyebrow">The collections</p><h2>Find the <em>right design</em></h2></div><p class="lead" style="max-width:36ch">From everyday gestures to the grandest occasions, every piece is crafted by hand.</p></div>
+    <div class="cols">
+      <a class="col rv" href="#designers-choice"><img src="img/bright.jpg" alt="Bright mixed arrangement of roses, lilies and orchids on a white pedestal" loading="lazy"><div><h3>Designer's Choice</h3><span>Order <i class="arrow"></i></span></div></a>
+      <a class="col rv d1" href="#designers-choice"><img src="img/heliconia.jpg" alt="Tropical arrangement of heliconia, birds of paradise and orchids" loading="lazy"><div><h3>Everyday Arrangements</h3><span>Explore <i class="arrow"></i></span></div></a>
+      <a class="col rv d2" href="#events"><img src="img/lobby.jpg" alt="Luxury orchid installation" loading="lazy"><div><h3>Luxury Collection</h3><span>Explore <i class="arrow"></i></span></div></a>
+      <a class="col rv" href="#events"><img src="img/whitetable.jpg" alt="Wedding table with white roses and candles" loading="lazy"><div><h3>Weddings &amp; Events</h3><span>Plan yours <i class="arrow"></i></span></div></a>
+      <a class="col rv d1" href="#designers-choice"><img src="img/redroses.jpg" alt="Long banquet table covered in red roses" loading="lazy"><div><h3>Valentine's Day</h3><span>Order <i class="arrow"></i></span></div></a>
+      <a class="col rv d2" href="#sympathy"><img src="img/spray.jpg" alt="Pink and white sympathy spray" loading="lazy"><div><h3>Sympathy &amp; Funeral</h3><span>Explore <i class="arrow"></i></span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec dc" id="designers-choice">
+  <div class="wrap">
+    <div class="head rv"><div><p class="eyebrow">Designer's Choice</p><h2>Choose a style. <em>We'll design it.</em></h2></div><p class="lead" style="max-width:38ch">Handcrafted arrangements at any price point. Pick the mood and our florists do the rest.</p></div>
+    <div class="styles" id="styles">
+      <button class="st rv" data-s="White Palette" aria-pressed="false"><div class="ph"><img src="img/whitetable.jpg" alt="White roses and greenery" loading="lazy"></div><h3>White Palette</h3><p>Clean, elegant whites and greens</p></button>
+      <button class="st rv d1" data-s="Valentine's Day" aria-pressed="false"><div class="ph"><img src="img/redroses.jpg" alt="Red roses" loading="lazy"></div><h3>Valentine's Day</h3><p>Luxury red roses and romance</p></button>
+      <button class="st rv d2" data-s="Tropical" aria-pressed="false"><div class="ph"><img src="img/tropical.jpg" alt="Tropical arrangement against a green wall" loading="lazy"></div><h3>Tropical</h3><p>Bold, exotic blooms</p></button>
+      <button class="st rv" data-s="Soft Pastels" aria-pressed="false"><div class="ph"><img src="img/spray.jpg" alt="Soft pink arrangement with white lilies" loading="lazy"></div><h3>Soft Pastels</h3><p>Gentle pinks, creams and lilacs</p></button>
+      <button class="st rv d1" data-s="Bright &amp; Cheerful" aria-pressed="false"><div class="ph"><img src="img/bright.jpg" alt="Bright and cheerful arrangement" loading="lazy"></div><h3>Bright &amp; Cheerful</h3><p>Vibrant color to lift any day</p></button>
+      <button class="st rv d2" data-s="Open Design" aria-pressed="false"><div class="ph"><img src="img/centerpiece.jpg" alt="Open, airy centerpiece with branches and baby's breath" loading="lazy"></div><h3>Open Design</h3><p>Airy, natural and artistic</p></button>
+    </div>
+    <div class="box">
+      <div class="rv">
+        <p class="eyebrow">Request your design</p>
+        <h3>Tell us the occasion. We'll take care of the rest.</h3>
+        <p class="lead" style="font-size:1rem">Choose Designer's Choice at any price point, or request specific flowers, colors or styles. Our florists will design a custom piece that fits your vision and budget.</p>
+      </div>
+      <form class="f rv d1" id="dform" novalidate>
+        <div class="row">
+          <label>Style<select id="dstyle" required><option value="">Select a style</option><option>White Palette</option><option>Valentine's Day</option><option>Tropical</option><option>Soft Pastels</option><option>Bright &amp; Cheerful</option><option>Open Design</option><option>Something else, surprise me</option></select></label>
+          <label>Delivery or pickup date<input type="date" required></label>
+        </div>
+        <div class="row">
+          <label>Your name<input type="text" required></label>
+          <label>Phone<input type="tel" required></label>
+        </div>
+        <label>Budget and notes<textarea placeholder="Occasion, budget, favorite flowers or colors, delivery address…"></textarea></label>
+        <button class="btn dk" type="submit">Send my request</button>
+        <p class="ok" id="dok">Thank you! This is a sample form: in the final version your request goes straight to the shop.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec events" id="events">
+  <div class="wrap grid">
+    <div class="rv">
+      <p class="eyebrow">Weddings &amp; events</p>
+      <h2>Everything you need, <em>from ceremony to reception.</em></h2>
+      <p class="lead">From the ceremony to cocktail hour and into the reception, we take care of every floral detail. Weddings, corporate events and special occasions, in Houston and beyond.</p>
+      <ul>
+        <li>Wedding florals, from bouquets to full venue design</li>
+        <li>Corporate events and special occasions</li>
+        <li>Travel to larger events and destination weddings</li>
+      </ul>
+      <a class="btn dk" href="#consult">Schedule your consult <span class="arrow"></span></a>
+    </div>
+    <div class="pics rv d1">
+      <img src="img/bouquet.jpg" alt="Bride and groom holding hands with a calla lily bouquet" loading="lazy">
+      <img src="img/candles.jpg" alt="White garden roses beside candles" loading="lazy">
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="consult dark rv" id="consult">
+      <h3>We're excited to learn more about your event</h3>
+      <form class="f" id="cform" novalidate>
+        <div class="row"><label>Name<input type="text" required></label><label>Email<input type="email" required></label></div>
+        <div class="row"><label>Phone<input type="tel"></label><label>Event date<input type="date"></label></div>
+        <label>Tell us about your event<textarea></textarea></label>
+        <button class="btn solid" type="submit">Submit</button>
+        <p class="ok" id="cok">Thank you! This is a sample form. In the final version, a follow-up email confirms the details and collects inspiration, and inquiries are reviewed within 24–48 hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec symp" id="sympathy">
+  <div class="wrap grid">
+    <img class="rv" src="img/spray.jpg" alt="Pink and white standing sympathy spray" loading="lazy">
+    <div class="rv d1">
+      <p class="eyebrow">Sympathy &amp; funeral</p>
+      <h2>Sympathy easels, <em>redefined.</em></h2>
+      <p class="lead">Our standing sprays and easels are designed on a much larger scale than the smaller easels commonly offered, each one a striking and dignified tribute.</p>
+      <ul>
+        <li>Standing sprays <span>5.5 to 6 feet tall</span></li>
+        <li>Cross easels <span>42 inches</span></li>
+        <li>Heart and wreath easels <span>24 inches, open or closed</span></li>
+      </ul>
+      <p class="lead" style="font-size:.95rem;margin-bottom:1.8rem">Pricing is based on flower selection, scale and the quantity of florals used.</p>
+      <a class="btn solid" href="tel:+12818736466">Call 281-873-6466 <span class="arrow"></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec bloom" id="bloom">
+  <div class="wrap grid">
+    <div class="rv">
+      <p class="eyebrow">Bloom Parties</p>
+      <h2>Where every guest <em>becomes a designer.</em></h2>
+      <p class="lead">A hands-on floral experience for every guest. Create stunning arrangements with guidance from our expert designers. We'll bring the Bloom Party to you, wherever you choose to host it.</p>
+      <p style="margin-top:2rem"><a class="btn dk" href="#contact">Book your Bloom Party <span class="arrow"></span></a></p>
+    </div>
+    <img class="rv d1" src="img/bloomparty.jpg" alt="Roses arranged on a restaurant table" loading="lazy">
+  </div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="wrap grid">
+    <img class="rv" src="img/nino.jpg" alt="Nino Shbeeb standing beside a tall white orchid arrangement" loading="lazy">
+    <div class="rv d1">
+      <p class="eyebrow">Meet our founder</p>
+      <h2>Nino Shbeeb</h2>
+      <p class="lead">Nino was raised with a deep appreciation for flowers, shaped by his family's roots in horticulture and his lifelong commitment to faith, craftsmanship and service.</p>
+      <p>After moving to Houston, Nino founded Flowers by Nino in 1998, where he began sharing his refined floral designs. With over 40 years of experience, his work is known for its timeless beauty, premium blooms and meticulous detail. His designs reflect gratitude, faith and a calling to serve others through florals.</p>
+      <div class="vals">
+        <div><h3>Premium florals</h3><p>High-quality blooms selected for every arrangement.</p></div>
+        <div><h3>Signature designs</h3><p>Arrangements created with intention and artistry.</p></div>
+        <div><h3>Individually crafted</h3><p>Created with care for each unique moment.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec gal" id="gallery">
+  <div class="wrap">
+    <div class="head rv"><div><p class="eyebrow">Gallery</p><h2>Nino's <em>floral gallery</em></h2></div></div>
+    <div class="cols2" id="grid">
+      <figure class="rv"><img src="img/redroses.jpg" alt="Bridal dinner table covered in red roses" loading="lazy" width="1100" height="733"><figcaption>Bridal dinner · 200 dozen luxury red roses</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d1"><img src="img/whitetable.jpg" alt="Wedding table with white roses" loading="lazy" width="1000" height="1500"><figcaption>Wedding table</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d2"><img src="img/lobby.jpg" alt="Orchid installation in a hotel lobby" loading="lazy" width="1100" height="1375"><figcaption>Lobby installation</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv"><img src="img/bouquet.jpg" alt="Calla lily bridal bouquet" loading="lazy" width="900" height="900"><figcaption>Bridal bouquet</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d1"><img src="img/candles.jpg" alt="White roses and candles" loading="lazy" width="900" height="1409"><figcaption>Candlelit roses</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d2"><img src="img/tropical.jpg" alt="Tropical arrangement" loading="lazy" width="900" height="900"><figcaption>Tropical design</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv"><img src="img/centerpiece.jpg" alt="Open centerpiece with branches" loading="lazy" width="900" height="1400"><figcaption>Event centerpiece</figcaption><button aria-label="Open photo"></button></figure>
+      <figure class="rv d1"><img src="img/heliconia.jpg" alt="Heliconia and orchid arrangement" loading="lazy" width="900" height="900"><figcaption>Everyday arrangement</figcaption><button aria-label="Open photo"></button></figure>
+    </div>
+    <p class="credit">Bridal dinner in Tony's San Remo Room, designed by Nino with 200 dozen luxury red roses. Photo by Sylvester Garza.</p>
+  </div>
+</section>
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <button class="x" aria-label="Close">×</button>
+  <button class="pv" aria-label="Previous">‹</button>
+  <button class="nx" aria-label="Next">›</button>
+  <div class="stage"><img alt=""></div>
+  <p class="cap"></p>
+</dialog>
+
+<section class="sec faq" id="faq">
+  <div class="wrap grid">
+    <div class="rv"><p class="eyebrow">FAQ</p><h2>Good <em>questions.</em></h2></div>
+    <div class="rv d1">
+      <details open><summary>Do you offer same-day flower delivery?</summary><p>Yes. We offer same-day delivery across Houston and surrounding areas in Harris County. Orders must meet the $100 minimum and are subject to a $30 delivery fee.</p></details>
+      <details><summary>Can I request a custom arrangement?</summary><p>Absolutely. Choose our Designer's Choice option at any price point, or request specific flowers, colors or styles. Our florists will design a custom piece that fits your vision and budget.</p></details>
+      <details><summary>Do you offer arrangements under $100?</summary><p>Yes. Arrangements for less than $100 are available for in-store pickup. Call 281-873-6466 and we'll have yours ready.</p></details>
+      <details><summary>Do you deliver for weddings and events?</summary><p>Yes. We design and deliver for weddings, corporate events and special occasions. Our team can also travel outside of Houston for larger events and destination weddings.</p></details>
+      <details><summary>Do you offer gift cards?</summary><p>Yes. Flowers by Nino gift cards are the perfect way to let someone choose their favorite blooms. They can be purchased in-store, online or by phone.</p></details>
+      <details><summary>Do you keep pre-made arrangements in-store?</summary><p>No. Every arrangement is made fresh to order, ensuring the highest quality, freshness and attention to detail in every piece.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact dark" id="contact">
+  <div class="wrap grid">
+    <div class="rv">
+      <p class="eyebrow">Visit &amp; contact</p>
+      <h2>Not seeing what you're looking for? <em>Give us a call.</em></h2>
+      <p class="lead">Let our designers bring your vision to life.</p>
+      <div class="info">
+        <div><b>Phone</b><a href="tel:+12818736466">281-873-6466</a></div>
+        <div><b>Studio</b>5805 Chimney Rock Rd, Suite C<br>Houston, TX 77081<br><span style="font-size:.9rem;color:#9cab9d">In a warehouse park, across from Turkish Carpets.</span></div>
+        <div><b>Hours</b>Monday – Friday: 8:00 AM – 5:00 PM<br>Saturday: 8:00 AM – 3:00 PM</div>
+      </div>
+    </div>
+    <form class="f rv d1" id="kform" novalidate>
+      <div class="row"><label>Name<input type="text" required></label><label>Email<input type="email" required></label></div>
+      <label>Phone<input type="tel"></label>
+      <label>Comment<textarea required></textarea></label>
+      <button class="btn solid" type="submit">Send</button>
+      <p class="ok" id="kok">Thank you! This is a sample form: in the final version your message goes straight to the shop.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div class="logo"><b>Flowers by Nino</b><small>Houston · Since 1998</small></div>
+      <ul><li><a href="#collections">Shop</a></li><li><a href="#events">Weddings &amp; Events</a></li><li><a href="#sympathy">Sympathy</a></li><li><a href="#bloom">Bloom Party</a></li><li><a href="#faq">FAQ</a></li></ul>
+    </div>
+    <div class="bot">
+      <span>© 2026 Flowers by Nino</span>
+      <span>Sample version designed by <a href="https://cybervision.com.mx" target="_blank" rel="noopener">CyberVision</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:+12818736466">Call</a><a class="s2" href="#designers-choice">Order flowers</a></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var hdr=$('#hdr');
+  function onS(){hdr.classList.toggle('sh',scrollY>10)}
+  addEventListener('scroll',onS,{passive:true});onS();
+
+  var burger=document.querySelector('.burger');
+  function menu(o){document.body.classList.toggle('menu',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Close menu':'Open menu');document.documentElement.style.overflow=o?'hidden':''}
+  burger.addEventListener('click',function(){menu(!document.body.classList.contains('menu'))});
+  $('#drawer').addEventListener('click',function(e){if(e.target.closest('a'))menu(false)});
+  addEventListener('resize',function(){if(innerWidth>1080)menu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')menu(false)});
+
+  /* aparición al hacer scroll */
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.1,rootMargin:'0px 0px -5% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }
+  function fb(){var h=innerHeight;els.forEach(function(e){if(!e.classList.contains('in')&&e.getBoundingClientRect().top<h*.94)e.classList.add('in')})}
+  addEventListener('scroll',fb,{passive:true});addEventListener('load',fb);fb();
+
+  /* elegir estilo de Designer's Choice */
+  var sel=$('#dstyle');
+  $('#styles').addEventListener('click',function(e){
+    var b=e.target.closest('.st');if(!b)return;
+    [].forEach.call(this.children,function(c){c.setAttribute('aria-pressed',c===b)});
+    var v=b.dataset.s.replace('&amp;','&');
+    for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===v)sel.selectedIndex=i}
+    document.getElementById('dform').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+
+  /* formularios de ejemplo */
+  function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(function(){t.classList.remove('on')},2000)}
+  function demo(formId,okId){
+    $(formId).addEventListener('submit',function(e){
+      e.preventDefault();var ok=true;
+      [].forEach.call(this.querySelectorAll('[required]'),function(f){if(!f.value.trim()){f.style.outline='2px solid #c0613b';ok=false}else{f.style.outline=''}});
+      $(okId).classList.toggle('on',ok);
+      if(!ok)toast('Please complete the required fields');
+    });
+  }
+  demo('#dform','#dok');demo('#cform','#cok');demo('#kform','#kok');
+
+  /* lightbox */
+  var lb=$('#lb'),img=lb.querySelector('img'),cap=lb.querySelector('.cap');
+  var figs=[].slice.call(document.querySelectorAll('#grid figure')),cur=0;
+  function open(i){cur=(i+figs.length)%figs.length;var f=figs[cur].querySelector('img');img.src=f.currentSrc||f.src;img.alt=f.alt;cap.textContent=figs[cur].querySelector('figcaption').textContent;if(!lb.open)lb.showModal()}
+  figs.forEach(function(f,i){f.querySelector('button').addEventListener('click',function(){open(i)})});
+  lb.querySelector('.x').addEventListener('click',function(){lb.close()});
+  lb.querySelector('.pv').addEventListener('click',function(){open(cur-1)});
+  lb.querySelector('.nx').addEventListener('click',function(){open(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('stage'))lb.close()});
+  lb.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')open(cur-1);if(e.key==='ArrowRight')open(cur+1)});
+})();
+</script>
+</body>
+</html>
