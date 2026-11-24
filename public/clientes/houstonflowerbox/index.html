@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flower Box Florist | Houston Flower Delivery</title>
+<meta name="description" content="Flower Box Florist in Houston, TX 77017. Designer's Choice bouquets, roses, birthday, sympathy and funeral flowers, orchids and plants, delivered locally.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#9e4a45">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Narrow:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf3ee; --blush:#f4e2da; --brick:#9e4a45; --brick2:#7d3834; --coral:#e07a62; --ink:#1c1715; --muted:#6f625d; --line:#e6d3ca; --white:#fff;
+  --head:"Archivo Narrow","Archivo",system-ui,sans-serif; --sans:"Archivo",system-ui,-apple-system,sans-serif; --ital:"Instrument Serif",Georgia,serif;
+  --wrap:1240px; --hdr:74px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:1rem;line-height:1.65;color:var(--ink);background:var(--paper);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.wrap{width:min(var(--wrap),100% - 3rem);margin-inline:auto}
+section[id]{scroll-margin-top:calc(var(--hdr) + 8px)}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.01em}
+h2{font-size:clamp(2.2rem,5vw,3.9rem)}
+em{font-family:var(--ital);font-style:italic;font-weight:400;text-transform:none;color:var(--brick);letter-spacing:0}
+.kick{display:inline-block;font-family:var(--head);font-weight:600;font-size:.86rem;letter-spacing:.26em;text-transform:uppercase;color:var(--brick)}
+.lead{font-size:1.06rem;color:var(--muted);max-width:54ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1rem 1.9rem;font-family:var(--head);font-weight:700;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:#fff;border:2px solid var(--ink);transition:.25s}
+.btn:hover{background:var(--brick);border-color:var(--brick)}
+.btn.line{background:transparent;color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:#fff}
+.btn.br{background:var(--brick);border-color:var(--brick)}
+.btn.br:hover{background:var(--ink);border-color:var(--ink)}
+.btn.wh{background:#fff;color:var(--ink);border-color:#fff}
+.btn.wh:hover{background:var(--coral);border-color:var(--coral);color:#fff}
+
+.top{background:var(--brick);color:#fff;font-family:var(--head);font-weight:500;font-size:.92rem;letter-spacing:.2em;text-transform:uppercase;text-align:center;padding:.55rem 1rem}
+.top a{font-weight:700}
+.top .st{display:inline-block;margin-left:.9rem;padding:.12rem .6rem;background:#ffffff26;letter-spacing:.14em;font-size:.78rem}
+.top .st.o{background:#fff;color:var(--brick2)}
+header{position:sticky;top:0;z-index:50;background:rgba(251,243,238,.96);backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
+header .in{min-height:var(--hdr);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+.logo{display:flex;align-items:center;gap:.7rem;justify-self:center;grid-column:2;line-height:.9}
+.logo svg{width:30px;height:44px;color:var(--ink)}
+.logo b{display:block;font-family:var(--head);font-weight:700;font-size:1.9rem;text-transform:uppercase;letter-spacing:.02em}
+.logo small{display:block;font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.5em;text-transform:uppercase;color:var(--brick);margin-top:.15rem}
+nav.main{grid-column:1;grid-row:1;display:flex;gap:1.6rem;font-family:var(--head);font-weight:600;font-size:.98rem;letter-spacing:.14em;text-transform:uppercase}
+nav.main a{position:relative;padding:.2rem 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;background:var(--brick);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav.main a:hover::after{transform:scaleX(1)}
+.tools{grid-column:3;grid-row:1;justify-self:end;display:flex;align-items:center;gap:.5rem}
+.tel{font-family:var(--head);font-weight:700;font-size:1.05rem;letter-spacing:.06em;margin-right:.6rem;white-space:nowrap}
+.cartbtn{position:relative;width:46px;height:46px;display:grid;place-items:center}
+.cartbtn svg{width:25px;height:25px}
+.cartbtn b{position:absolute;top:2px;right:0;min-width:20px;height:20px;background:var(--brick);color:#fff;font-family:var(--head);font-size:.78rem;display:grid;place-items:center;padding:0 5px;transform:scale(0);transition:transform .3s}
+.cartbtn b.on{transform:scale(1)}
+.burger{display:none;width:46px;height:46px;position:relative}
+.burger i{position:absolute;left:10px;right:10px;height:2px;background:var(--ink);transition:.3s}
+.burger i:nth-child(1){top:17px}.burger i:nth-child(2){top:22px}.burger i:nth-child(3){top:27px}
+body.menu .burger i:nth-child(1){top:22px;transform:rotate(45deg)}
+body.menu .burger i:nth-child(2){opacity:0}
+body.menu .burger i:nth-child(3){top:22px;transform:rotate(-45deg)}
+.drawer{position:fixed;inset:calc(var(--hdr) + 38px) 0 0 0;z-index:40;background:var(--paper);padding:1.5rem;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:.3s}
+body.menu .drawer{opacity:1;visibility:visible}
+.drawer a{font-family:var(--head);font-weight:700;text-transform:uppercase;font-size:2.1rem;padding:.55rem 0;border-bottom:2px solid var(--line)}
+
+/* hero */
+.hero{padding:clamp(2.2rem,4.5vw,4rem) 0 clamp(3rem,6vw,5rem)}
+.hero .grid{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero h1{font-size:clamp(3.3rem,8.6vw,7.4rem);margin:1.1rem 0 1.3rem;line-height:.88}
+.hero .lead{margin-bottom:2rem}
+.hero .acts{display:flex;flex-wrap:wrap;gap:.8rem}
+.box{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:auto auto;gap:.8rem}
+.box figure{overflow:hidden;background:var(--blush);border:2px solid var(--ink)}
+.box img{width:100%;height:100%;object-fit:cover}
+.box .a{grid-row:1 / span 2;aspect-ratio:4/5.6}
+.box .b{aspect-ratio:1}
+.box .c{background:var(--brick);color:#fff;border-color:var(--ink);display:grid;place-content:center;text-align:center;padding:1rem;aspect-ratio:1}
+.box .c b{display:block;font-family:var(--head);font-weight:700;font-size:clamp(2.6rem,5vw,4rem);line-height:.9}
+.box .c span{display:block;font-family:var(--head);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:.9rem;margin-top:.5rem}
+.box .c i{font-family:var(--ital);font-size:1.4rem;display:block;margin-top:.2rem;opacity:.9}
+
+.strip{background:var(--ink);color:#fff;overflow:hidden}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.t{padding:1.3rem 0;display:flex;align-items:center;gap:.9rem;font-size:.9rem;line-height:1.3}
+.t svg{flex:none;width:30px;height:30px;color:var(--coral)}
+.t b{display:block;font-family:var(--head);font-weight:700;font-size:1.1rem;letter-spacing:.08em;text-transform:uppercase}
+.t span{color:#c8bbb5;font-size:.84rem}
+
+.sec{padding:clamp(4.2rem,8vw,7rem) 0}
+.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:1.2rem;margin-bottom:2rem}
+.head h2{margin-top:.7rem}
+
+/* pick */
+.pick{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.8rem}
+.pick button{position:relative;aspect-ratio:3/4;overflow:hidden;border:2px solid var(--ink);background:var(--blush);text-align:left;display:block}
+.pick img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.pick button:hover img{transform:scale(1.06)}
+.pick span{position:absolute;left:0;right:0;bottom:0;padding:2.5rem .8rem .8rem;background:linear-gradient(transparent,rgba(28,23,21,.82));color:#fff;font-family:var(--head);font-weight:700;font-size:1.25rem;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.pick small{display:block;font-family:var(--sans);font-weight:400;font-size:.76rem;letter-spacing:.02em;text-transform:none;opacity:.85;margin-top:.3rem}
+
+/* shop */
+.bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:2px solid var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{padding:.5rem 1.15rem;border:2px solid var(--ink);font-family:var(--head);font-weight:600;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;transition:.2s;background:transparent}
+.chip:hover{background:var(--blush)}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff}
+.sort{display:flex;align-items:center;gap:.6rem;font-family:var(--head);font-weight:600;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase}
+.sort select{padding:.5rem 2rem .5rem .8rem;border:2px solid var(--ink);background:var(--paper);font-family:var(--sans);font-size:.92rem;letter-spacing:0;text-transform:none;font-weight:500}
+.count{font-size:.9rem;color:var(--muted);margin:-1rem 0 1.4rem}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2.2rem 1.3rem}
+.prod{min-width:0}
+.prod.hide{display:none}
+.prod .ph{position:relative;aspect-ratio:4/5;background:var(--blush);overflow:hidden;border:2px solid var(--ink)}
+.prod .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.prod:hover .ph img{transform:scale(1.05)}
+.prod .tag{position:absolute;top:0;left:0;background:var(--brick);color:#fff;font-family:var(--head);font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;padding:.3rem .7rem}
+.prod .add{position:absolute;left:0;right:0;bottom:0;padding:.9rem;background:var(--ink);color:#fff;font-family:var(--head);font-weight:700;font-size:.95rem;letter-spacing:.16em;text-transform:uppercase;transform:translateY(101%);transition:transform .3s}
+.prod:hover .add,.prod .add:focus-visible{transform:none}
+.prod .nm{display:flex;justify-content:space-between;gap:.8rem;align-items:baseline;margin-top:.75rem}
+.prod h3{font-size:1.4rem;line-height:1.05}
+.prod .pr{font-family:var(--head);font-weight:700;font-size:1.3rem;color:var(--brick);white-space:nowrap}
+.mini{display:none;margin-top:.55rem;width:100%;padding:.65rem;border:2px solid var(--ink);font-family:var(--head);font-weight:700;font-size:.92rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* designer */
+.dc{background:var(--brick);color:#fff}
+.dc .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.dc .kick{color:#f3c9bd}
+.dc h2{margin:.8rem 0 1.2rem}
+.dc em{color:#fbd9cf}
+.dc p{color:#f3dcd5;margin-bottom:1rem;max-width:52ch}
+.dc .pics{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.dc .pics figure{aspect-ratio:3/4;overflow:hidden;border:2px solid #fff}
+.dc .pics img{width:100%;height:100%;object-fit:cover}
+.dc .pics figure:nth-child(2){margin-top:2rem}
+.dc .pics figure:nth-child(3){margin-top:4rem}
+
+/* care */
+.care{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.care article{background:#fff;border:2px solid var(--ink);padding:1.8rem 1.6rem;position:relative}
+.care article::after{content:"";position:absolute;right:-2px;top:-2px;width:34px;height:34px;background:var(--coral);clip-path:polygon(0 0,100% 0,100% 100%)}
+.care h3{font-size:1.7rem;margin-bottom:.8rem}
+.care p{color:var(--muted);font-size:.96rem;line-height:1.55}
+.care ul{list-style:none;display:grid;gap:.45rem;font-size:.95rem;line-height:1.45;color:var(--muted)}
+.care li::before{content:"";display:inline-block;width:8px;height:8px;background:var(--brick);margin-right:.7rem;vertical-align:middle}
+.care li b{color:var(--ink);font-weight:600}
+
+/* sub */
+.sub{background:var(--blush)}
+.sub .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.sub h2{margin:.8rem 0 1.1rem}
+.subs{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.subs a{display:block;border:2px solid var(--ink);background:#fff;transition:.25s}
+.subs a:hover{transform:translateY(-4px);box-shadow:5px 5px 0 var(--ink)}
+.subs figure{aspect-ratio:1;overflow:hidden;border-bottom:2px solid var(--ink)}
+.subs img{width:100%;height:100%;object-fit:cover}
+.subs div{padding:.9rem 1rem 1.1rem}
+.subs h3{font-size:1.4rem}
+.subs p{font-size:.86rem;color:var(--muted);line-height:1.4;margin-top:.3rem}
+
+/* visit */
+.visit .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.visit h2{margin:.8rem 0 1.1rem}
+.info{display:grid;gap:1.3rem;margin-top:1.8rem}
+.info b{display:block;font-family:var(--head);font-weight:700;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase}
+.info span{color:var(--muted)}
+.hrs{list-style:none;max-width:340px;margin-top:.4rem}
+.hrs li{display:flex;justify-content:space-between;gap:1rem;padding:.38rem 0;border-bottom:1px solid var(--line);font-size:.95rem;color:var(--muted)}
+.hrs li.td{color:var(--ink);font-weight:600;border-bottom-color:var(--brick)}
+.hrs li.td span::after{content:" · today";color:var(--brick);font-weight:500}
+.map{margin-top:1.6rem;aspect-ratio:16/10;border:2px solid var(--ink);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0}
+form.card{background:#fff;border:2px solid var(--ink);padding:clamp(1.4rem,3vw,2.2rem);box-shadow:8px 8px 0 var(--brick)}
+form.card h3{font-size:2.1rem;margin-bottom:.3rem}
+form.card>p{color:var(--muted);font-size:.93rem;margin-bottom:1.3rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:block;margin-bottom:1rem;font-family:var(--head);font-weight:600;font-size:.9rem;letter-spacing:.14em;text-transform:uppercase}
+input,select,textarea{display:block;width:100%;margin-top:.3rem;padding:.75rem .85rem;border:2px solid var(--line);background:var(--paper);font-family:var(--sans);font-weight:400;font-size:1rem;letter-spacing:0;text-transform:none}
+textarea{min-height:90px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink);background:#fff}
+form .btn{width:100%}
+.ok{display:none;text-align:center;padding:2.2rem 1rem}
+.ok h3{font-size:2.2rem;margin-bottom:.5rem}
+.ok p{color:var(--muted)}
+form.sent>*:not(.ok){display:none}
+form.sent .ok{display:block}
+
+footer{background:var(--ink);color:#bcaea8;padding:3.2rem 0 2rem}
+footer .ft{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;padding-bottom:2rem;border-bottom:1px solid #ffffff22}
+footer .logo{justify-self:start;grid-column:auto}
+footer .logo svg,footer .logo b{color:#fff}
+footer ul{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;font-family:var(--head);font-weight:600;font-size:.98rem;letter-spacing:.14em;text-transform:uppercase;align-self:center}
+footer ul a:hover{color:#fff}
+footer .bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem 2rem;padding-top:1.5rem;font-size:.85rem}
+footer .bot a{color:var(--coral);text-decoration:underline;text-underline-offset:3px}
+
+.scrim{position:fixed;inset:0;z-index:90;background:rgba(28,23,21,.6);opacity:0;visibility:hidden;transition:.3s}
+.scrim.on{opacity:1;visibility:visible}
+.panel{position:fixed;top:0;right:0;bottom:0;z-index:95;width:min(450px,100%);background:var(--paper);border-left:2px solid var(--ink);transform:translateX(102%);transition:transform .4s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+.panel.on{transform:none}
+.panel .ph2{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 1.5rem;border-bottom:2px solid var(--ink)}
+.panel .ph2 h3{font-size:2rem}
+.panel .ph2 button{font-size:2.2rem;line-height:1}
+.panel .items{flex:1;overflow:auto;padding:.5rem 1.5rem}
+.empty{text-align:center;color:var(--muted);padding:3rem 1rem}
+.li{display:grid;grid-template-columns:72px 1fr auto;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:center}
+.li img{width:72px;height:90px;object-fit:cover;border:2px solid var(--ink)}
+.li b{font-family:var(--head);font-weight:700;text-transform:uppercase;font-size:1.15rem;line-height:1.05;display:block}
+.li small{color:var(--muted)}
+.qty{display:inline-flex;align-items:center;border:2px solid var(--ink);margin-top:.4rem;background:#fff}
+.qty button{width:30px;height:30px;font-size:1.1rem}
+.qty span{min-width:28px;text-align:center;font-size:.9rem;font-weight:600}
+.li .rm{font-size:.74rem;color:var(--muted);text-decoration:underline;display:block;margin-top:.3rem;text-align:right}
+.panel .ft2{padding:1.2rem 1.5rem;border-top:2px solid var(--ink);background:#fff}
+.panel .ft2 label{font-size:.82rem;margin-bottom:.8rem}
+.panel .tot{display:flex;justify-content:space-between;font-family:var(--head);font-weight:700;text-transform:uppercase;font-size:1.6rem;margin-bottom:.3rem}
+.panel .ft2 p{font-size:.8rem;color:var(--muted);margin-bottom:1rem;line-height:1.45}
+.panel .ft2 .btn{width:100%}
+.panel .done{display:none;text-align:center;padding:3rem 1.5rem}
+.panel.fin .items,.panel.fin .ft2{display:none}
+.panel.fin .done{display:block}
+.done h3{font-size:2.2rem;margin-bottom:.6rem}
+.done p{color:var(--muted);margin-bottom:1.4rem}
+
+.mbar{display:none}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.prod:hover .ph img,.pick button:hover img{transform:none}}
+
+@media (max-width:1060px){
+  nav.main,.tel{display:none}
+  .burger{display:block}
+  header .in{grid-template-columns:46px 1fr auto}
+  .logo{grid-column:2}
+  .tools{grid-column:3}
+  .burger{grid-column:1;grid-row:1}
+  .hero .grid,.dc .grid,.sub .grid,.visit .grid{grid-template-columns:1fr}
+  .box{max-width:600px;width:100%}
+  .strip .wrap{grid-template-columns:1fr 1fr}
+  .pick{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid4{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1rem}
+  .care{grid-template-columns:1fr}
+  .mini{display:block}
+  .prod .add{display:none}
+}
+@media (max-width:640px){
+  body{padding-bottom:66px}
+  :root{--hdr:64px}
+  .top{font-size:.78rem;letter-spacing:.1em}
+  .top .st{display:block;margin:.3rem auto 0;width:max-content}
+  .logo b{font-size:1.5rem}
+  .logo svg{width:24px;height:36px}
+  .logo small{font-size:.7rem;letter-spacing:.4em}
+  .strip .wrap{grid-template-columns:1fr;gap:0}
+  .t{padding:.9rem 0;border-bottom:1px solid #ffffff1a}
+  .row,.subs{grid-template-columns:1fr}
+  .pick{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prod h3{font-size:1.15rem}
+  .prod .nm{flex-direction:column;gap:.1rem}
+  .dc .pics figure:nth-child(2){margin-top:1rem}
+  .dc .pics figure:nth-child(3){margin-top:2rem}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);padding:.55rem;gap:.55rem}
+  .mbar a,.mbar button{display:flex;align-items:center;justify-content:center;padding:.8rem;font-family:var(--head);font-weight:700;font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;border:2px solid #ffffff55}
+  .mbar a:first-child{background:var(--brick);border-color:var(--brick)}
+}
+</style>
+</head>
+<body>
+<div class="top">Flower Box Florist &nbsp;~&nbsp; <a href="tel:+17136434329">713-643-4329</a> &nbsp;~&nbsp; Houston TX<span class="st" id="st" hidden></span></div>
+
+<header id="top">
+  <div class="wrap in">
+    <nav class="main" aria-label="Main"><a href="#shop">Flowers</a><a href="#sympathy">Sympathy</a><a href="#plans">Subscriptions</a><a href="#visit">Visit</a></nav>
+    <a class="logo" href="#top" aria-label="Flower Box Florist, home">
+      <svg viewBox="0 0 30 44" fill="currentColor" aria-hidden="true"><path d="M15 43V17" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="15" cy="6" r="4.500"/><circle cx="8" cy="12" r="3.500"/><circle cx="22" cy="12" r="3.500"/><circle cx="10" cy="19" r="3"/><circle cx="20" cy="19" r="3"/><path d="M15 33c-5-1-8-4-8-8 5 0 8 3 8 8zM15 30c5-1 8-4 8-8-5 0-8 3-8 8z"/></svg>
+      <span><b>Flower Box</b><small>Florist</small></span>
+    </a>
+    <div class="tools"><a class="tel" href="tel:+17136434329">713-643-4329</a>
+      <button class="cartbtn" id="cartbtn" aria-label="Open cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1.200 11.200a1 1 0 0 1-1 .8H7.200a1 1 0 0 1-1-.8L5 8z"/><path d="M9 8V6.500a3 3 0 0 1 6 0V8"/></svg><b id="cnt">0</b></button>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+<div class="drawer"><a href="#shop">Flowers</a><a href="#sympathy">Sympathy</a><a href="#plans">Subscriptions</a><a href="#visit">Visit &amp; contact</a></div>
+
+<main>
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="kick">Houston, TX 77017</span>
+      <h1>Open a <em>box</em> of blooms.</h1>
+      <p class="lead">Birthday bouquets, roses, orchids and sympathy flowers, designed by your neighborhood Houston florist and delivered locally. Order online or call the shop.</p>
+      <div class="acts"><a class="btn br" href="#shop">Shop flowers</a><a class="btn line" href="tel:+17136434329">Call 713-643-4329</a></div>
+    </div>
+    <div class="box rv">
+      <figure class="a"><img src="img/full-lush.jpg" alt="Full and Lush Designer's Choice bouquet" fetchpriority="high"></figure>
+      <figure class="b"><img src="img/bright-bold.jpg" alt="Bright and Bold bouquet"></figure>
+      <figure class="c"><div><b>$85</b><span>Designer's Choice</span><i>starting at</i></div></figure>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap">
+  <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h12v9H3zM15 10h3.500L21 13v3h-6"/><circle cx="7" cy="17.500" r="1.600"/><circle cx="17" cy="17.500" r="1.600"/></svg><p><b>Local delivery</b><span>Houston and nearby areas</span></p></div>
+  <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c4-3 6-6 6-9.500A6 6 0 0 0 6 11.500C6 15 8 18 12 21z"/><path d="M12 21V9"/></svg><p><b>Hand-designed</b><span>By a real Houston shop</span></p></div>
+  <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="10" width="18" height="11"/><path d="M3 10h18M12 10v11M12 10c-3-5-7-4-6-1.500S12 10 12 10zM12 10c3-5 7-4 6-1.500S12 10 12 10z"/></svg><p><b>Gifts that arrive</b><span>Funeral homes and hospitals too</span></p></div>
+  <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg><p><b>Secure checkout</b><span>Cards, Apple Pay, Google Pay</span></p></div>
+</div></div>
+
+<section class="sec" id="start">
+  <div class="wrap">
+    <div class="head rv"><div><span class="kick">Start here</span><h2>Find the <em>right box</em></h2></div>
+      <p class="lead">Pick a category to jump straight to the arrangements.</p></div>
+    <div class="pick rv" id="pick"></div>
+  </div>
+</section>
+
+<section class="sec" id="shop" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv"><div><span class="kick">The shop</span><h2>Fresh from <em>Flower Box</em></h2></div>
+      <p class="lead">Real arrangements and prices from the shop. Add to your cart and pick a delivery date. This is a sample cart.</p></div>
+    <div class="bar">
+      <div class="chips" role="group" aria-label="Filter">
+        <button class="chip" aria-pressed="true" data-f="all">All</button>
+        <button class="chip" aria-pressed="false" data-f="dc">Designer's Choice</button>
+        <button class="chip" aria-pressed="false" data-f="ros">Roses</button>
+        <button class="chip" aria-pressed="false" data-f="bday">Birthday</button>
+        <button class="chip" aria-pressed="false" data-f="fall">Fall</button>
+        <button class="chip" aria-pressed="false" data-f="symp">Sympathy</button>
+        <button class="chip" aria-pressed="false" data-f="plant">Plants</button>
+      </div>
+      <label class="sort" style="margin:0">Sort <select id="sort"><option value="f">Featured</option><option value="a">Price: low to high</option><option value="d">Price: high to low</option></select></label>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="grid4" id="grid"></div>
+  </div>
+</section>
+
+<section class="sec dc" id="designer">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="kick">How it works</span>
+      <h2>What is a <em>Designer's Choice?</em></h2>
+      <p>Your florist hand-selects the color scheme, the flower varieties, the style and the container based on what is freshest this season.</p>
+      <p>Tell us the palette you love, from warm tones to pastels or all white, and let the designer do the rest. Because flowers are seasonal, substitutions of equal or greater value are sometimes needed, always keeping the look and feel of the arrangement.</p>
+      <a class="btn wh" href="#shop" data-go="dc">Shop Designer's Choice</a>
+    </div>
+    <div class="pics rv">
+      <figure><img src="img/pretty-pastels.jpg" alt="Pretty Pastels" loading="lazy"></figure>
+      <figure><img src="img/warm-tones.jpg" alt="Warm Tones" loading="lazy"></figure>
+      <figure><img src="img/white-greens.jpg" alt="White and Greens" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sympathy">
+  <div class="wrap">
+    <div class="head rv"><div><span class="kick">Sympathy &amp; funeral</span><h2>Here when <em>it matters most</em></h2></div>
+      <p class="lead">Arrangements for services, homes and hospitals. A few details help us get it right.</p></div>
+    <div class="care rv">
+      <article><h3>Funeral services</h3><ul><li><b>Name</b> of the deceased</li><li><b>Funeral home</b> name</li><li><b>Date and time</b> of the viewing</li></ul><p style="margin-top:.9rem">Funeral orders usually need extra lead time. Call us if you need a specific delivery time.</p></article>
+      <article><h3>Hospital deliveries</h3><ul><li><b>Patient</b> name and room number</li><li>Make sure the patient is <b>not being released</b></li></ul><p style="margin-top:.9rem">We are experienced with hospital deliveries, though many ICU patients cannot receive flowers. Check with the hospital first.</p></article>
+      <article><h3>Plants &amp; orchids</h3><p>A living gift that lasts. Peace lilies and orchids are ready to brighten a home or a family's day.</p><p style="margin-top:.9rem"><a href="#shop" data-go="symp" style="color:var(--brick);font-weight:600;text-decoration:underline;text-underline-offset:3px">Browse sympathy flowers</a></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sub" id="plans">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="kick">Subscription packages</span>
+      <h2>Flowers on <em>repeat</em></h2>
+      <p class="lead">Need a thoughtful gift, or want to treat yourself? Choose a collection and have flowers arrive again and again.</p>
+      <p style="margin-top:1.4rem"><a class="btn br" href="#visit">Ask about subscriptions</a></p>
+    </div>
+    <div class="subs rv">
+      <a href="#visit"><figure><img src="img/deluxe-dozen.jpg" alt="Roses" loading="lazy"></figure><div><h3>Roses</h3><p>The freshest seasonally available roses.</p></div></a>
+      <a href="#visit"><figure><img src="img/nicholi.jpg" alt="Seasonal flowers" loading="lazy"></figure><div><h3>Seasonal</h3><p>Whatever is blooming best right now.</p></div></a>
+      <a href="#visit"><figure><img src="img/peace-lily.jpg" alt="Plants" loading="lazy"></figure><div><h3>Plants</h3><p>Green gifts that keep growing.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec visit" id="visit">
+  <div class="wrap grid">
+    <div class="rv">
+      <span class="kick">Visit &amp; contact</span>
+      <h2>Call the shop, <em>we pick up</em>.</h2>
+      <p class="lead">Order online, or call to place an order, ask about availability or set up a timed delivery with our designers.</p>
+      <div class="info">
+        <p><b>Flower Box Florist</b><span>7910 Gulf Fwy, Houston, TX 77017</span></p>
+        <p><b>Phone</b><span><a href="tel:+17136434329">713-643-4329</a></span></p>
+        <div><b>Hours</b>
+          <ul class="hrs" id="hrs">
+            <li data-d="1"><span>Monday</span>9:00 AM – 5:00 PM</li>
+            <li data-d="2"><span>Tuesday</span>9:00 AM – 5:00 PM</li>
+            <li data-d="3"><span>Wednesday</span>9:00 AM – 5:00 PM</li>
+            <li data-d="4"><span>Thursday</span>9:00 AM – 5:00 PM</li>
+            <li data-d="5"><span>Friday</span>9:00 AM – 5:00 PM</li>
+            <li data-d="6"><span>Saturday</span>9:00 AM – 12:00 PM</li>
+            <li data-d="0"><span>Sunday</span>Closed</li>
+          </ul></div>
+      </div>
+      <div class="map"><iframe title="Map to Flower Box Florist" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=7910+Gulf+Fwy,+Houston,+TX+77017&output=embed"></iframe></div>
+    </div>
+    <form class="card rv" id="f" novalidate>
+      <h3>Send us a message</h3>
+      <p>Custom request or a question? This is a sample form.</p>
+      <div class="row"><label>Your name<input name="n" required autocomplete="name"></label><label>Phone<input name="p" type="tel" required autocomplete="tel"></label></div>
+      <div class="row"><label>Occasion<select><option>Birthday</option><option>Anniversary</option><option>Sympathy / funeral</option><option>Get well</option><option>Subscription</option><option>Other</option></select></label><label>Needed by<input type="date"></label></div>
+      <label>Message<textarea placeholder="Colors, budget, delivery address…"></textarea></label>
+      <button class="btn br" type="submit">Send message</button>
+      <div class="ok"><h3>Thank you!</h3><p>This is a sample form, so nothing was sent. On the real site, Flower Box Florist would reply shortly.</p></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft"><a class="logo" href="#top" aria-label="Flower Box Florist, home"><svg viewBox="0 0 30 44" fill="currentColor" aria-hidden="true"><path d="M15 43V17" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="15" cy="6" r="4.500"/><circle cx="8" cy="12" r="3.500"/><circle cx="22" cy="12" r="3.500"/><circle cx="10" cy="19" r="3"/><circle cx="20" cy="19" r="3"/><path d="M15 33c-5-1-8-4-8-8 5 0 8 3 8 8zM15 30c5-1 8-4 8-8-5 0-8 3-8 8z"/></svg><span><b>Flower Box</b><small>Florist</small></span></a>
+      <ul><li><a href="#shop">Flowers</a></li><li><a href="#sympathy">Sympathy</a></li><li><a href="#plans">Subscriptions</a></li><li><a href="#visit">Visit</a></li></ul></div>
+    <div class="bot"><span>7910 Gulf Fwy, Houston, TX 77017 · 713-643-4329</span><span>Sample version designed by <a href="https://cybervision.com.mx" target="_blank" rel="noopener">CyberVision</a></span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:+17136434329">Call now</a><button id="mcart">View cart</button></div>
+<div class="scrim" id="scrim"></div>
+<aside class="panel" id="panel" aria-label="Cart">
+  <div class="ph2"><h3>Your cart</h3><button id="cx" aria-label="Close cart">×</button></div>
+  <div class="items" id="items"></div>
+  <div class="ft2">
+    <label>Delivery date<input type="date" id="dd"></label>
+    <div class="tot"><span>Subtotal</span><b id="sub">$0.00</b></div>
+    <p>Delivery fee and tax are calculated at checkout. Flowers may be substituted with equal or greater value. Sample cart, no payment is taken.</p>
+    <button class="btn br" id="chk">Checkout</button>
+  </div>
+  <div class="done"><h3>Thank you!</h3><p>This is a sample checkout, so no order was placed. On the real site you would enter the recipient and pay securely.</p><button class="btn line" id="cont">Keep browsing</button></div>
+</aside>
+
+<script>
+(function(){
+  var P=[
+    {i:'custom-roses',n:'Custom Roses',p:110,c:'dc ros',t:'Best seller'},
+    {i:'wildflower',n:'Wildflower Style',p:85,c:'dc',t:'Best seller'},
+    {i:'bright-bold',n:'Bright & Bold',p:85,c:'dc bday',t:'Best seller'},
+    {i:'warm-tones',n:'Warm Tones',p:85,c:'dc fall',t:'Trending'},
+    {i:'full-lush',n:'Full & Lush',p:125,c:'dc'},
+    {i:'pretty-pastels',n:'Pretty Pastels',p:85,c:'dc'},
+    {i:'vibrant-pinks',n:'Vibrant Pinks',p:85,c:'dc'},
+    {i:'sweet-blush',n:'Sweet Blush',p:85,c:'dc'},
+    {i:'shades-of-yellow',n:'Shades of Yellow',p:85,c:'dc'},
+    {i:'white-greens',n:'White & Greens',p:85,c:'dc symp'},
+    {i:'deluxe-dozen',n:'Deluxe Dozen Roses',p:110,c:'ros'},
+    {i:'bubble-of-roses',n:'Bubble of Roses',p:85,c:'ros'},
+    {i:'wendy',n:'Wendy',p:160,c:'ros symp'},
+    {i:'bella',n:'Bella',p:180,c:'ros'},
+    {i:'amour',n:'Amour',p:375,c:'ros'},
+    {i:'gabriella',n:'Gabriella',p:100,c:'bday'},
+    {i:'esmeralda',n:'Esmeralda',p:95,c:'bday'},
+    {i:'orchids',n:'Orchids, orchids, orchids!',p:165,c:'bday'},
+    {i:'aspen',n:'Aspen',p:175,c:'bday symp'},
+    {i:'lola',n:'Lola',p:180,c:'bday'},
+    {i:'blooming-beautiful',n:'Blooming Beautiful',p:180,c:'bday'},
+    {i:'ember',n:'Ember',p:150,c:'fall'},
+    {i:'nicholi',n:'Nicholi',p:150,c:'fall'},
+    {i:'sorrel',n:'Sorrel',p:165,c:'fall'},
+    {i:'aurelia',n:'Aurelia',p:200,c:'fall'},
+    {i:'bright-white',n:'Bright White',p:90,c:'symp'},
+    {i:'garden-of-serenity',n:'Garden of Serenity',p:110,c:'symp'},
+    {i:'symphony-in-white',n:'Symphony in White',p:165,c:'symp'},
+    {i:'calla',n:'Calla',p:210,c:'symp'},
+    {i:'evelyn',n:'Evelyn',p:225,c:'symp'},
+    {i:'elegant-spray',n:'Elegant Spray',p:250,c:'symp',t:'Standing spray'},
+    {i:'stella-spray',n:'Stella Standing Spray',p:400,c:'symp',t:'Standing spray'},
+    {i:'eden',n:'Eden',p:450,c:'symp'},
+    {i:'novelty-orchid',n:'Novelty Orchid',p:90,c:'plant'},
+    {i:'double-orchid',n:'Standard Double Orchid',p:110,c:'plant'},
+    {i:'premium-orchid',n:'Premium Orchid',p:200,c:'plant'},
+    {i:'peace-lily',n:'Peace Lily, Medium',p:75,c:'plant'}
+  ];
+  var CATS=[['dc',"Designer's Choice",'From $85','full-lush'],['ros','Roses','From $85','deluxe-dozen'],['bday','Birthday','From $85','gabriella'],['fall','Fall flowers','From $85','sorrel'],['symp','Sympathy','From $85','eden'],['plant','Plants & orchids','From $75','premium-orchid']];
+  var $=function(s){return document.querySelector(s)},$$=function(s){return document.querySelectorAll(s)};
+  var money=function(v){return '$'+v.toFixed(2)};
+  var cart={};try{cart=JSON.parse(localStorage.getItem('fb_cart')||'{}')}catch(e){}
+  function save(){try{localStorage.setItem('fb_cart',JSON.stringify(cart))}catch(e){}}
+  var byId={};P.forEach(function(p){byId[p.i]=p});
+  var filter='all',sort='f';
+
+  $('#pick').innerHTML=CATS.map(function(c){return '<button data-go="'+c[0]+'"><img src="img/'+c[3]+'.jpg" alt="" loading="lazy"><span>'+c[1]+'<small>'+c[2]+'</small></span></button>'}).join('');
+
+  function list(){
+    var l=P.filter(function(p){return filter==='all'||p.c.split(' ').indexOf(filter)>-1});
+    if(sort==='a')l=l.slice().sort(function(a,b){return a.p-b.p});
+    if(sort==='d')l=l.slice().sort(function(a,b){return b.p-a.p});
+    return l;
+  }
+  function draw(){
+    var l=list();
+    $('#grid').innerHTML=l.map(function(p){
+      return '<article class="prod"><div class="ph"><img src="img/'+p.i+'.jpg" alt="'+p.n.replace(/&/g,'&amp;')+'" loading="lazy" width="760" height="760">'+(p.t?'<span class="tag">'+p.t+'</span>':'')
+        +'<button class="add" data-add="'+p.i+'">Add to cart</button></div><div class="nm"><h3>'+p.n.replace(/&/g,'&amp;')+'</h3><span class="pr">'+money(p.p)+'</span></div><button class="mini" data-add="'+p.i+'">Add to cart</button></article>';
+    }).join('');
+    $('#count').textContent=l.length+' arrangement'+(l.length===1?'':'s');
+  }
+  function setFilter(f){
+    filter=f;
+    $$('.chip').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.f===f)});
+    draw();
+  }
+  function render(){
+    var ids=Object.keys(cart).filter(function(k){return byId[k]&&cart[k]>0}),n=0,s=0;
+    $('#items').innerHTML=ids.length?ids.map(function(k){var p=byId[k];n+=cart[k];s+=p.p*cart[k];
+      return '<div class="li"><img src="img/'+k+'.jpg" alt=""><div><b>'+p.n.replace(/&/g,'&amp;')+'</b><small>'+money(p.p)+'</small><div class="qty"><button data-q="-1" data-id="'+k+'" aria-label="Less">−</button><span>'+cart[k]+'</span><button data-q="1" data-id="'+k+'" aria-label="More">+</button></div></div><div><b>'+money(p.p*cart[k])+'</b><button class="rm" data-rm="'+k+'">Remove</button></div></div>'}).join('')
+      :'<p class="empty">Your cart is empty.</p>';
+    $('#sub').textContent=money(s);
+    var c=$('#cnt');c.textContent=n;c.classList.toggle('on',n>0);
+    $('#chk').disabled=!ids.length;$('#chk').style.opacity=ids.length?1:.5;
+    $('#mcart').textContent=n?'View cart ('+n+')':'View cart';
+  }
+  function open(){$('#panel').classList.remove('fin');$('#panel').classList.add('on');$('#scrim').classList.add('on')}
+  function close(){$('#panel').classList.remove('on');$('#scrim').classList.remove('on')}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-add]');
+    if(a){var k=a.dataset.add;cart[k]=(cart[k]||0)+1;save();render();open();return}
+    var q=e.target.closest('[data-q]');
+    if(q){var id=q.dataset.id;cart[id]=Math.max(0,(cart[id]||0)+parseInt(q.dataset.q));if(!cart[id])delete cart[id];save();render();return}
+    var r=e.target.closest('[data-rm]');
+    if(r){delete cart[r.dataset.rm];save();render();return}
+    var g=e.target.closest('[data-go]');
+    if(g){e.preventDefault();setFilter(g.dataset.go);document.getElementById('shop').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})}
+  });
+  $$('.chip').forEach(function(c){c.addEventListener('click',function(){setFilter(c.dataset.f)})});
+  $('#sort').addEventListener('change',function(){sort=this.value;draw()});
+  $('#cartbtn').addEventListener('click',open);$('#mcart').addEventListener('click',open);
+  $('#cx').addEventListener('click',close);$('#scrim').addEventListener('click',close);$('#cont').addEventListener('click',close);
+  $('#chk').addEventListener('click',function(){cart={};save();render();$('#panel').classList.add('fin')});
+  var b=document.body,bg=$('.burger');
+  bg.addEventListener('click',function(){var o=b.classList.toggle('menu');bg.setAttribute('aria-expanded',o)});
+  $$('.drawer a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('menu')})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){close();b.classList.remove('menu')}});
+  $('#f').addEventListener('submit',function(e){e.preventDefault();this.classList.add('sent')});
+
+  /* open / closed (Houston time) */
+  try{
+    var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()),o={};
+    parts.forEach(function(x){o[x.type]=x.value});
+    var dm={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},d=dm[o.weekday],m=(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10);
+    var close_=d>=1&&d<=5?17*60:(d===6?12*60:0),isOpen=close_>0&&m>=9*60&&m<close_;
+    var st=$('#st');st.hidden=false;st.textContent=isOpen?'Open now':'Closed now';st.classList.toggle('o',isOpen);
+    var td=document.querySelector('#hrs li[data-d="'+d+'"]');if(td)td.classList.add('td');
+  }catch(e){}
+
+  var dd=$('#dd');try{dd.min=new Date().toISOString().slice(0,10)}catch(e){}
+  draw();render();
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});
+    $$('.rv').forEach(function(r){io.observe(r)});
+  }else{$$('.rv').forEach(function(r){r.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
